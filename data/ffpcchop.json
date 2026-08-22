@@ -1,6 +1,6 @@
 {
- "at": 1787410350241,
- "generated": "2026-08-22T14:52:30.241Z",
+ "at": 1787411084383,
+ "generated": "2026-08-22T15:04:44.383Z",
  "season": 2026,
  "source": "myffpc.com Chop",
  "note": "75 leagues, last 30 days",
@@ -1933,16 +1933,16 @@
    "team": "PIT"
   },
   {
-   "name": "Andrei Iosivas",
-   "adp": 346.77,
-   "pos": "WR",
-   "team": "CIN"
-  },
-  {
    "name": "Xavier Hutchinson",
    "adp": 346.77,
    "pos": "WR",
    "team": "HOU"
+  },
+  {
+   "name": "Andrei Iosivas",
+   "adp": 346.77,
+   "pos": "WR",
+   "team": "CIN"
   },
   {
    "name": "Darnell Washington",
@@ -2017,6 +2017,12 @@
    "team": "TEN"
   },
   {
+   "name": "Zavion Thomas",
+   "adp": 348.4,
+   "pos": "WR",
+   "team": "CHI"
+  },
+  {
    "name": "Xavier Legette",
    "adp": 348.4,
    "pos": "WR",
@@ -2027,12 +2033,6 @@
    "adp": 348.4,
    "pos": "TE",
    "team": "FA"
-  },
-  {
-   "name": "Zavion Thomas",
-   "adp": 348.4,
-   "pos": "WR",
-   "team": "CHI"
   },
   {
    "name": "Ja'Tavion Sanders",

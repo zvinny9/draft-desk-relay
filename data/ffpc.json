@@ -1,6 +1,6 @@
 {
- "at": 1787410349778,
- "generated": "2026-08-22T14:52:29.778Z",
+ "at": 1787411083660,
+ "generated": "2026-08-22T15:04:43.660Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "61 leagues, last 30 days",
@@ -1891,15 +1891,15 @@
    "team": "DET"
   },
   {
-   "name": "Jacob Saylors",
-   "adp": 347.74,
-   "pos": "RB",
-   "team": "DET"
-  },
-  {
    "name": "Greg Dortch",
    "adp": 347.74,
    "pos": "WR",
+   "team": "DET"
+  },
+  {
+   "name": "Jacob Saylors",
+   "adp": 347.74,
+   "pos": "RB",
    "team": "DET"
   },
   {
@@ -1969,12 +1969,6 @@
    "team": "LAC"
   },
   {
-   "name": "Michael Carter",
-   "adp": 348.08,
-   "pos": "RB",
-   "team": "TEN"
-  },
-  {
    "name": "Roschon Johnson",
    "adp": 348.08,
    "pos": "RB",
@@ -1985,6 +1979,12 @@
    "adp": 348.08,
    "pos": "DF",
    "team": "ATL"
+  },
+  {
+   "name": "Michael Carter",
+   "adp": 348.08,
+   "pos": "RB",
+   "team": "TEN"
   },
   {
    "name": "Darius Slayton",
@@ -2011,6 +2011,12 @@
    "team": "IND"
   },
   {
+   "name": "Jordan Whittington",
+   "adp": 348.15,
+   "pos": "WR",
+   "team": "LAR"
+  },
+  {
    "name": "Spencer Shrader",
    "adp": 348.15,
    "pos": "K",
@@ -2027,12 +2033,6 @@
    "adp": 348.15,
    "pos": "QB",
    "team": "PIT"
-  },
-  {
-   "name": "Jordan Whittington",
-   "adp": 348.15,
-   "pos": "WR",
-   "team": "LAR"
   }
  ]
 }
