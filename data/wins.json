@@ -1,6 +1,6 @@
 {
- "at": 1787433804906,
- "generated": "2026-08-22T21:23:24.906Z",
+ "at": 1787441914798,
+ "generated": "2026-08-22T23:38:34.798Z",
  "season": 2026,
  "source": "VegasInsider posted win totals",
  "note": "32 teams, consensus of the books listed",
@@ -26,7 +26,7 @@
   },
   {
    "team": "GB",
-   "line": 10.5,
+   "line": 9.5,
    "over": null,
    "under": null
   },
@@ -49,6 +49,12 @@
    "under": null
   },
   {
+   "team": "LAC",
+   "line": 9.5,
+   "over": null,
+   "under": null
+  },
+  {
    "team": "LAR",
    "line": 11.5,
    "over": null,
@@ -62,12 +68,6 @@
   },
   {
    "team": "BUF",
-   "line": 10.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "LAC",
    "line": 10.5,
    "over": null,
    "under": null
@@ -133,12 +133,6 @@
    "under": null
   },
   {
-   "team": "WAS",
-   "line": 7.5,
-   "over": null,
-   "under": null
-  },
-  {
    "team": "NO",
    "line": 7.5,
    "over": null,
@@ -151,13 +145,13 @@
    "under": null
   },
   {
-   "team": "TEN",
-   "line": 6.5,
+   "team": "WAS",
+   "line": 7.5,
    "over": null,
    "under": null
   },
   {
-   "team": "ATL",
+   "team": "TEN",
    "line": 6.5,
    "over": null,
    "under": null
@@ -175,14 +169,20 @@
    "under": null
   },
   {
+   "team": "NYJ",
+   "line": 5.5,
+   "over": null,
+   "under": null
+  },
+  {
    "team": "LV",
    "line": 6.5,
    "over": null,
    "under": null
   },
   {
-   "team": "NYJ",
-   "line": 5.5,
+   "team": "ATL",
+   "line": 7.5,
    "over": null,
    "under": null
   },
@@ -194,7 +194,7 @@
   },
   {
    "team": "MIA",
-   "line": 4.5,
+   "line": 3.5,
    "over": null,
    "under": null
   }
