@@ -1,6 +1,6 @@
 {
- "at": 1787409859546,
- "generated": "2026-08-22T14:44:19.546Z",
+ "at": 1787410350592,
+ "generated": "2026-08-22T14:52:30.592Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "232 leagues, last 14 days",
@@ -1855,16 +1855,16 @@
    "team": "ARI"
   },
   {
-   "name": "Isaiah Davis",
-   "adp": 348.38,
-   "pos": "RB",
-   "team": "NYJ"
-  },
-  {
    "name": "Trey Lance",
    "adp": 348.38,
    "pos": "QB",
    "team": "LAC"
+  },
+  {
+   "name": "Isaiah Davis",
+   "adp": 348.38,
+   "pos": "RB",
+   "team": "NYJ"
   },
   {
    "name": "Colbie Young",
@@ -1891,16 +1891,16 @@
    "team": "TB"
   },
   {
-   "name": "Tyrod Taylor",
-   "adp": 348.47,
-   "pos": "QB",
-   "team": "GB"
-  },
-  {
    "name": "Robert Henry",
    "adp": 348.47,
    "pos": "RB",
    "team": "WAS"
+  },
+  {
+   "name": "Tyrod Taylor",
+   "adp": 348.47,
+   "pos": "QB",
+   "team": "GB"
   },
   {
    "name": "Elic Ayomanor",
@@ -1993,28 +1993,28 @@
    "team": "DEN"
   },
   {
-   "name": "Jarrett Stidham",
-   "adp": 349,
-   "pos": "QB",
-   "team": "DEN"
-  },
-  {
    "name": "Nick Mullens",
    "adp": 349,
    "pos": "QB",
    "team": "JAC"
   },
   {
-   "name": "KeAndre Lambert-Smith",
-   "adp": 349.44,
-   "pos": "WR",
-   "team": "LAC"
+   "name": "Jarrett Stidham",
+   "adp": 349,
+   "pos": "QB",
+   "team": "DEN"
   },
   {
    "name": "Haynes King",
    "adp": 349.44,
    "pos": "QB",
    "team": "CAR"
+  },
+  {
+   "name": "KeAndre Lambert-Smith",
+   "adp": 349.44,
+   "pos": "WR",
+   "team": "LAC"
   },
   {
    "name": "Eli Heidenreich",
@@ -2035,22 +2035,16 @@
    "team": "DET"
   },
   {
-   "name": "Will Shipley",
-   "adp": 349.47,
-   "pos": "RB",
-   "team": "PHI"
-  },
-  {
    "name": "Max Klare",
    "adp": 349.47,
    "pos": "TE",
    "team": "LAR"
   },
   {
-   "name": "Will Levis",
-   "adp": 349.48,
-   "pos": "QB",
-   "team": "TEN"
+   "name": "Will Shipley",
+   "adp": 349.47,
+   "pos": "RB",
+   "team": "PHI"
   },
   {
    "name": "Phil Mafah",
@@ -2077,14 +2071,32 @@
    "team": "SF"
   },
   {
+   "name": "Will Levis",
+   "adp": 349.48,
+   "pos": "QB",
+   "team": "TEN"
+  },
+  {
+   "name": "Calvin Austin",
+   "adp": 349.49,
+   "pos": "WR",
+   "team": "NYG"
+  },
+  {
    "name": "Marquise Brown",
    "adp": 349.49,
    "pos": "WR",
    "team": "PHI"
   },
   {
-   "name": "Calvin Austin",
-   "adp": 349.49,
+   "name": "Carson Wentz",
+   "adp": 349.5,
+   "pos": "QB",
+   "team": "MIN"
+  },
+  {
+   "name": "Odell Beckham",
+   "adp": 349.5,
    "pos": "WR",
    "team": "NYG"
   },
@@ -2095,16 +2107,10 @@
    "team": "IND"
   },
   {
-   "name": "Riley Leonard",
+   "name": "Isaiah Bond",
    "adp": 349.5,
-   "pos": "QB",
-   "team": "IND"
-  },
-  {
-   "name": "Carson Wentz",
-   "adp": 349.5,
-   "pos": "QB",
-   "team": "MIN"
+   "pos": "WR",
+   "team": "CLE"
   },
   {
    "name": "Savion Williams",
@@ -2113,27 +2119,9 @@
    "team": "GB"
   },
   {
-   "name": "Isaiah Bond",
+   "name": "Riley Leonard",
    "adp": 349.5,
-   "pos": "WR",
-   "team": "CLE"
-  },
-  {
-   "name": "Odell Beckham",
-   "adp": 349.5,
-   "pos": "WR",
-   "team": "NYG"
-  },
-  {
-   "name": "Myles Price",
-   "adp": 349.51,
-   "pos": "WR",
-   "team": "MIN"
-  },
-  {
-   "name": "Ashton Dulin",
-   "adp": 349.51,
-   "pos": "WR",
+   "pos": "QB",
    "team": "IND"
   },
   {
@@ -2149,28 +2137,28 @@
    "team": "NO"
   },
   {
-   "name": "Will Howard",
-   "adp": 349.52,
-   "pos": "QB",
-   "team": "PIT"
-  },
-  {
-   "name": "Tai Felton",
-   "adp": 349.52,
+   "name": "Myles Price",
+   "adp": 349.51,
    "pos": "WR",
    "team": "MIN"
   },
   {
-   "name": "Sione Vaki",
-   "adp": 349.52,
-   "pos": "RB",
-   "team": "DET"
+   "name": "Ashton Dulin",
+   "adp": 349.51,
+   "pos": "WR",
+   "team": "IND"
   },
   {
    "name": "Teddy Bridgewater",
    "adp": 349.52,
    "pos": "QB",
    "team": "FA"
+  },
+  {
+   "name": "Sione Vaki",
+   "adp": 349.52,
+   "pos": "RB",
+   "team": "DET"
   },
   {
    "name": "Spencer Rattler",
@@ -2183,6 +2171,18 @@
    "adp": 349.52,
    "pos": "TE",
    "team": "DAL"
+  },
+  {
+   "name": "Will Howard",
+   "adp": 349.52,
+   "pos": "QB",
+   "team": "PIT"
+  },
+  {
+   "name": "Tai Felton",
+   "adp": 349.52,
+   "pos": "WR",
+   "team": "MIN"
   },
   {
    "name": "Zamir White",

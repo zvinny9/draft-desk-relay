@@ -1,6 +1,6 @@
 {
- "at": 1787409859753,
- "generated": "2026-08-22T14:44:19.753Z",
+ "at": 1787410350982,
+ "generated": "2026-08-22T14:52:30.982Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "232 leagues, last 14 days",
@@ -1981,16 +1981,16 @@
    "team": "WAS"
   },
   {
-   "name": "Justin Joly",
-   "adp": 348.99,
-   "pos": "TE",
-   "team": "DEN"
-  },
-  {
    "name": "Mitchell Evans",
    "adp": 348.99,
    "pos": "TE",
    "team": "CAR"
+  },
+  {
+   "name": "Justin Joly",
+   "adp": 348.99,
+   "pos": "TE",
+   "team": "DEN"
   },
   {
    "name": "Nick Mullens",
@@ -2005,16 +2005,16 @@
    "team": "DEN"
   },
   {
-   "name": "KeAndre Lambert-Smith",
-   "adp": 349.44,
-   "pos": "WR",
-   "team": "LAC"
-  },
-  {
    "name": "Haynes King",
    "adp": 349.44,
    "pos": "QB",
    "team": "CAR"
+  },
+  {
+   "name": "KeAndre Lambert-Smith",
+   "adp": 349.44,
+   "pos": "WR",
+   "team": "LAC"
   },
   {
    "name": "Eli Heidenreich",
@@ -2077,22 +2077,22 @@
    "team": "TEN"
   },
   {
-   "name": "Marquise Brown",
-   "adp": 349.49,
-   "pos": "WR",
-   "team": "PHI"
-  },
-  {
    "name": "Calvin Austin",
    "adp": 349.49,
    "pos": "WR",
    "team": "NYG"
   },
   {
-   "name": "Nick Westbrook-Ikhine",
-   "adp": 349.5,
+   "name": "Marquise Brown",
+   "adp": 349.49,
    "pos": "WR",
-   "team": "IND"
+   "team": "PHI"
+  },
+  {
+   "name": "Carson Wentz",
+   "adp": 349.5,
+   "pos": "QB",
+   "team": "MIN"
   },
   {
    "name": "Odell Beckham",
@@ -2101,10 +2101,10 @@
    "team": "NYG"
   },
   {
-   "name": "Carson Wentz",
+   "name": "Nick Westbrook-Ikhine",
    "adp": 349.5,
-   "pos": "QB",
-   "team": "MIN"
+   "pos": "WR",
+   "team": "IND"
   },
   {
    "name": "Isaiah Bond",
@@ -2161,16 +2161,16 @@
    "team": "DET"
   },
   {
-   "name": "Michael Trigg",
-   "adp": 349.52,
-   "pos": "TE",
-   "team": "DAL"
-  },
-  {
    "name": "Spencer Rattler",
    "adp": 349.52,
    "pos": "QB",
    "team": "NO"
+  },
+  {
+   "name": "Michael Trigg",
+   "adp": 349.52,
+   "pos": "TE",
+   "team": "DAL"
   },
   {
    "name": "Will Howard",
