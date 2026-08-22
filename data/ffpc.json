@@ -1,6 +1,6 @@
 {
- "at": 1787377912401,
- "generated": "2026-08-22T05:51:52.401Z",
+ "at": 1787398748181,
+ "generated": "2026-08-22T11:39:08.181Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "79 leagues behind the top pick, drafts since 1 Jul",
@@ -1789,16 +1789,16 @@
    "team": "PIT"
   },
   {
-   "name": "CIN Team Defense",
-   "adp": 345.46,
-   "pos": "DF",
-   "team": "CIN"
-  },
-  {
    "name": "ATL Team Defense",
    "adp": 345.46,
    "pos": "DF",
    "team": "ATL"
+  },
+  {
+   "name": "CIN Team Defense",
+   "adp": 345.46,
+   "pos": "DF",
+   "team": "CIN"
   },
   {
    "name": "Nick Folk",
@@ -1945,15 +1945,15 @@
    "team": "CAR"
   },
   {
-   "name": "Jacob Saylors",
-   "adp": 348.25,
-   "pos": "RB",
-   "team": "DET"
-  },
-  {
    "name": "Greg Dortch",
    "adp": 348.25,
    "pos": "WR",
+   "team": "DET"
+  },
+  {
+   "name": "Jacob Saylors",
+   "adp": 348.25,
+   "pos": "RB",
    "team": "DET"
   },
   {

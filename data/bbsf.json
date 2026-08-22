@@ -1,6 +1,6 @@
 {
- "at": 1787377913883,
- "generated": "2026-08-22T05:51:53.883Z",
+ "at": 1787398749685,
+ "generated": "2026-08-22T11:39:09.685Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "710 leagues behind the top pick, drafts since 1 Jul",
@@ -55,16 +55,16 @@
    "team": "SF"
   },
   {
-   "name": "Jaxon Smith-Njigba",
-   "adp": 9.91,
-   "pos": "WR",
-   "team": "SEA"
-  },
-  {
    "name": "Brock Bowers",
    "adp": 9.91,
    "pos": "TE",
    "team": "LV"
+  },
+  {
+   "name": "Jaxon Smith-Njigba",
+   "adp": 9.91,
+   "pos": "WR",
+   "team": "SEA"
   },
   {
    "name": "Amon-Ra St. Brown",
@@ -2071,12 +2071,6 @@
    "team": "LAR"
   },
   {
-   "name": "CJ Daniels",
-   "adp": 349.34,
-   "pos": "WR",
-   "team": "LAR"
-  },
-  {
    "name": "Mitchell Trubisky",
    "adp": 349.34,
    "pos": "QB",
@@ -2087,6 +2081,12 @@
    "adp": 349.34,
    "pos": "WR",
    "team": "SF"
+  },
+  {
+   "name": "CJ Daniels",
+   "adp": 349.34,
+   "pos": "WR",
+   "team": "LAR"
   },
   {
    "name": "Savion Williams",
@@ -2119,16 +2119,16 @@
    "team": "FA"
   },
   {
-   "name": "Devontez Walker",
-   "adp": 349.5,
-   "pos": "WR",
-   "team": "BAL"
-  },
-  {
    "name": "Luke McCaffrey",
    "adp": 349.5,
    "pos": "WR",
    "team": "WAS"
+  },
+  {
+   "name": "Devontez Walker",
+   "adp": 349.5,
+   "pos": "WR",
+   "team": "BAL"
   },
   {
    "name": "Robert Henry",
@@ -2203,18 +2203,6 @@
    "team": "NYG"
   },
   {
-   "name": "Nick Chubb",
-   "adp": 349.67,
-   "pos": "RB",
-   "team": "FA"
-  },
-  {
-   "name": "Kyle Juszczyk",
-   "adp": 349.67,
-   "pos": "RB",
-   "team": "SF"
-  },
-  {
    "name": "Max Klare",
    "adp": 349.67,
    "pos": "TE",
@@ -2227,22 +2215,22 @@
    "team": "MIN"
   },
   {
+   "name": "Nick Chubb",
+   "adp": 349.67,
+   "pos": "RB",
+   "team": "FA"
+  },
+  {
+   "name": "Kyle Juszczyk",
+   "adp": 349.67,
+   "pos": "RB",
+   "team": "SF"
+  },
+  {
    "name": "Isaiah Williams",
    "adp": 349.68,
    "pos": "WR",
    "team": "NYJ"
-  },
-  {
-   "name": "Jalen Royals",
-   "adp": 349.68,
-   "pos": "WR",
-   "team": "KC"
-  },
-  {
-   "name": "Teddy Bridgewater",
-   "adp": 349.68,
-   "pos": "QB",
-   "team": "FA"
   },
   {
    "name": "Carson Wentz",
@@ -2255,6 +2243,18 @@
    "adp": 349.68,
    "pos": "RB",
    "team": "NYG"
+  },
+  {
+   "name": "Teddy Bridgewater",
+   "adp": 349.68,
+   "pos": "QB",
+   "team": "FA"
+  },
+  {
+   "name": "Jalen Royals",
+   "adp": 349.68,
+   "pos": "WR",
+   "team": "KC"
   },
   {
    "name": "Ashton Dulin",
@@ -2287,6 +2287,36 @@
    "team": "MIA"
   },
   {
+   "name": "Stetson Bennett",
+   "adp": 349.82,
+   "pos": "QB",
+   "team": "LAR"
+  },
+  {
+   "name": "Ameer Abdullah",
+   "adp": 349.82,
+   "pos": "RB",
+   "team": "JAC"
+  },
+  {
+   "name": "Zach Ertz",
+   "adp": 349.82,
+   "pos": "TE",
+   "team": "FA"
+  },
+  {
+   "name": "Salvon Ahmed",
+   "adp": 349.82,
+   "pos": "RB",
+   "team": "CHI"
+  },
+  {
+   "name": "KeAndre Lambert-Smith",
+   "adp": 349.82,
+   "pos": "WR",
+   "team": "LAC"
+  },
+  {
    "name": "Nate Boerkircher",
    "adp": 349.82,
    "pos": "TE",
@@ -2305,34 +2335,10 @@
    "team": "CAR"
   },
   {
-   "name": "KeAndre Lambert-Smith",
-   "adp": 349.82,
-   "pos": "WR",
-   "team": "LAC"
-  },
-  {
-   "name": "Ameer Abdullah",
-   "adp": 349.82,
-   "pos": "RB",
-   "team": "JAC"
-  },
-  {
-   "name": "Zach Ertz",
-   "adp": 349.82,
+   "name": "Marlin Klein",
+   "adp": 349.83,
    "pos": "TE",
-   "team": "FA"
-  },
-  {
-   "name": "Stetson Bennett",
-   "adp": 349.82,
-   "pos": "QB",
-   "team": "LAR"
-  },
-  {
-   "name": "Salvon Ahmed",
-   "adp": 349.82,
-   "pos": "RB",
-   "team": "CHI"
+   "team": "HOU"
   },
   {
    "name": "Will Levis",
@@ -2345,12 +2351,6 @@
    "adp": 349.83,
    "pos": "QB",
    "team": "DET"
-  },
-  {
-   "name": "Marlin Klein",
-   "adp": 349.83,
-   "pos": "TE",
-   "team": "HOU"
   },
   {
    "name": "Will Shipley",
@@ -2377,16 +2377,16 @@
    "team": "DAL"
   },
   {
+   "name": "Austin Ekeler",
+   "adp": 349.84,
+   "pos": "RB",
+   "team": "FA"
+  },
+  {
    "name": "Barion Brown",
    "adp": 349.84,
    "pos": "WR",
    "team": "NO"
-  },
-  {
-   "name": "Jaylin Lane",
-   "adp": 349.84,
-   "pos": "WR",
-   "team": "WAS"
   },
   {
    "name": "Will Howard",
@@ -2395,10 +2395,10 @@
    "team": "PIT"
   },
   {
-   "name": "Austin Ekeler",
+   "name": "Jaylin Lane",
    "adp": 349.84,
-   "pos": "RB",
-   "team": "FA"
+   "pos": "WR",
+   "team": "WAS"
   },
   {
    "name": "Zach Wilson",
@@ -2411,12 +2411,6 @@
    "adp": 349.85,
    "pos": "RB",
    "team": "SF"
-  },
-  {
-   "name": "Luke Musgrave",
-   "adp": 349.85,
-   "pos": "TE",
-   "team": "GB"
   },
   {
    "name": "Raheim Sanders",
@@ -2435,6 +2429,12 @@
    "adp": 349.85,
    "pos": "WR",
    "team": "NE"
+  },
+  {
+   "name": "Luke Musgrave",
+   "adp": 349.85,
+   "pos": "TE",
+   "team": "GB"
   }
  ]
 }
