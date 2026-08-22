@@ -1,9 +1,9 @@
 {
- "at": 1787430116711,
- "generated": "2026-08-22T20:21:56.711Z",
+ "at": 1787433806322,
+ "generated": "2026-08-22T21:23:26.322Z",
  "season": 2026,
  "source": "fantasypros — Seth Miller (Crossroads Fantasy Football)",
- "note": "individual draft board; multi-year draft accuracy #28 of 157; expert updated 8/22",
+ "note": "individual draft board; multi-year draft accuracy #28 of 157; QB3 at #30; expert updated 8/22",
  "count": 360,
  "rows": [
   {
@@ -2532,6 +2532,8 @@
   "who": "Seth Miller",
   "site": "Crossroads Fantasy Football",
   "multiYearRank": 28,
-  "updated": "8/22"
+  "updated": "8/22",
+  "superflex": false,
+  "qb3": 30
  }
 }

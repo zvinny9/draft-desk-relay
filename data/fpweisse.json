@@ -1,9 +1,9 @@
 {
- "at": 1787430116319,
- "generated": "2026-08-22T20:21:56.319Z",
+ "at": 1787433805790,
+ "generated": "2026-08-22T21:23:25.790Z",
  "season": 2026,
  "source": "fantasypros — Ryan Weisse (Club Fantasy FFL)",
- "note": "individual draft board; multi-year draft accuracy #12 of 157; expert updated 8/22",
+ "note": "individual draft board; multi-year draft accuracy #12 of 157; QB3 at #30; expert updated 8/22",
  "count": 389,
  "rows": [
   {
@@ -2735,6 +2735,8 @@
   "who": "Ryan Weisse",
   "site": "Club Fantasy FFL",
   "multiYearRank": 12,
-  "updated": "8/22"
+  "updated": "8/22",
+  "superflex": false,
+  "qb3": 30
  }
 }

@@ -1,9 +1,9 @@
 {
- "at": 1787430116582,
- "generated": "2026-08-22T20:21:56.582Z",
+ "at": 1787433806142,
+ "generated": "2026-08-22T21:23:26.142Z",
  "season": 2026,
  "source": "fantasypros — Ben Wasley (Hashtag Football)",
- "note": "individual draft board; multi-year draft accuracy #15 of 157; expert updated 8/22",
+ "note": "individual draft board; multi-year draft accuracy #15 of 157; QB3 at #30; expert updated 8/22",
  "count": 385,
  "rows": [
   {
@@ -2707,6 +2707,8 @@
   "who": "Ben Wasley",
   "site": "Hashtag Football",
   "multiYearRank": 15,
-  "updated": "8/22"
+  "updated": "8/22",
+  "superflex": false,
+  "qb3": 30
  }
 }

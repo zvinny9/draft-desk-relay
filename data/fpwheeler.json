@@ -1,9 +1,9 @@
 {
- "at": 1787430115983,
- "generated": "2026-08-22T20:21:55.983Z",
+ "at": 1787433805404,
+ "generated": "2026-08-22T21:23:25.404Z",
  "season": 2026,
  "source": "fantasypros — Kev Wheeler (Wheel Route FF)",
- "note": "individual draft board; multi-year draft accuracy #9 of 157; expert updated 8/20",
+ "note": "individual draft board; multi-year draft accuracy #9 of 157; QB3 at #30; expert updated 8/20",
  "count": 397,
  "rows": [
   {
@@ -2791,6 +2791,8 @@
   "who": "Kev Wheeler",
   "site": "Wheel Route FF",
   "multiYearRank": 9,
-  "updated": "8/20"
+  "updated": "8/20",
+  "superflex": false,
+  "qb3": 30
  }
 }

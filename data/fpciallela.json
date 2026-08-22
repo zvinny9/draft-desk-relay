@@ -1,9 +1,9 @@
 {
- "at": 1787430116455,
- "generated": "2026-08-22T20:21:56.455Z",
+ "at": 1787433805964,
+ "generated": "2026-08-22T21:23:25.964Z",
  "season": 2026,
  "source": "fantasypros — Mick Ciallela (Fantrax)",
- "note": "individual draft board; multi-year draft accuracy #14 of 157; expert updated 8/21",
+ "note": "individual draft board; multi-year draft accuracy #14 of 157; QB3 at #30; expert updated 8/21",
  "count": 321,
  "rows": [
   {
@@ -2259,6 +2259,8 @@
   "who": "Mick Ciallela",
   "site": "Fantrax",
   "multiYearRank": 14,
-  "updated": "8/21"
+  "updated": "8/21",
+  "superflex": false,
+  "qb3": 30
  }
 }
