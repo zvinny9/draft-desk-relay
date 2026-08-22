@@ -42,40 +42,51 @@ jobs:
           git push
 
       # Reconnaissance, not a source. Manual runs only, never fails the job.
-      # The question each round is the same: which hosts answer a datacenter IP
-      # AND actually contain the thing we want. Round 1 answered it for win
-      # totals (VegasInsider). Round 2 asks it for the expert/value sources the
-      # board still takes by hand.
+      # Round 1 asked WHICH hosts answer (found VegasInsider). Round 2 asked
+      # which contain the player pool (found six). Round 3 asks HOW each one is
+      # shaped, so the parsers get written once instead of five times.
       - name: Probe candidate sources
         if: github.event_name == 'workflow_dispatch'
         continue-on-error: true
         run: |
           node --input-type=module -e '
           const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
-          // If a page has the 2026 draft board in it, these surnames are in it.
-          const NAMES = ["Gibbs","Bijan","Nacua","Chase","Jefferson","Bowers","Nabers",
-            "McBride","Achane","Jeanty","Barkley","Lamb","Hampton","Odunze"];
+          const MARK = "Gibbs";
           const URLS = [
             "https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=1&numTeams=12&ppr=1",
-            "https://api.fantasycalc.com/values/current?isDynasty=true&numQbs=2&numTeams=12&ppr=1",
             "https://keeptradecut.com/dynasty-rankings",
-            "https://www.fantasypros.com/nfl/adp/ppr-overall.php",
             "https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php",
-            "https://www.fantasypros.com/nfl/projections/qb.php?scoring=PPR",
             "https://www.draftsharks.com/adp/ppr",
-            "https://api.sleeper.app/v1/players/nfl",
-            "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
-            "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv"
+            "https://api.github.com/repos/nflverse/nflverse-data/releases/tags/injuries",
+            "https://api.github.com/repos/nflverse/nflverse-data/releases/tags/depth_charts"
           ];
+          const clip = (s, n) => String(s).replace(/\s+/g, " ").slice(0, n);
           for (const u of URLS) {
-            const host = u.split("/")[2] + u.split("/").slice(3).join("/").slice(0, 28);
+            const tag = u.split("/")[2] + " " + u.split("/").slice(3).join("/").slice(0, 34);
             try {
               const r = await fetch(u, { headers: { "user-agent": UA, accept: "*/*" }, redirect: "follow" });
               const b = await r.text();
-              const hits = NAMES.filter((n) => b.includes(n)).length;
-              let json = false; try { JSON.parse(b); json = true; } catch (e) {}
-              const rows = (b.match(/<tr[\s\S]*?<\/tr>/gi) || []).length;
-              console.log(`PROBE ${host} -> ${r.status}, ${b.length}b, ${hits}/${NAMES.length} names, json=${json}, trs=${rows}`);
-            } catch (e) { console.log(`PROBE ${host} -> ${e.message}`); }
+              let j = null; try { j = JSON.parse(b); } catch (e) {}
+              if (j) {
+                if (Array.isArray(j)) {
+                  console.log(`SHAPE ${tag} -> ARRAY len=${j.length}`);
+                  console.log(`  keys: ${Object.keys(j[0] || {}).join(",")}`);
+                  console.log(`  row0: ${clip(JSON.stringify(j[0]), 420)}`);
+                } else if (j.assets) {
+                  console.log(`SHAPE ${tag} -> RELEASE assets=${j.assets.length}`);
+                  console.log(`  ${j.assets.map((a) => a.name).filter((n) => /202[56]|csv/.test(n)).slice(0, 12).join(", ")}`);
+                } else {
+                  console.log(`SHAPE ${tag} -> OBJECT keys=${Object.keys(j).join(",")}`);
+                  console.log(`  ${clip(JSON.stringify(j).slice(0, 400), 400)}`);
+                }
+                continue;
+              }
+              // HTML: find where the data actually lives.
+              const blobs = ["__NEXT_DATA__", "ecrData", "playersArray", "window.__", "application/ld+json",
+                             "var players", "dataLayer", "__NUXT__"].filter((k) => b.includes(k));
+              const at = b.indexOf(MARK);
+              console.log(`SHAPE ${tag} -> HTML ${b.length}b, blobs=[${blobs.join(",")}], trs=${(b.match(/<tr/gi)||[]).length}`);
+              if (at > -1) console.log(`  around "${MARK}": ${clip(b.slice(Math.max(0, at - 220), at + 220), 440)}`);
+            } catch (e) { console.log(`SHAPE ${tag} -> ${e.message}`); }
           }
           '
