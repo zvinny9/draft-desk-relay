@@ -81,87 +81,125 @@ function adpFromRows(rows) {
 
 /* ---------- sources ---------- */
 
-/* FFPC. The League Type picker is not in the URL — verified: ?leagueType=chop
-   loads Main Event — so the page state is driven by whatever call the picker
-   makes. The page is fetched, the call is found in its own script, and each
-   contest is requested directly. If the page stops exposing it, the failure is
-   loud and this file simply is not written. */
-async function ffpc(kind, leagueType) {
-  const page = "https://myffpc.com/cms/public/ffpc-league-and-tournament-adp";
-  const html = await get(page);
-  const api = (html.match(/["'](\/[\w/-]*adp[\w/-]*)["']/i) || [])[1];
-  const end = (m) => `https://myffpc.com${m}`;
-  const tries = [];
-  if (api) tries.push(end(api) + `?leagueType=${leagueType}`);
-  tries.push(`https://myffpc.com/api/adp?leagueType=${leagueType}`);
-  tries.push(page);
-  for (const u of tries) {
-    try {
-      const body = await get(u);
-      if (body.trim().startsWith("{") || body.trim().startsWith("[")) {
-        const j = JSON.parse(body);
-        const arr = Array.isArray(j) ? j : (j.players || j.rows || j.data || []);
-        const rows = arr.map((r) => ({
-          name: r.name || r.playerName || `${r.firstName || ""} ${r.lastName || ""}`.trim(),
-          adp: Number(r.adp ?? r.averageDraftPosition), pos: r.position || r.pos || null,
-          team: r.team || r.nflTeam || null,
-        })).filter((r) => r.name && r.adp > 0);
-        if (rows.length > 50) return { rows, source: `myffpc.com ${leagueType} (json)` };
-      }
-      const rows = adpFromRows(tableRows(body));
-      if (rows.length > 50) return { rows, source: `myffpc.com ${leagueType} (table)` };
-    } catch (e) { log(`  ffpc ${leagueType}: ${u} — ${e.message}`); }
+/* FFPC. Measured 22 Aug 2026, not guessed. The League Type picker never touches
+   the URL; the page posts nothing either. It issues
+
+     GET /FFPCADPReport.ashx?draftStartDateFrom=..&draftStartDateTo=..
+         &leagueTypeID=N | &leagueGroupID=N
+         &superflexFilter=0|1&slimRostersFilter=0|1
+
+   and gets back XML: <data><players><player name= nflTeam= position= adp=
+   min= max= leaguesDraftedIn= .../></players></data>. The contest is a numeric
+   id and the picker's own script carries the table; two different KINDS of id
+   share one report, so a contest is { param, id } here rather than a bare
+   number. Proof the filter is real: superflex (55) puts Josh Allen at 2.12 and
+   no other board has a quarterback in its top five. */
+const FFPC_XML = /<player\b([^>]*)\/?>/gi;
+/* The report is XML, so apostrophes arrive escaped. Ja&apos;Marr Chase does not
+   match Ja'Marr Chase in any name table Draft Desk has, and the miss is silent:
+   the player simply never gets an FFPC ADP. */
+const unxml = (s) => s.replace(/&apos;|&#39;/g, "'").replace(/&quot;/g, '"')
+  .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+const attr = (s, k) => {
+  const m = s.match(new RegExp(`\\b${k}\\s*=\\s*"([^"]*)"`, "i"));
+  return m ? unxml(m[1]) : null;
+};
+function ffpcRows(xml) {
+  const out = [];
+  let m;
+  FFPC_XML.lastIndex = 0;
+  while ((m = FFPC_XML.exec(xml))) {
+    const a = m[1];
+    const name = attr(a, "name"), adp = Number(attr(a, "adp"));
+    /* MEASURED: the report returns the whole player universe and pads everyone
+       who was not actually drafted to a flat adp of 350 — 2155 of 2466 rows on
+       the Main Event board. Publishing those would hand Draft Desk two thousand
+       identical fake ADPs that look exactly like a market. Only rows with a
+       league count behind them are real. */
+    const leagues = Number(attr(a, "leaguesDraftedIn")) || 0;
+    if (!name || !(adp > 0) || leagues < 1) continue;
+    out.push({ name, adp, pos: attr(a, "position"), team: attr(a, "nflTeam"), leagues });
   }
-  throw new Error(`no readable ${leagueType} table`);
+  return out;
 }
 
-/* NFFC. nfc.shgn.com/adp/football renders server-side; a plain GET is enough
-   for the public contest boards even though a browser is refused the CORS
-   header. */
-async function nffc() {
-  const urls = [
-    "https://nfc.shgn.com/adp/football",
-    "https://nfc.shgn.com/adp/football?SortBy=ADP",
-  ];
-  for (const u of urls) {
-    try {
-      const rows = adpFromRows(tableRows(await get(u)));
-      if (rows.length > 50) return { rows, source: "nfc.shgn.com" };
-    } catch (e) { log("  nffc:", e.message); }
-  }
-  throw new Error("no readable NFFC table");
+/* A wide window on purpose. The page defaults to the last seven days, which for
+   Main Event was 22 leagues on the day this was written — an ADP with a sample
+   of 22 is noise. From July gives 79 there and 710 on the superflex board. */
+const ffpcWindow = () => {
+  const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const d = new Date();
+  const f = (x) => `${String(x.getDate()).padStart(2, "0")}${M[x.getMonth()]}${x.getFullYear()}`;
+  return `draftStartDateFrom=01Jul${SEASON}&draftStartDateTo=${f(d)}`;
+};
+
+async function ffpc(kind, contest) {
+  const q = `${ffpcWindow()}&${contest.param}=${contest.id}` +
+    `&superflexFilter=${contest.sf ? 1 : 0}&slimRostersFilter=${contest.slim ? 1 : 0}`;
+  const xml = await get(`https://myffpc.com/FFPCADPReport.ashx?${q}`);
+  const rows = ffpcRows(xml);
+  if (rows.length <= 50) throw new Error(`${contest.label}: only ${rows.length} players actually drafted`);
+  const n = rows[0].leagues;
+  return { rows: rows.map(({ leagues, ...r }) => r),
+    source: `myffpc.com ${contest.label}`,
+    note: n ? `${n} leagues behind the top pick, drafts since 1 Jul` : "" };
 }
 
-/* Underdog. api.underdogfantasy.com/v1/lobby is open and names the live Best
-   Ball Mania; the rankings page itself redirects to a login. Both are tried
-   from here, where there is no browser to be refused. */
+/* NFFC. Also measured. /adp/football serves "Loading..." and nothing else — the
+   table is drawn client-side from
+
+     POST /adp.data.php   sport=football&draft_type=N&num_teams=0&...
+
+   which answers with bare <tr> fragments, no <table> around them. The sport
+   field is not optional: the same endpoint with no body returns BASEBALL, which
+   is how the first version of this file quietly published Shohei Ohtani.
+   draft_type 0 is every non-auction draft; the numbered contests are NFFC's
+   own ids, read off the picker. */
+const NFFC_CONTESTS = { all: 0, superflex: 961, primetime: 941, classic: 935 };
+
+async function nffc(draftType = NFFC_CONTESTS.all) {
+  const body = new URLSearchParams({ team_id: "0", time_period: "", from_date: "",
+    to_date: "", num_teams: "0", draft_type: String(draftType), sport: "football",
+    position: "", league_teams: "", as_board: "0" }).toString();
+  const r = await fetch("https://nfc.shgn.com/adp.data.php", { method: "POST",
+    headers: { "user-agent": UA, "x-requested-with": "XMLHttpRequest",
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8" }, body });
+  if (!r.ok) throw new Error(`adp.data.php -> ${r.status}`);
+  const rows = adpFromRows(tableRows(await r.text()));
+  if (rows.length <= 50) throw new Error(`${rows.length} rows back from adp.data.php`);
+  /* Cheap guard against the wrong sport coming back: an NFL board is almost all
+     one of six positions, a baseball board is almost none of them. */
+  const known = rows.filter((x) => x.pos).length / rows.length;
+  if (known < 0.5) throw new Error(`only ${Math.round(known * 100)}% of rows carry an NFL position`);
+  return { rows, source: "nfc.shgn.com adp.data.php" };
+}
+
+/* Underdog. The host matters and it is not the obvious one: api.underdogfantasy
+   .com is the ACCOUNT api and 404s every ADP path (four of them, in run #1 of
+   this workflow). The public board lives on stats.underdogfantasy.com, which
+   Draft Desk already reads directly in the browser because that host does send
+   Access-Control-Allow-Origin: *. This job is therefore a backstop rather than
+   the primary path, and it uses the same three calls the app uses. */
+const UD = "https://stats.underdogfantasy.com";
+const UD_Q = "?product=SEASON_LONG&product_experience_id=1";
+const UD_SCORING = "ccf300b0-9197-5951-bd96-cba84ad71e86";
+
 async function underdog() {
-  const lobby = await get("https://api.underdogfantasy.com/v1/lobby", "json");
-  const L = lobby.lobby || lobby;
-  const t = (L.tournaments || []).find((x) => /best ball mania/i.test(x.title || ""))
-    || (L.tournaments || []).find((x) => /best ball/i.test(x.title || ""));
-  if (!t) throw new Error("no Best Ball contest in the lobby");
-  const slate = (t.slates || [])[0]?.id || (t.tournament_rounds || [])[0]?.slate_id;
-  const tries = [
-    `https://api.underdogfantasy.com/v1/slates/${slate}/adp`,
-    `https://api.underdogfantasy.com/v2/slates/${slate}/adp`,
-    `https://api.underdogfantasy.com/v1/tournaments/${t.id}/adp`,
-    `https://api.underdogfantasy.com/beta/v5/slates/${slate}/appearances`,
-  ];
-  for (const u of tries) {
-    try {
-      const j = await get(u, "json");
-      const arr = Array.isArray(j) ? j : (j.players || j.appearances || j.adp || []);
-      const rows = arr.map((r) => {
-        const p = r.player || r;
-        return { name: p.full_name || `${p.first_name || ""} ${p.last_name || ""}`.trim(),
-          adp: Number(r.adp ?? r.average_draft_position ?? p.adp),
-          pos: p.position || p.slot || null, team: p.team_name || p.team || null };
-      }).filter((r) => r.name && r.adp > 0);
-      if (rows.length > 50) return { rows, source: `underdog ${t.title}`, tournament: t.id };
-    } catch (e) { log("  underdog:", u.split("/").slice(3).join("/"), "—", e.message); }
-  }
-  throw new Error(`lobby reachable (${t.title}) but no open ADP endpoint`);
+  const slates = await get(`${UD}/v1/sports/nfl/slates${UD_Q}`, "json");
+  const list = slates.slates || slates.data || (Array.isArray(slates) ? slates : []);
+  const slate = list.find((s) => /^\d{4} season$/i.test(String(s.title || s.name || "").trim()))
+    || list[0];
+  if (!slate) throw new Error("no season slate listed");
+  const app = await get(`${UD}/v1/slates/${slate.id}/scoring_types/${UD_SCORING}/appearances${UD_Q}`, "json");
+  const arr = app.appearances || app.data || (Array.isArray(app) ? app : []);
+  const rows = arr.map((r) => {
+    const p = r.player || r;
+    return { name: p.full_name || `${p.first_name || ""} ${p.last_name || ""}`.trim(),
+      adp: Number(r.adp ?? r.average_draft_position ?? p.adp),
+      pos: p.position || p.slot || null, team: p.team_name || p.team || null };
+  }).filter((r) => r.name && r.adp > 0);
+  if (rows.length <= 50) throw new Error(`${rows.length} appearances back for ${slate.title || slate.id}`);
+  return { rows, source: `underdog ${slate.title || slate.id}` };
 }
 
 /* Posted season win totals with both prices. nflverse publishes exactly this
@@ -187,12 +225,21 @@ async function wins() {
 }
 
 /* ---------- run ---------- */
+/* The FFPC contest ids, read off the picker's own script on 22 Aug 2026. Two
+   different parameters are in play: Main Event and the tournaments are league
+   TYPES, while Chop and the dynasty/best-ball families are league GROUPS. */
+const FFPC = {
+  mainEvent: { param: "leagueTypeID",  id: 1,  label: "Main Event" },
+  chop:      { param: "leagueGroupID", id: 4,  label: "Chop" },
+  sfBbt:     { param: "leagueTypeID",  id: 55, label: "Superflex Best Ball Tournament" },
+};
+
 const JOBS = [
-  ["nffc", nffc],
-  ["ffpc", () => ffpc("ffpc", "mainEvent")],
-  ["ffpcchop", () => ffpc("ffpcchop", "chop")],
-  ["ffpcsf", () => ffpc("ffpcsf", "sfBbTournament")],
-  ["bbsf", () => ffpc("bbsf", "sfBbTournament")],
+  ["nffc", () => nffc()],
+  ["ffpc", () => ffpc("ffpc", FFPC.mainEvent)],
+  ["ffpcchop", () => ffpc("ffpcchop", FFPC.chop)],
+  ["ffpcsf", () => ffpc("ffpcsf", FFPC.sfBbt)],
+  ["bbsf", () => ffpc("bbsf", FFPC.sfBbt)],
   ["underdog", underdog],
   ["wins", wins],
 ];
@@ -217,4 +264,3 @@ await writeFile(join(OUT, "status.json"), JSON.stringify(
   { at: Date.now(), generated: new Date().toISOString(), season: SEASON, ok, failed }, null, 1));
 log(`done — ${ok} of ${JOBS.length} published`);
 if (!ok) process.exit(1);
-
