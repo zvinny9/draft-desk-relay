@@ -42,6 +42,15 @@ const TEAMS = new Set(["ARI","ATL","BAL","BUF","CAR","CHI","CIN","CLE","DAL","DE
   "HOU","IND","JAX","KC","LV","LAC","LAR","MIA","MIN","NE","NO","NYG","NYJ","PHI","PIT","SF",
   "SEA","TB","TEN","WAS","LA"]);
 const POS = /^(QB|RB|WR|TE|K|PK|DST|D\/ST|DEF)$/i;
+/* Every site spells the two non-skill positions differently and Draft Desk drops
+   a row whose position disagrees with its board - silently, until v80. So the
+   relay settles it here, once, rather than letting each source ship its own
+   dialect downstream. */
+const POS_CANON = { PK: "K", K: "K", "D/ST": "DST", "D-ST": "DST", DEF: "DST", DST: "DST" };
+const canonPos = (p) => {
+  const u = String(p || "").toUpperCase().trim();
+  return POS_CANON[u] || u || null;
+};
 
 /* Strip tags, keep cell boundaries. Good enough for a table and far more robust
    than a DOM parser we would have to install. */
@@ -73,7 +82,7 @@ function adpFromRows(rows) {
     const adp = dec.length ? dec[dec.length - 1] : after.length ? after[after.length - 1] : null;
     if (!(adp > 0)) continue;
     out.push({ name, adp,
-      pos: (c.find((x) => POS.test(x)) || "").toUpperCase().replace("D/ST", "DST").replace("PK", "K") || null,
+      pos: canonPos(c.find((x) => POS.test(x))),
       team: c.find((x) => TEAMS.has(x.toUpperCase()))?.toUpperCase() || null });
   }
   return out;
@@ -118,31 +127,54 @@ function ffpcRows(xml) {
        league count behind them are real. */
     const leagues = Number(attr(a, "leaguesDraftedIn")) || 0;
     if (!name || !(adp > 0) || leagues < 1) continue;
-    out.push({ name, adp, pos: attr(a, "position"), team: attr(a, "nflTeam"), leagues });
+    out.push({ name, adp, pos: canonPos(attr(a, "position")), team: attr(a, "nflTeam"), leagues });
   }
   return out;
 }
 
-/* A wide window on purpose. The page defaults to the last seven days, which for
-   Main Event was 22 leagues on the day this was written — an ADP with a sample
-   of 22 is noise. From July gives 79 there and 710 on the superflex board. */
-const ffpcWindow = () => {
-  const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const d = new Date();
-  const f = (x) => `${String(x.getDate()).padStart(2, "0")}${M[x.getMonth()]}${x.getFullYear()}`;
-  return `draftStartDateFrom=01Jul${SEASON}&draftStartDateTo=${f(d)}`;
+/* The window is a real trade-off and the first version of this file got it
+   wrong in the safe-looking direction.
+
+   The page defaults to the last seven days. On that window Main Event was 22
+   leagues, and an ADP built from 22 drafts is noise. So this fetched everything
+   since 1 July instead - 79 leagues, a much steadier number, and a number that
+   is quietly WRONG for drafting. Eight weeks of drafts blended together lags the
+   market: it is still carrying July, before camp, before the depth charts moved.
+   Measured against the board's own manually-downloaded FFPC file, the seven-day
+   window reproduced it exactly (Gibbs 1.05, Bijan 1.95) while the since-July
+   window drifted (Puka 4.27 against 4.75 - most of a round).
+
+   So: start narrow and widen only until the sample is big enough to trust, and
+   publish which window was actually used so the app can show it. Recency first,
+   sample size as the constraint rather than the goal. */
+const FFPC_WINDOWS = [14, 30, 60];
+const FFPC_MIN_LEAGUES = 40;
+const M3 = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const ddMon = (d) => `${String(d.getDate()).padStart(2, "0")}${M3[d.getMonth()]}${d.getFullYear()}`;
+const ffpcWindow = (days) => {
+  const to = new Date();
+  const from = new Date(to.getTime() - days * 864e5);
+  return `draftStartDateFrom=${ddMon(from)}&draftStartDateTo=${ddMon(to)}`;
 };
 
 async function ffpc(kind, contest) {
-  const q = `${ffpcWindow()}&${contest.param}=${contest.id}` +
-    `&superflexFilter=${contest.sf ? 1 : 0}&slimRostersFilter=${contest.slim ? 1 : 0}`;
-  const xml = await get(`https://myffpc.com/FFPCADPReport.ashx?${q}`);
-  const rows = ffpcRows(xml);
-  if (rows.length <= 50) throw new Error(`${contest.label}: only ${rows.length} players actually drafted`);
-  const n = rows[0].leagues;
-  return { rows: rows.map(({ leagues, ...r }) => r),
+  let best = null;
+  for (const days of FFPC_WINDOWS) {
+    const q = `${ffpcWindow(days)}&${contest.param}=${contest.id}` +
+      `&superflexFilter=${contest.sf ? 1 : 0}&slimRostersFilter=${contest.slim ? 1 : 0}`;
+    const rows = ffpcRows(await get(`https://myffpc.com/FFPCADPReport.ashx?${q}`));
+    const n = rows.length ? rows[0].leagues : 0;
+    log(`  ffpc ${contest.label}: ${days}d -> ${rows.length} players, ${n} leagues`);
+    /* Keep the widest attempt as a floor, so a quiet contest still publishes
+       something rather than nothing. */
+    if (rows.length > 50) best = { rows, n, days };
+    if (rows.length > 50 && n >= FFPC_MIN_LEAGUES) break;
+  }
+  if (!best) throw new Error(`${contest.label}: too few drafts in the last ${FFPC_WINDOWS.at(-1)} days`);
+  const thin = best.n < FFPC_MIN_LEAGUES;
+  return { rows: best.rows.map(({ leagues, ...r }) => r),
     source: `myffpc.com ${contest.label}`,
-    note: n ? `${n} leagues behind the top pick, drafts since 1 Jul` : "" };
+    note: `${best.n} leagues, last ${best.days} days${thin ? " \u2014 thin, read it loosely" : ""}` };
 }
 
 /* NFFC. Also measured. /adp/football serves "Loading..." and nothing else — the
@@ -202,6 +234,103 @@ async function underdog() {
   return { rows, source: `underdog ${slate.title || slate.id}` };
 }
 
+/* DraftKings. The board's Vegas axis has been dark all season: nflverse's
+   win_totals.csv is the only posted source wired up and it has no 2026 rows, so
+   `wins` fails every run and Draft Desk pins the Vegas weight at zero. This is
+   the live replacement.
+
+   DraftKings' sportscontent API is open - no key, no cookie - and answers with
+   the whole content graph for a category: events, markets, selections, plus an
+   index of every OTHER category. That index is the useful part, because the
+   numeric id for season win totals is DraftKings' to change and has changed
+   before. So nothing here hardcodes it. One known-good category is fetched
+   purely to read the index off it, the index is filtered by NAME, and the
+   win-total market is then recognised by its SHAPE: selections labelled Over
+   and Under, against a line between 1 and 17, on something that resolves to an
+   NFL team. If DraftKings renumbers tomorrow, this still finds it. */
+const DK = "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusnj/v1/leagues/88808";
+
+const dkLine = (sel) => {
+  for (const k of ["points", "line", "handicap"]) {
+    const v = Number(sel && sel[k]);
+    if (Number.isFinite(v)) return v;
+  }
+  const m = String((sel && sel.label) || "").match(/-?\d+(\.\d+)?/);
+  return m ? Number(m[0]) : null;
+};
+const dkPrice = (sel) => {
+  const o = sel && (sel.displayOdds || sel.trueOdds || sel.odds);
+  const raw = o && (o.american ?? o.americanOdds ?? o);
+  const txt = String(raw == null ? "" : raw).trim();
+  const n = Number(txt.replace(/[+\s,]/g, ""));
+  return Number.isFinite(n) && txt ? n : null;
+};
+
+/* DraftKings writes full club names; Draft Desk wants the three-letter code.
+   Matched on the nickname, so "New York Giants", "NY Giants" and "Giants" all
+   land on NYG. */
+const DK_NICK = { cardinals: "ARI", falcons: "ATL", ravens: "BAL", bills: "BUF",
+  panthers: "CAR", bears: "CHI", bengals: "CIN", browns: "CLE", cowboys: "DAL",
+  broncos: "DEN", lions: "DET", packers: "GB", texans: "HOU", colts: "IND",
+  jaguars: "JAX", chiefs: "KC", raiders: "LV", chargers: "LAC", rams: "LAR",
+  dolphins: "MIA", vikings: "MIN", patriots: "NE", saints: "NO", giants: "NYG",
+  jets: "NYJ", eagles: "PHI", steelers: "PIT", "49ers": "SF", niners: "SF",
+  seahawks: "SEA", buccaneers: "TB", bucs: "TB", titans: "TEN", commanders: "WAS" };
+const dkTeam = (label) => {
+  const l = String(label).toLowerCase();
+  for (const nick of Object.keys(DK_NICK)) if (l.includes(nick)) return DK_NICK[nick];
+  return null;
+};
+
+function dkHarvest(j) {
+  const evs = new Map((j.events || []).map((e) => [String(e.id), e]));
+  const byMarket = new Map();
+  for (const sel of j.selections || []) {
+    const k = String(sel.marketId);
+    if (!byMarket.has(k)) byMarket.set(k, []);
+    byMarket.get(k).push(sel);
+  }
+  const out = [];
+  for (const mk of j.markets || []) {
+    const name = String(mk.name || "");
+    if (!/win/i.test(name)) continue;
+    /* Matchbets, division winners and Super Bowl futures also say "win". */
+    if (/matchbet|match bet|most|fewest|division|conference|super bowl|playoff|mvp/i.test(name)) continue;
+    const sels = byMarket.get(String(mk.id)) || [];
+    const lbl = (x) => String((x && (x.label || x.outcomeType)) || "");
+    const over = sels.find((x) => /^over/i.test(lbl(x)));
+    const under = sels.find((x) => /^under/i.test(lbl(x)));
+    if (!over || !under) continue;
+    const line = dkLine(over);
+    if (!Number.isFinite(line) || line < 1 || line > 17) continue;
+    const ev = evs.get(String(mk.eventId));
+    const team = dkTeam([mk.participantName, mk.eventName, ev && ev.name, name]
+      .filter(Boolean).join(" "));
+    if (!team) continue;
+    out.push({ team, line, over: dkPrice(over), under: dkPrice(under) });
+  }
+  const seen = new Set();
+  return out.filter((r) => (seen.has(r.team) ? false : (seen.add(r.team), true)));
+}
+
+async function dkWins() {
+  const seed = await get(DK + "/categories/1286", "json");
+  const cats = seed.categories || [];
+  log("  dk: " + cats.length + " categories -> "
+    + (cats.map((c) => c.id + ":" + c.name).join(", ") || "(none listed)"));
+  const direct = dkHarvest(seed);
+  if (direct.length >= 20) return { rows: direct, source: "DraftKings season win totals" };
+  const wanted = cats.filter((c) => /win|season|futures|team/i.test(String(c.name || "")));
+  for (const c of wanted) {
+    try {
+      const rows = dkHarvest(await get(DK + "/categories/" + c.id, "json"));
+      log("  dk: category " + c.id + " \"" + c.name + "\" -> " + rows.length + " teams");
+      if (rows.length >= 20) return { rows, source: "DraftKings season win totals (" + c.name + ")" };
+    } catch (e) { log("  dk: category " + c.id + " - " + e.message); }
+  }
+  throw new Error("reachable, but no category held 20+ team win totals");
+}
+
 /* Posted season win totals with both prices. nflverse publishes exactly this
    schema and stops short of the current season, so it is tried and then a live
    scrape is tried behind it. Only genuinely POSTED numbers are written here —
@@ -221,6 +350,12 @@ async function wins() {
     if (rows.length >= 20) return { rows, source: "nflverse posted win totals" };
     log(`  wins: nflverse has no ${SEASON} rows yet`);
   } catch (e) { log("  wins: nflverse —", e.message); }
+  /* nflverse is a snapshot and lags the season; DraftKings is the live book.
+     nflverse still goes first, because for a season it HAS reached it is the
+     cleaner record. For a season it has not reached, the book is the only
+     genuinely posted number rather than a derived one. */
+  try { return await dkWins(); }
+  catch (e) { log("  wins: draftkings —", e.message); }
   throw new Error(`no posted ${SEASON} win totals found`);
 }
 
