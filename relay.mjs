@@ -510,9 +510,15 @@ const FP_EXPERTS = [
   { sid: "fpmiller",   id: 2743, who: "Seth Miller",   site: "Crossroads Fantasy Football", my: 28 },
 ];
 
-async function fpJson(filters) {
+/* `position` picks the BOARD, not a filter on it. ALL is the one-QB draft
+   board; OP ("offensive player") is the superflex one, where quarterbacks are
+   ranked as if they were flex-eligible. They are genuinely different boards,
+   not a re-sort: on the ALL board the first quarterback lands around #27, on OP
+   he is #1. Measured 22 Aug 2026, and the per-expert `filters` selector works
+   identically on both. */
+async function fpJson(filters, position = "ALL") {
   const u = `${FP_API}/nfl/${SEASON}/consensus-rankings`
-    + `?type=draft&scoring=PPR&position=ALL&week=0&sport=NFL&filters=${encodeURIComponent(filters)}`;
+    + `?type=draft&scoring=PPR&position=${position}&week=0&sport=NFL&filters=${encodeURIComponent(filters)}`;
   const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
     "content-type": "application/json", "x-api-key": FP_KEY } });
   if (!r.ok) throw new Error(`fantasypros -> ${r.status}`);
@@ -546,13 +552,33 @@ function fpRows(j, exp) {
   return rows;
 }
 
-async function fpExpert(exp) {
-  const j = await fpJson(String(exp.id));
+/* A superflex board has to actually BE one, and the cheap way to be sure is to
+   ask where the quarterbacks are. On a one-QB board the third quarterback sits
+   somewhere in the thirties; on a superflex board he is inside the top handful.
+   Anything in between means the position parameter was ignored and a one-QB
+   board is about to be published under a superflex name — which is exactly the
+   silent-substitution failure that put a duplicate of FFPC's superflex board
+   into `bbsf` and left a league reporting coverage it did not have. */
+function qbShape(rows) {
+  const qb = rows.map((r, i) => r.pos === "QB" ? i + 1 : 0).filter(Boolean);
+  return { first: qb[0] ?? null, third: qb[2] ?? null, count: qb.length };
+}
+
+async function fpExpert(exp, position = "ALL") {
+  const sf = position === "OP";
+  const j = await fpJson(String(exp.id), position);
   const rows = fpRows(j, exp);
+  const q = qbShape(rows);
+  if (q.third == null) throw new Error(`${exp.who}: fewer than three quarterbacks ranked`);
+  if (sf && q.third > 12)
+    throw new Error(`${exp.who}: asked for superflex, got a board with QB3 at #${q.third}`);
+  if (!sf && q.third < 12)
+    throw new Error(`${exp.who}: asked for one-QB, got a board with QB3 at #${q.third}`);
   return { rows,
-    source: `fantasypros — ${exp.who} (${exp.site})`,
-    note: `individual draft board; multi-year draft accuracy #${exp.my} of 157; expert updated ${j.last_updated || "?"}`,
-    expert: { id: exp.id, who: exp.who, site: exp.site, multiYearRank: exp.my, updated: j.last_updated || null } };
+    source: `fantasypros — ${exp.who} (${exp.site})${sf ? " — superflex" : ""}`,
+    note: `individual ${sf ? "superflex " : ""}draft board; multi-year draft accuracy #${exp.my} of 157; QB3 at #${q.third}; expert updated ${j.last_updated || "?"}`,
+    expert: { id: exp.id, who: exp.who, site: exp.site, multiYearRank: exp.my,
+      updated: j.last_updated || null, superflex: sf, qb3: q.third } };
 }
 
 /* ---------- run ---------- */
@@ -586,7 +612,13 @@ const JOBS = [
      empty slot shows up in the coverage matrix and a clone does not. */
   ["underdog", underdog],
   ["wins", wins],
-  ...FP_EXPERTS.map((e) => [e.sid, () => fpExpert(e)]),
+  ...FP_EXPERTS.map((e) => [e.sid, () => fpExpert(e, "ALL")]),
+  /* The same six analysts, superflex. Red Wing is best ball AND superflex, and
+     until now the only superflex opinion on the board was FFPC's — one market,
+     which `bbsf` was quietly duplicating to look like two. These are six
+     genuinely separate superflex boards, and they disagree: Weisse has
+     Allen/Maye/Burrow at the top, Wheeler has Allen/Jackson/Maye. */
+  ...FP_EXPERTS.map((e) => [e.sid + "sf", () => fpExpert(e, "OP")]),
 ];
 
 let ok = 0, failed = [];
