@@ -470,6 +470,91 @@ async function wins() {
   throw new Error(`no posted ${SEASON} win totals found`);
 }
 
+/* ---------- FantasyPros: individual expert boards ----------
+
+   Draft Desk's five named experts were chosen off FantasyPros' MULTI-YEAR draft
+   accuracy board, and none of the multi-year top eight publish 2026 rankings to
+   FantasyPros any more (Jody Smith #1 and Jared Smola #7 are Draft Sharks, which
+   is paywalled; Koerner #2, Wright #3, Ratcliffe #4, Kluge #5 are absent from
+   FantasyPros' current 154). The six below are the best multi-year drafters who
+   ARE both listed and still updating for 2026. Ranks read off
+   /nfl/accuracy/multi-year-draft.php (157 analysts) on 22 Aug 2026.
+
+   The endpoint is the one the Pick Experts modal itself calls. Three details
+   were measured from the page rather than guessed, and each one is load-bearing:
+
+   1. The selector parameter is `filters`, not `experts`. An `experts` value is
+      accepted and silently IGNORED — the response comes back as the full
+      103-expert consensus. That failure is invisible without a check, so
+      fpRows asserts total_experts === 1 and refuses anything else.
+   2. Multiple ids are joined with a COLON. A comma falls back to full
+      consensus, again silently. Single ids are what this file uses, so the
+      colon is documented here rather than relied on.
+   3. With one id the payload IS that expert's own board: rank_min, rank_max and
+      rank_ecr are equal on every row, and `last_updated` is that expert's own
+      publish date. That is what makes per-expert weighting possible — a blend
+      would flatten six analysts of unequal record into one equal-weight vote,
+      which is exactly the distinction the multi-year board was consulted for.
+
+   The key is the public one embedded in FantasyPros' own page script, sent by
+   every visitor's browser. No account, no login, nothing of the user's. */
+const FP_API = "https://api.fantasypros.com/v2/json";
+const FP_KEY = "zjxN52G3lP4fORpHRftGI2mTU8cTwxVNvkjByM3j";
+
+const FP_EXPERTS = [
+  { sid: "fpwheeler",  id: 835,  who: "Kev Wheeler",   site: "Wheel Route FF",              my: 9  },
+  { sid: "fpmaher",    id: 908,  who: "Mike Maher",    site: "BettingPros",                 my: 11 },
+  { sid: "fpweisse",   id: 3585, who: "Ryan Weisse",   site: "Club Fantasy FFL",            my: 12 },
+  { sid: "fpciallela", id: 1667, who: "Mick Ciallela", site: "Fantrax",                     my: 14 },
+  { sid: "fpwasley",   id: 2559, who: "Ben Wasley",    site: "Hashtag Football",            my: 15 },
+  { sid: "fpmiller",   id: 2743, who: "Seth Miller",   site: "Crossroads Fantasy Football", my: 28 },
+];
+
+async function fpJson(filters) {
+  const u = `${FP_API}/nfl/${SEASON}/consensus-rankings`
+    + `?type=draft&scoring=PPR&position=ALL&week=0&sport=NFL&filters=${encodeURIComponent(filters)}`;
+  const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
+    "content-type": "application/json", "x-api-key": FP_KEY } });
+  if (!r.ok) throw new Error(`fantasypros -> ${r.status}`);
+  return r.json();
+}
+
+/* Turn one expert's payload into relay rows. Kept separate from the fetch so
+   the shape checks are testable without a network. */
+function fpRows(j, exp) {
+  const total = Number(j && j.total_experts);
+  if (total !== 1) throw new Error(`filters=${exp.id} came back as ${total || "?"} experts — the id was ignored`);
+  const ids = String((j && j.filters) || "").split(",").filter(Boolean);
+  if (ids.length !== 1 || ids[0] !== String(exp.id))
+    throw new Error(`asked for ${exp.id}, got [${ids.join(",")}]`);
+  const rows = (j.players || []).map((p) => ({
+    name: String(p.player_name || "").trim(),
+    /* rank IS the datum here. It is repeated into `adp` because Draft Desk's
+       reader sorts on adp and numbers the result; for a single-expert board the
+       two are the same number, so nothing is being fudged into an ADP. */
+    adp: Number(p.rank_ecr),
+    rank: Number(p.rank_ecr),
+    pos: canonPos(p.player_position_id),
+    team: p.player_team_id || null,
+  })).filter((r) => r.name && Number.isFinite(r.adp) && r.adp > 0);
+  /* An expert who has ranked 40 players is a partial board and would drag a
+     weighted consensus around by absence. 150 is roughly a 12-team draft. */
+  if (rows.length < 150) throw new Error(`${exp.who} has only ${rows.length} players ranked`);
+  const seen = new Set(); let dup = 0;
+  rows.forEach((r) => { if (seen.has(r.adp)) dup++; seen.add(r.adp); });
+  if (dup > 5) throw new Error(`${exp.who}: ${dup} duplicated ranks`);
+  return rows;
+}
+
+async function fpExpert(exp) {
+  const j = await fpJson(String(exp.id));
+  const rows = fpRows(j, exp);
+  return { rows,
+    source: `fantasypros — ${exp.who} (${exp.site})`,
+    note: `individual draft board; multi-year draft accuracy #${exp.my} of 157; expert updated ${j.last_updated || "?"}`,
+    expert: { id: exp.id, who: exp.who, site: exp.site, multiYearRank: exp.my, updated: j.last_updated || null } };
+}
+
 /* ---------- run ---------- */
 /* The FFPC contest ids, read off the picker's own script on 22 Aug 2026. Two
    different parameters are in play: Main Event and the tournaments are league
@@ -488,13 +573,17 @@ const JOBS = [
   ["bbsf", () => ffpc("bbsf", FFPC.sfBbt)],
   ["underdog", underdog],
   ["wins", wins],
+  ...FP_EXPERTS.map((e) => [e.sid, () => fpExpert(e)]),
 ];
 
 let ok = 0, failed = [];
 for (const [name, fn] of JOBS) {
   try {
     const got = await fn();
-    await publish(name, got.rows, got.source, got.note, got.tournament ? { tournament: got.tournament } : {});
+    const extra = {};
+    if (got.tournament) extra.tournament = got.tournament;
+    if (got.expert) extra.expert = got.expert;
+    await publish(name, got.rows, got.source, got.note, extra);
     ok++;
   } catch (e) {
     /* Deliberately does NOT write an empty file. A source that fails leaves its
