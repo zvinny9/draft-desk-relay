@@ -339,30 +339,85 @@ function dkHarvest(j) {
    readers are: these pages reorder columns without warning, but a row will
    always be one team, one line between 1 and 17, and prices that look like
    American odds. */
+/* MEASURED, run #6, and this is the bug worth remembering. Taking "the first
+   two American-odds numbers in the row" got the LINE right for all 32 teams and
+   the PRICES wrong for all 32: what landed in `over` was a column earlier in the
+   row, and what landed in `under` was the actual over. Checked against the
+   rendered page for six teams - Baltimore 11.5 reads O +120, the first pass had
+   over -150 and under +120.
+
+   Silently inverted prices are worse than no prices at all: Draft Desk de-vigs
+   them into a win probability, so every team would have been pushed the wrong
+   way with nothing on screen to suggest it. Prices are now read from the O and U
+   LABELS beside them, paired inside one book's cell where the page puts them
+   together, and the vig is checked afterwards - a de-vigged pair that does not
+   sum to something between 1.00 and 1.20 means the columns have moved again. */
+const priceAfter = (txt, side) => {
+  const m = String(txt).match(new RegExp("\\b" + side + "\\b[^0-9+\\-]{0,4}([+-]\\d{3})", "i"));
+  return m ? Number(m[1]) : null;
+};
+const impliedFromAmerican = (a) => (a == null ? null : a < 0 ? -a / (-a + 100) : 100 / (a + 100));
+
 function viRows(html) {
   const out = [];
   for (const cells of tableRows(html)) {
     const joined = cells.join(" ");
     const team = dkTeam(joined);
     if (!team) continue;
-    /* The line is the half-point number in a sane range. Prices are three-digit
-       American odds and are never confused for it because of the range check. */
     const nums = (joined.match(/(?<![\d.+-])\d{1,2}\.5(?![\d])/g) || []).map(Number)
       .filter((n) => n >= 1 && n <= 17);
     if (!nums.length) continue;
-    const prices = (joined.match(/[+-]\d{3}(?![\d.])/g) || []).map(Number);
-    out.push({ team, line: nums[0], over: prices[0] ?? null, under: prices[1] ?? null });
+    /* Prefer one book's own cell, where the two sides sit together and cannot be
+       paired across columns by accident. */
+    let over = null, under = null;
+    for (const c of cells) {
+      const o = priceAfter(c, "O"), u = priceAfter(c, "U");
+      if (o != null && u != null) { over = o; under = u; break; }
+    }
+    if (over == null) {
+      for (const c of cells) {
+        if (over == null) over = priceAfter(c, "O");
+        if (under == null) under = priceAfter(c, "U");
+      }
+    }
+    out.push({ team, line: nums[0], over, under });
   }
   const seen = new Set();
   return out.filter((r) => (seen.has(r.team) ? false : (seen.add(r.team), true)));
 }
 
+/* A pair of American prices on the two sides of one line always overrounds a
+   little. If they do not, they are not two sides of the same line.
+
+   The bound is 14%, not 20%. My first attempt used 20% and it did NOT catch the
+   very bug it was written for: two OVER prices from different books, -150 and
+   -145, sum to 1.19 and slid straight through. Real season win totals run about
+   4-7% vig - the six pairs checked against the page came in at 1.046 to 1.057 -
+   so 14% is already generous headroom and 20% was not a check at all. */
+const VIG_MAX = 1.14;
+function vigOk(r) {
+  const a = impliedFromAmerican(r.over), b = impliedFromAmerican(r.under);
+  if (a == null || b == null) return false;
+  const sum = a + b;
+  return sum > 1.0 && sum < VIG_MAX;
+}
+
 async function viWins() {
   const html = await get("https://www.vegasinsider.com/nfl/odds/win-totals/");
   const rows = viRows(html);
-  log(`  vi: ${rows.length} teams -> `
-    + rows.slice(0, 4).map((r) => `${r.team} ${r.line} (${r.over})`).join(", "));
+  const priced = rows.filter((r) => r.over != null && r.under != null);
+  const sane = priced.filter(vigOk);
+  log(`  vi: ${rows.length} teams, ${priced.length} with both prices, ${sane.length} passing the vig check`);
+  log(`  vi: ` + rows.slice(0, 4).map((r) => `${r.team} ${r.line} O${r.over} U${r.under}`).join(", "));
   if (rows.length < 20) throw new Error(`only ${rows.length} teams parsed off the page`);
+  /* Lines without prices are still worth having - Draft Desk can use the line
+     alone - so a price failure drops the prices, not the row. */
+  if (priced.length >= 20 && sane.length < priced.length * 0.75) {
+    log(`  vi: prices look mispaired (${sane.length}/${priced.length} sane) - publishing lines only`);
+    return { rows: rows.map((r) => ({ team: r.team, line: r.line, over: null, under: null })),
+      source: "VegasInsider posted win totals",
+      note: `${rows.length} teams, lines only - the price columns did not check out` };
+  }
   return { rows, source: "VegasInsider posted win totals",
     note: `${rows.length} teams, consensus of the books listed` };
 }
