@@ -313,6 +313,60 @@ function dkHarvest(j) {
   return out.filter((r) => (seen.has(r.team) ? false : (seen.add(r.team), true)));
 }
 
+/* MEASURED, run #4: the GitHub runner gets 403 from DraftKings. Not a bug in
+   any of the code below - a datacenter-IP block. Sportsbooks refuse cloud IPs
+   as a matter of course, and no amount of retrying or header-setting changes
+   that, so this stays wired up (it works from a residential IP) but a second,
+   non-sportsbook path is tried behind it.
+
+   The reconnaissance below is deliberately dumb: fetch the page, count the NFL
+   nicknames and the half-point numbers in it, and report. A source that has 32
+   teams and 30-odd x.5 numbers has win totals in it and is worth writing a real
+   parser for; one that does not, is not. Guessing at parsers before knowing
+   which hosts even answer is how the first version of this file wasted a run.
+   That reconnaissance runs as a dispatch-only step in the workflow, not here -
+   it is a question being asked once, not a source being served. */
+/* VegasInsider. MEASURED from the runner, run #5, alongside six other
+   candidates: 200, 374KB, 32 of 32 team nicknames present, 339 half-point
+   numbers, and the phrase "win total" in the body. Of everything probed it was
+   the only host that both answered a datacenter IP and actually had the market
+   - covers.com 404s, sportsoddshistory has no nicknames, ESPN 403s, the-odds-api
+   wants a key, and actionnetwork's scoreboard is game lines, not futures.
+
+   The page is a book-by-book grid (BetMGM, DraftKings, Caesars, Rivers), so the
+   line is read from the row and the price from the first book that quotes one.
+   Parsed by shape rather than by column index, for the same reason the ADP
+   readers are: these pages reorder columns without warning, but a row will
+   always be one team, one line between 1 and 17, and prices that look like
+   American odds. */
+function viRows(html) {
+  const out = [];
+  for (const cells of tableRows(html)) {
+    const joined = cells.join(" ");
+    const team = dkTeam(joined);
+    if (!team) continue;
+    /* The line is the half-point number in a sane range. Prices are three-digit
+       American odds and are never confused for it because of the range check. */
+    const nums = (joined.match(/(?<![\d.+-])\d{1,2}\.5(?![\d])/g) || []).map(Number)
+      .filter((n) => n >= 1 && n <= 17);
+    if (!nums.length) continue;
+    const prices = (joined.match(/[+-]\d{3}(?![\d.])/g) || []).map(Number);
+    out.push({ team, line: nums[0], over: prices[0] ?? null, under: prices[1] ?? null });
+  }
+  const seen = new Set();
+  return out.filter((r) => (seen.has(r.team) ? false : (seen.add(r.team), true)));
+}
+
+async function viWins() {
+  const html = await get("https://www.vegasinsider.com/nfl/odds/win-totals/");
+  const rows = viRows(html);
+  log(`  vi: ${rows.length} teams -> `
+    + rows.slice(0, 4).map((r) => `${r.team} ${r.line} (${r.over})`).join(", "));
+  if (rows.length < 20) throw new Error(`only ${rows.length} teams parsed off the page`);
+  return { rows, source: "VegasInsider posted win totals",
+    note: `${rows.length} teams, consensus of the books listed` };
+}
+
 async function dkWins() {
   const seed = await get(DK + "/categories/1286", "json");
   const cats = seed.categories || [];
@@ -356,6 +410,8 @@ async function wins() {
      genuinely posted number rather than a derived one. */
   try { return await dkWins(); }
   catch (e) { log("  wins: draftkings —", e.message); }
+  try { return await viWins(); }
+  catch (e) { log("  wins: vegasinsider —", e.message); }
   throw new Error(`no posted ${SEASON} win totals found`);
 }
 
