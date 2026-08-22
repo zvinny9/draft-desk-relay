@@ -1,6 +1,6 @@
 {
- "at": 1787415381524,
- "generated": "2026-08-22T16:16:21.524Z",
+ "at": 1787416200533,
+ "generated": "2026-08-22T16:30:00.533Z",
  "season": 2026,
  "source": "myffpc.com Chop",
  "note": "77 leagues, last 30 days",
@@ -277,16 +277,16 @@
    "team": "CAR"
   },
   {
-   "name": "Drake Maye",
-   "adp": 50.62,
-   "pos": "QB",
-   "team": "NE"
-  },
-  {
    "name": "Jaylen Waddle",
    "adp": 50.62,
    "pos": "WR",
    "team": "DEN"
+  },
+  {
+   "name": "Drake Maye",
+   "adp": 50.62,
+   "pos": "QB",
+   "team": "NE"
   },
   {
    "name": "David Montgomery",
@@ -1651,16 +1651,16 @@
    "team": "NE"
   },
   {
-   "name": "Mike Gesicki",
-   "adp": 327.01,
-   "pos": "TE",
-   "team": "CIN"
-  },
-  {
    "name": "Jaylin Noel",
    "adp": 327.01,
    "pos": "WR",
    "team": "HOU"
+  },
+  {
+   "name": "Mike Gesicki",
+   "adp": 327.01,
+   "pos": "TE",
+   "team": "CIN"
   },
   {
    "name": "Tory Horton",
@@ -2017,16 +2017,16 @@
    "team": "TEN"
   },
   {
-   "name": "Xavier Legette",
-   "adp": 348.44,
-   "pos": "WR",
-   "team": "CAR"
-  },
-  {
    "name": "Zavion Thomas",
    "adp": 348.44,
    "pos": "WR",
    "team": "CHI"
+  },
+  {
+   "name": "Xavier Legette",
+   "adp": 348.44,
+   "pos": "WR",
+   "team": "CAR"
   },
   {
    "name": "Zach Ertz",
@@ -2095,16 +2095,16 @@
    "team": "ATL"
   },
   {
-   "name": "Brenen Thompson",
-   "adp": 348.55,
-   "pos": "WR",
-   "team": "LAC"
-  },
-  {
    "name": "Joshua Palmer",
    "adp": 348.55,
    "pos": "WR",
    "team": "BUF"
+  },
+  {
+   "name": "Brenen Thompson",
+   "adp": 348.55,
+   "pos": "WR",
+   "team": "LAC"
   },
   {
    "name": "Tahj Brooks",

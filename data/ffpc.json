@@ -1,6 +1,6 @@
 {
- "at": 1787415380922,
- "generated": "2026-08-22T16:16:20.922Z",
+ "at": 1787416200015,
+ "generated": "2026-08-22T16:30:00.015Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "61 leagues, last 30 days",
@@ -1705,16 +1705,16 @@
    "team": "NYJ"
   },
   {
-   "name": "NYG Team Defense",
-   "adp": 340.23,
-   "pos": "DF",
-   "team": "NYG"
-  },
-  {
    "name": "KC Team Defense",
    "adp": 340.23,
    "pos": "DF",
    "team": "KC"
+  },
+  {
+   "name": "NYG Team Defense",
+   "adp": 340.23,
+   "pos": "DF",
+   "team": "NYG"
   },
   {
    "name": "Bryce Young",
@@ -1891,15 +1891,15 @@
    "team": "DET"
   },
   {
-   "name": "Jacob Saylors",
-   "adp": 347.74,
-   "pos": "RB",
-   "team": "DET"
-  },
-  {
    "name": "Greg Dortch",
    "adp": 347.74,
    "pos": "WR",
+   "team": "DET"
+  },
+  {
+   "name": "Jacob Saylors",
+   "adp": 347.74,
+   "pos": "RB",
    "team": "DET"
   },
   {
@@ -1969,16 +1969,16 @@
    "team": "LAC"
   },
   {
-   "name": "Michael Carter",
-   "adp": 348.08,
-   "pos": "RB",
-   "team": "TEN"
-  },
-  {
    "name": "Roschon Johnson",
    "adp": 348.08,
    "pos": "RB",
    "team": "CHI"
+  },
+  {
+   "name": "Michael Carter",
+   "adp": 348.08,
+   "pos": "RB",
+   "team": "TEN"
   },
   {
    "name": "ATL Team Defense",

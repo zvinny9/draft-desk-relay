@@ -1,6 +1,6 @@
 {
- "at": 1787415383004,
- "generated": "2026-08-22T16:16:23.004Z",
+ "at": 1787416201158,
+ "generated": "2026-08-22T16:30:01.158Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "233 leagues, last 14 days",
@@ -913,16 +913,16 @@
    "team": "LAC"
   },
   {
-   "name": "Khalil Shakir",
-   "adp": 153.89,
-   "pos": "WR",
-   "team": "BUF"
-  },
-  {
    "name": "Woody Marks",
    "adp": 153.89,
    "pos": "RB",
    "team": "HOU"
+  },
+  {
+   "name": "Khalil Shakir",
+   "adp": 153.89,
+   "pos": "WR",
+   "team": "BUF"
   },
   {
    "name": "Jalen Coker",
@@ -1873,16 +1873,16 @@
    "team": "CIN"
   },
   {
-   "name": "Tyler Higbee",
-   "adp": 348.42,
-   "pos": "TE",
-   "team": "LAR"
-  },
-  {
    "name": "Michael Carter",
    "adp": 348.42,
    "pos": "RB",
    "team": "TEN"
+  },
+  {
+   "name": "Tyler Higbee",
+   "adp": 348.42,
+   "pos": "TE",
+   "team": "LAR"
   },
   {
    "name": "Tez Johnson",
@@ -1987,15 +1987,15 @@
    "team": "CAR"
   },
   {
-   "name": "Justin Joly",
-   "adp": 349,
-   "pos": "TE",
-   "team": "DEN"
-  },
-  {
    "name": "Jarrett Stidham",
    "adp": 349,
    "pos": "QB",
+   "team": "DEN"
+  },
+  {
+   "name": "Justin Joly",
+   "adp": 349,
+   "pos": "TE",
    "team": "DEN"
   },
   {
@@ -2029,40 +2029,28 @@
    "team": "FA"
   },
   {
-   "name": "Olamide Zaccheaus",
-   "adp": 349.48,
-   "pos": "WR",
-   "team": "ATL"
-  },
-  {
    "name": "Kyle Juszczyk",
    "adp": 349.48,
    "pos": "RB",
    "team": "SF"
   },
   {
-   "name": "Will Levis",
+   "name": "Olamide Zaccheaus",
    "adp": 349.48,
-   "pos": "QB",
-   "team": "TEN"
-  },
-  {
-   "name": "Max Klare",
-   "adp": 349.48,
-   "pos": "TE",
-   "team": "LAR"
-  },
-  {
-   "name": "Mason Rudolph",
-   "adp": 349.48,
-   "pos": "QB",
-   "team": "PIT"
+   "pos": "WR",
+   "team": "ATL"
   },
   {
    "name": "Joshua Dobbs",
    "adp": 349.48,
    "pos": "QB",
    "team": "DET"
+  },
+  {
+   "name": "Mason Rudolph",
+   "adp": 349.48,
+   "pos": "QB",
+   "team": "PIT"
   },
   {
    "name": "Will Shipley",
@@ -2075,6 +2063,18 @@
    "adp": 349.48,
    "pos": "RB",
    "team": "DAL"
+  },
+  {
+   "name": "Max Klare",
+   "adp": 349.48,
+   "pos": "TE",
+   "team": "LAR"
+  },
+  {
+   "name": "Will Levis",
+   "adp": 349.48,
+   "pos": "QB",
+   "team": "TEN"
   },
   {
    "name": "Calvin Austin",
@@ -2095,21 +2095,27 @@
    "team": "MIN"
   },
   {
-   "name": "Odell Beckham",
-   "adp": 349.5,
-   "pos": "WR",
-   "team": "NYG"
-  },
-  {
    "name": "Savion Williams",
    "adp": 349.5,
    "pos": "WR",
    "team": "GB"
   },
   {
+   "name": "Odell Beckham",
+   "adp": 349.5,
+   "pos": "WR",
+   "team": "NYG"
+  },
+  {
    "name": "Nick Westbrook-Ikhine",
    "adp": 349.5,
    "pos": "WR",
+   "team": "IND"
+  },
+  {
+   "name": "Riley Leonard",
+   "adp": 349.51,
+   "pos": "QB",
    "team": "IND"
   },
   {
@@ -2119,9 +2125,33 @@
    "team": "CLE"
   },
   {
-   "name": "Riley Leonard",
-   "adp": 349.51,
+   "name": "Myles Price",
+   "adp": 349.52,
+   "pos": "WR",
+   "team": "MIN"
+  },
+  {
+   "name": "Teddy Bridgewater",
+   "adp": 349.52,
    "pos": "QB",
+   "team": "FA"
+  },
+  {
+   "name": "Spencer Rattler",
+   "adp": 349.52,
+   "pos": "QB",
+   "team": "NO"
+  },
+  {
+   "name": "Michael Trigg",
+   "adp": 349.52,
+   "pos": "TE",
+   "team": "DAL"
+  },
+  {
+   "name": "Ashton Dulin",
+   "adp": 349.52,
+   "pos": "WR",
    "team": "IND"
   },
   {
@@ -2137,12 +2167,6 @@
    "team": "MIN"
   },
   {
-   "name": "Teddy Bridgewater",
-   "adp": 349.52,
-   "pos": "QB",
-   "team": "FA"
-  },
-  {
    "name": "Jaylin Lane",
    "adp": 349.52,
    "pos": "WR",
@@ -2155,34 +2179,10 @@
    "team": "NO"
   },
   {
-   "name": "Ashton Dulin",
-   "adp": 349.52,
-   "pos": "WR",
-   "team": "IND"
-  },
-  {
    "name": "Sione Vaki",
    "adp": 349.52,
    "pos": "RB",
    "team": "DET"
-  },
-  {
-   "name": "Michael Trigg",
-   "adp": 349.52,
-   "pos": "TE",
-   "team": "DAL"
-  },
-  {
-   "name": "Spencer Rattler",
-   "adp": 349.52,
-   "pos": "QB",
-   "team": "NO"
-  },
-  {
-   "name": "Myles Price",
-   "adp": 349.52,
-   "pos": "WR",
-   "team": "MIN"
   },
   {
    "name": "Zamir White",
