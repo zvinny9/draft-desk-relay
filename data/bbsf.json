@@ -1,6 +1,6 @@
 {
- "at": 1787411085095,
- "generated": "2026-08-22T15:04:45.095Z",
+ "at": 1787411877484,
+ "generated": "2026-08-22T15:17:57.484Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "232 leagues, last 14 days",
@@ -1873,16 +1873,16 @@
    "team": "CIN"
   },
   {
-   "name": "Michael Carter",
-   "adp": 348.41,
-   "pos": "RB",
-   "team": "TEN"
-  },
-  {
    "name": "Tyler Higbee",
    "adp": 348.41,
    "pos": "TE",
    "team": "LAR"
+  },
+  {
+   "name": "Michael Carter",
+   "adp": 348.41,
+   "pos": "RB",
+   "team": "TEN"
   },
   {
    "name": "Tez Johnson",
@@ -1993,16 +1993,16 @@
    "team": "DEN"
   },
   {
-   "name": "Jarrett Stidham",
-   "adp": 349,
-   "pos": "QB",
-   "team": "DEN"
-  },
-  {
    "name": "Nick Mullens",
    "adp": 349,
    "pos": "QB",
    "team": "JAC"
+  },
+  {
+   "name": "Jarrett Stidham",
+   "adp": 349,
+   "pos": "QB",
+   "team": "DEN"
   },
   {
    "name": "KeAndre Lambert-Smith",
@@ -2029,6 +2029,12 @@
    "team": "FA"
   },
   {
+   "name": "Max Klare",
+   "adp": 349.47,
+   "pos": "TE",
+   "team": "LAR"
+  },
+  {
    "name": "Joshua Dobbs",
    "adp": 349.47,
    "pos": "QB",
@@ -2039,18 +2045,6 @@
    "adp": 349.47,
    "pos": "RB",
    "team": "PHI"
-  },
-  {
-   "name": "Max Klare",
-   "adp": 349.47,
-   "pos": "TE",
-   "team": "LAR"
-  },
-  {
-   "name": "Will Levis",
-   "adp": 349.48,
-   "pos": "QB",
-   "team": "TEN"
   },
   {
    "name": "Phil Mafah",
@@ -2077,6 +2071,12 @@
    "team": "SF"
   },
   {
+   "name": "Will Levis",
+   "adp": 349.48,
+   "pos": "QB",
+   "team": "TEN"
+  },
+  {
    "name": "Marquise Brown",
    "adp": 349.49,
    "pos": "WR",
@@ -2089,15 +2089,21 @@
    "team": "NYG"
   },
   {
+   "name": "Isaiah Bond",
+   "adp": 349.5,
+   "pos": "WR",
+   "team": "CLE"
+  },
+  {
+   "name": "Savion Williams",
+   "adp": 349.5,
+   "pos": "WR",
+   "team": "GB"
+  },
+  {
    "name": "Nick Westbrook-Ikhine",
    "adp": 349.5,
    "pos": "WR",
-   "team": "IND"
-  },
-  {
-   "name": "Riley Leonard",
-   "adp": 349.5,
-   "pos": "QB",
    "team": "IND"
   },
   {
@@ -2107,34 +2113,16 @@
    "team": "MIN"
   },
   {
-   "name": "Savion Williams",
+   "name": "Riley Leonard",
    "adp": 349.5,
-   "pos": "WR",
-   "team": "GB"
-  },
-  {
-   "name": "Isaiah Bond",
-   "adp": 349.5,
-   "pos": "WR",
-   "team": "CLE"
+   "pos": "QB",
+   "team": "IND"
   },
   {
    "name": "Odell Beckham",
    "adp": 349.5,
    "pos": "WR",
    "team": "NYG"
-  },
-  {
-   "name": "Myles Price",
-   "adp": 349.51,
-   "pos": "WR",
-   "team": "MIN"
-  },
-  {
-   "name": "Ashton Dulin",
-   "adp": 349.51,
-   "pos": "WR",
-   "team": "IND"
   },
   {
    "name": "Jaylin Lane",
@@ -2149,16 +2137,28 @@
    "team": "NO"
   },
   {
-   "name": "Will Howard",
-   "adp": 349.52,
-   "pos": "QB",
-   "team": "PIT"
+   "name": "Ashton Dulin",
+   "adp": 349.51,
+   "pos": "WR",
+   "team": "IND"
   },
   {
-   "name": "Tai Felton",
-   "adp": 349.52,
+   "name": "Myles Price",
+   "adp": 349.51,
    "pos": "WR",
    "team": "MIN"
+  },
+  {
+   "name": "Michael Trigg",
+   "adp": 349.52,
+   "pos": "TE",
+   "team": "DAL"
+  },
+  {
+   "name": "Spencer Rattler",
+   "adp": 349.52,
+   "pos": "QB",
+   "team": "NO"
   },
   {
    "name": "Sione Vaki",
@@ -2173,16 +2173,16 @@
    "team": "FA"
   },
   {
-   "name": "Spencer Rattler",
+   "name": "Will Howard",
    "adp": 349.52,
    "pos": "QB",
-   "team": "NO"
+   "team": "PIT"
   },
   {
-   "name": "Michael Trigg",
+   "name": "Tai Felton",
    "adp": 349.52,
-   "pos": "TE",
-   "team": "DAL"
+   "pos": "WR",
+   "team": "MIN"
   },
   {
    "name": "Zamir White",
