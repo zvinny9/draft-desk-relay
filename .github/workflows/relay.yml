@@ -1,0 +1,41 @@
+# Draft Desk relay.
+#
+# Runs twice a day, fetches the market sources a browser is refused, and commits
+# the JSON into this repo. Draft Desk reads it from raw.githubusercontent.com.
+#
+# No secrets: GITHUB_TOKEN is issued by Actions for this run only, and every
+# source fetched is a public page.
+name: relay
+
+on:
+  schedule:
+    - cron: "17 11,23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: relay
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch the sources
+        run: node relay.mjs data
+
+      - name: Commit whatever changed
+        run: |
+          git config user.name  "draft-desk-relay"
+          git config user.email "actions@github.com"
+          git add data
+          git diff --staged --quiet || git commit -m "relay: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
