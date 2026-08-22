@@ -9,8 +9,8 @@ name: relay
 
 on:
   schedule:
-    - cron: "17 11,23 * * *"
-  workflow_dispatch:
+    - cron: "17 11,23 * * *"     # 11:17 and 23:17 UTC
+  workflow_dispatch:              # and a manual run whenever you want one
 
 permissions:
   contents: write
@@ -37,5 +37,42 @@ jobs:
           git config user.name  "draft-desk-relay"
           git config user.email "actions@github.com"
           git add data
+          # Nothing changed is a normal outcome, not a failure.
           git diff --staged --quiet || git commit -m "relay: $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
+
+      # Reconnaissance, not a source. DraftKings answers a residential browser
+      # but 403s this runner, so the question is which non-sportsbook host will
+      # serve posted win totals to a datacenter IP. Manual runs only, and it
+      # never fails the job.
+      - name: Probe candidate win-total sources
+        if: github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        run: |
+          node --input-type=module -e '
+          const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
+          const NICKS = ["cardinals","falcons","ravens","bills","panthers","bears","bengals","browns",
+            "cowboys","broncos","lions","packers","texans","colts","jaguars","chiefs","raiders",
+            "chargers","rams","dolphins","vikings","patriots","saints","giants","jets","eagles",
+            "steelers","49ers","seahawks","buccaneers","titans","commanders"];
+          const URLS = [
+            "https://www.vegasinsider.com/nfl/odds/win-totals/",
+            "https://www.covers.com/sport/football/nfl/odds/futures/win-totals",
+            "https://www.sportsoddshistory.com/nfl-win/",
+            "https://api.actionnetwork.com/web/v2/scoreboard/nfl",
+            "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams",
+            "https://api.the-odds-api.com/v4/sports/",
+            "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
+          ];
+          for (const u of URLS) {
+            const host = u.split("/")[2];
+            try {
+              const r = await fetch(u, { headers: { "user-agent": UA, accept: "*/*" }, redirect: "follow" });
+              const b = await r.text();
+              const low = b.toLowerCase();
+              const nicks = NICKS.filter((n) => low.includes(n)).length;
+              const halves = (b.match(/\b\d{1,2}\.5\b/g) || []).length;
+              console.log(`PROBE ${host} -> ${r.status}, ${b.length}b, ${nicks}/32 nicknames, ${halves} x.5 numbers, wintotal-phrase=${/win\s*total/i.test(b)}`);
+            } catch (e) { console.log(`PROBE ${host} -> ${e.message}`); }
+          }
+          '
