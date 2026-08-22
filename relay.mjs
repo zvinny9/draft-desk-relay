@@ -570,7 +570,20 @@ const JOBS = [
   ["ffpc", () => ffpc("ffpc", FFPC.mainEvent)],
   ["ffpcchop", () => ffpc("ffpcchop", FFPC.chop)],
   ["ffpcsf", () => ffpc("ffpcsf", FFPC.sfBbt)],
-  ["bbsf", () => ffpc("bbsf", FFPC.sfBbt)],
+  /* bbsf is gone, and it was a bug rather than a source.
+
+     It was pulling FFPC.sfBbt — the exact same contest `ffpcsf` above pulls —
+     and publishing it under a second name. Downstream, Draft Desk read the two
+     files as two independent superflex markets and gave them a combined weight
+     of 2.6, so one market voted twice and a league that had one superflex board
+     was reported as having two. Measured 22 Aug 2026: identical `source`
+     string, 340 of 364 rows byte-identical, rank correlation 1.000 over all
+     364 players.
+
+     The slot it fed still exists in the app, switched off, waiting for a book
+     that is genuinely not FFPC — DraftKings Best Ball superflex or Underdog SF.
+     Publishing a clone into it was worse than leaving it empty, because an
+     empty slot shows up in the coverage matrix and a clone does not. */
   ["underdog", underdog],
   ["wins", wins],
   ...FP_EXPERTS.map((e) => [e.sid, () => fpExpert(e)]),
