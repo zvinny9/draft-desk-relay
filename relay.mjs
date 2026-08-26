@@ -266,6 +266,39 @@ async function nffc(draftType = NFFC_CONTESTS.all) {
   return { rows, source: "nfc.shgn.com adp.data.php" };
 }
 
+/* NFFC SuperFlex, draft_type 961 — the second superflex MARKET this board has
+   never had, and the honest replacement for the slot `bbsf` was faking.
+
+   Everything else superflex on the board is either FFPC (one house, one price)
+   or an analyst opinion. NFFC is a different house running real money, on the
+   same endpoint the one-QB feed already uses, and its own draft-type menu names
+   961 "SuperFlex". Checked 26 Aug 2026: the contest exists and has no drafts
+   yet — the endpoint answers "No ADP Information Available" — so this job fails
+   cleanly every run and the slot stays empty until NFFC opens superflex
+   drafting. An empty slot is honest; the alternative is what bbsf was.
+
+   Two other candidates were checked the same day and rejected on evidence.
+   MyFantasyLeague's ADP export publishes a real independent market (638 drafts)
+   but has no superflex filter: IS_SUPERFLEX=1, IS_SUPERFLEX=0 and a deliberately
+   invented parameter all return the identical 388 rows and the identical 638
+   drafts, while IS_PPR genuinely splits it 544/94 — so unknown parameters are
+   silently ignored, and its QB3 sits at 26, a one-QB shape. Underdog returns
+   zero appearances for the 2026 season slate and has failed every run.
+
+   The qbShape guard is not decoration. It is the exact test bbsf failed: a
+   superflex board puts the third quarterback inside the top handful, a one-QB
+   board puts him in the thirties. If NFFC ever answers this draft_type with a
+   one-QB board, this throws rather than publishing it under a superflex name. */
+async function nffcSF() {
+  const out = await nffc(NFFC_CONTESTS.superflex);
+  const rows = [...out.rows].sort((a, b) => a.adp - b.adp);
+  const { first, third, count } = qbShape(rows);
+  if (!third || third > 12)
+    throw new Error(`draft_type 961 is not superflex-shaped: `
+      + `QB1 at ${first}, QB3 at ${third}, ${count} quarterbacks in ${rows.length} rows`);
+  return { rows, source: "nfc.shgn.com adp.data.php draft_type 961 (NFFC SuperFlex)" };
+}
+
 /* Underdog. The host matters and it is not the obvious one: api.underdogfantasy
    .com is the ACCOUNT api and 404s every ADP path (four of them, in run #1 of
    this workflow). The public board lives on stats.underdogfantasy.com, which
@@ -703,6 +736,7 @@ const FFPC = {
 
 const JOBS = [
   ["nffc", () => nffc()],
+  ["nffcsf", nffcSF],
   ["ffpc", () => ffpc("ffpc", FFPC.mainEvent)],
   ["ffpcchop", () => ffpc("ffpcchop", FFPC.chop)],
   ["ffpcsf", () => ffpc("ffpcsf", FFPC.sfBbt)],
