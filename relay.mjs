@@ -85,7 +85,43 @@ function adpFromRows(rows) {
       pos: canonPos(c.find((x) => POS.test(x))),
       team: c.find((x) => TEAMS.has(x.toUpperCase()))?.toUpperCase() || null });
   }
-  return out;
+  return offScale(out);
+}
+
+/* "The last decimal after the name" is the right rule for a table whose columns
+   move around, and it is wrong on any row where some other column happens to be
+   the last decimal. It cannot be caught row by row, because one number on its
+   own is never implausible — it is only implausible next to the rest of the
+   table.
+
+   Measured on the 26 Aug 2026 NFFC pull: 531 rows between 1.5 and 285, and four
+   rows at 1018, 1063, 1092 and 1116. Nothing in between. The four were Dak
+   Prescott, Aaron Jones, Tyjae Spears and Daniel Jones — all real players who
+   sit around 84 to 200 everywhere else, published at the very bottom of the
+   board. The set changes run to run, which is what makes it worth catching
+   here rather than remembering a list of names.
+
+   What distinguishes a misread column is a GAP: 283, 284, 284, 285, then 1018,
+   with nothing in between. A real ADP table has no such hole, because pick
+   numbers are continuous. So a row is dropped when it sits above a
+   better-than-doubling jump AND above four times the median — the jump is the
+   test, the scale only a second opinion, and a smooth tail of any length is
+   left alone. Two simpler rules were tried first: twice the 99th percentile
+   (computed from the very rows it was meant to catch, so it refused nothing)
+   and four times the median alone (which on a small top-heavy feed threw away
+   three team defences priced correctly at 205 to 210). */
+function offScale(rows) {
+  const a = rows.map((r) => r.adp).filter((v) => v > 0).sort((x, y) => x - y);
+  if (a.length < 20) return rows;
+  const floor = Math.max(4 * a[Math.floor(0.5 * (a.length - 1))], 60);
+  let cut = Infinity;
+  for (let i = a.length - 1; i > 0; i--) {
+    if (a[i] <= floor) break;
+    if (a[i] / a[i - 1] >= 2) cut = a[i];
+  }
+  const bad = rows.filter((r) => r.adp >= cut);
+  if (bad.length) log(`  dropped ${bad.length} off-scale ADP: ${bad.slice(0, 5).map((r) => `${r.name} ${r.adp}`).join(", ")}`);
+  return rows.filter((r) => r.adp < cut);
 }
 
 /* ---------- sources ---------- */
