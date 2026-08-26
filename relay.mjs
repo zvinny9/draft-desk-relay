@@ -564,6 +564,56 @@ function qbShape(rows) {
   return { first: qb[0] ?? null, third: qb[2] ?? null, count: qb.length };
 }
 
+/* The full FantasyPros consensus, fetched rather than pasted.
+
+   `fpcustom` on the board was a hand-pasted export, and the paste parser had
+   been picking the wrong column: it stored a flat cell index from a ten-column
+   table — 2, 12, 22, 32 … max 5790 across 338 players — instead of the rank.
+   The ordering was perfect (rho 0.965 against the healthy sources) and the
+   magnitudes were nonsense, which is the worst of the two combinations: a board
+   that averages raw rank numbers reads only the magnitudes, so the wrong answer
+   arrives looking entirely plausible. It put Justin Jefferson at 93.
+
+   v87 makes the app immune to that by re-numbering every source before it
+   blends. This removes the cause rather than merely surviving it: the same API
+   the expert boards come from returns the consensus when no `filters` is given,
+   already as clean integer ranks, so there is no column left to pick wrongly.
+
+   Omitting the filter means the site's own default panel of 100-odd analysts,
+   so this is a genuine consensus and NOT the six named boards counted twice —
+   those are fetched separately and weighted on their own multi-year record. */
+async function fpConsensus(position = "ALL") {
+  const u = `${FP_API}/nfl/${SEASON}/consensus-rankings`
+    + `?type=draft&scoring=PPR&position=${position}&week=0&sport=NFL`;
+  const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
+    "content-type": "application/json", "x-api-key": FP_KEY } });
+  if (!r.ok) throw new Error(`fantasypros ecr -> ${r.status}`);
+  const j = await r.json();
+  const total = Number(j.total_experts);
+  /* A "consensus" of one is a single analyst's board wearing the wrong name. */
+  if (!(total >= 20)) throw new Error(`ecr came back as ${total || "?"} experts`);
+  const rows = (j.players || []).map((pl) => ({
+    name: String(pl.player_name || "").trim(),
+    adp: Number(pl.rank_ecr), rank: Number(pl.rank_ecr),
+    pos: canonPos(pl.player_position_id), team: pl.player_team_id || null,
+  })).filter((x) => x.name && Number.isFinite(x.adp) && x.adp > 0);
+  if (rows.length < 200) throw new Error(`only ${rows.length} players in the consensus`);
+  /* The bug this replaces, asserted against directly: ranks have to be dense
+     and start at 1, not a stride-10 cell index climbing into the thousands. */
+  const sorted = rows.map((x) => x.rank).sort((a, b) => a - b);
+  if (sorted[0] !== 1) throw new Error(`ranks start at ${sorted[0]}, not 1`);
+  if (sorted[sorted.length - 1] > rows.length * 1.5)
+    throw new Error(`ranks run to ${sorted[sorted.length - 1]} for ${rows.length} players — that is not a rank column`);
+  const q = qbShape(rows);
+  const sf = position === "OP";
+  if (sf && !(q.third <= 12)) throw new Error(`asked for superflex ecr, got QB3 at #${q.third}`);
+  if (!sf && !(q.third > 12)) throw new Error(`asked for one-QB ecr, got QB3 at #${q.third}`);
+  return { rows, source: `fantasypros consensus ECR${sf ? " — superflex" : ""} (${total} analysts)`,
+    note: `${total} analysts; QB3 at #${q.third}; updated ${j.last_updated || "?"}`,
+    expert: { who: "FantasyPros consensus", analysts: total, superflex: sf,
+      updated: j.last_updated || null } };
+}
+
 async function fpExpert(exp, position = "ALL") {
   const sf = position === "OP";
   const j = await fpJson(String(exp.id), position);
@@ -619,6 +669,10 @@ const JOBS = [
      genuinely separate superflex boards, and they disagree: Weisse has
      Allen/Maye/Burrow at the top, Wheeler has Allen/Jackson/Maye. */
   ...FP_EXPERTS.map((e) => [e.sid + "sf", () => fpExpert(e, "OP")]),
+  /* Replaces the hand-pasted fpcustom export, and the wrong-column parse with
+     it. Same endpoint, no filter, so no column to misread. */
+  ["fpcustom", () => fpConsensus("ALL")],
+  ["fpcustomsf", () => fpConsensus("OP")],
 ];
 
 let ok = 0, failed = [];
