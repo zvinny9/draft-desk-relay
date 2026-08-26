@@ -1,6 +1,6 @@
 {
- "at": 1787744894619,
- "generated": "2026-08-26T11:48:14.619Z",
+ "at": 1787773063933,
+ "generated": "2026-08-26T19:37:43.933Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "47 leagues, last 14 days",
@@ -523,16 +523,16 @@
    "team": "PHI"
   },
   {
-   "name": "Joe Burrow",
-   "adp": 88.13,
-   "pos": "QB",
-   "team": "CIN"
-  },
-  {
    "name": "Michael Wilson",
    "adp": 88.13,
    "pos": "WR",
    "team": "ARI"
+  },
+  {
+   "name": "Joe Burrow",
+   "adp": 88.13,
+   "pos": "QB",
+   "team": "CIN"
   },
   {
    "name": "Courtland Sutton",
@@ -589,16 +589,16 @@
    "team": "WAS"
   },
   {
-   "name": "De'Zhaun Stribling",
-   "adp": 98.32,
-   "pos": "WR",
-   "team": "SF"
-  },
-  {
    "name": "Jake Ferguson",
    "adp": 98.32,
    "pos": "TE",
    "team": "DAL"
+  },
+  {
+   "name": "De'Zhaun Stribling",
+   "adp": 98.32,
+   "pos": "WR",
+   "team": "SF"
   },
   {
    "name": "Wan'Dale Robinson",
@@ -1585,16 +1585,16 @@
    "team": "CIN"
   },
   {
-   "name": "Germie Bernard",
-   "adp": 328.28,
-   "pos": "WR",
-   "team": "PIT"
-  },
-  {
    "name": "Mike Gesicki",
    "adp": 328.28,
    "pos": "TE",
    "team": "CIN"
+  },
+  {
+   "name": "Germie Bernard",
+   "adp": 328.28,
+   "pos": "WR",
+   "team": "PIT"
   },
   {
    "name": "LeQuint Allen",
@@ -1879,28 +1879,28 @@
    "team": "NO"
   },
   {
-   "name": "Christian Kirk",
-   "adp": 347.38,
-   "pos": "WR",
-   "team": "SF"
-  },
-  {
    "name": "Brandon Aiyuk",
    "adp": 347.38,
    "pos": "WR",
    "team": "SF"
   },
   {
-   "name": "Darnell Mooney",
-   "adp": 347.4,
+   "name": "Christian Kirk",
+   "adp": 347.38,
    "pos": "WR",
-   "team": "NYG"
+   "team": "SF"
   },
   {
    "name": "Phil Mafah",
    "adp": 347.4,
    "pos": "RB",
    "team": "DAL"
+  },
+  {
+   "name": "Darnell Mooney",
+   "adp": 347.4,
+   "pos": "WR",
+   "team": "NYG"
   },
   {
    "name": "Roman Wilson",
@@ -1957,16 +1957,16 @@
    "team": "LAR"
   },
   {
-   "name": "Bryce Lance",
-   "adp": 347.6,
-   "pos": "WR",
-   "team": "NO"
-  },
-  {
    "name": "Jack Bech",
    "adp": 347.6,
    "pos": "WR",
    "team": "LV"
+  },
+  {
+   "name": "Bryce Lance",
+   "adp": 347.6,
+   "pos": "WR",
+   "team": "NO"
   },
   {
    "name": "Andrew Mevis",
@@ -1975,16 +1975,16 @@
    "team": "FA"
   },
   {
-   "name": "NYG Team Defense",
-   "adp": 347.64,
-   "pos": "DF",
-   "team": "NYG"
-  },
-  {
    "name": "CAR Team Defense",
    "adp": 347.64,
    "pos": "DF",
    "team": "CAR"
+  },
+  {
+   "name": "NYG Team Defense",
+   "adp": 347.64,
+   "pos": "DF",
+   "team": "NYG"
   }
  ]
 }
