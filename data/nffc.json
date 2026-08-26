@@ -1,10 +1,10 @@
 {
- "at": 1787773063363,
- "generated": "2026-08-26T19:37:43.363Z",
+ "at": 1787774112446,
+ "generated": "2026-08-26T19:55:12.446Z",
  "season": 2026,
  "source": "nfc.shgn.com adp.data.php",
  "note": "",
- "count": 534,
+ "count": 533,
  "rows": [
   {
    "name": "Jahmyr Gibbs",
@@ -1557,12 +1557,6 @@
   {
    "name": "Tyreek Hill",
    "adp": 255.98,
-   "pos": "WR",
-   "team": "MIA"
-  },
-  {
-   "name": "Caleb Douglas",
-   "adp": 568,
    "pos": "WR",
    "team": "MIA"
   },

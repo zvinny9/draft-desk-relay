@@ -1,6 +1,6 @@
 {
- "at": 1787773063933,
- "generated": "2026-08-26T19:37:43.933Z",
+ "at": 1787774112768,
+ "generated": "2026-08-26T19:55:12.768Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "47 leagues, last 14 days",
@@ -589,16 +589,16 @@
    "team": "WAS"
   },
   {
-   "name": "Jake Ferguson",
-   "adp": 98.32,
-   "pos": "TE",
-   "team": "DAL"
-  },
-  {
    "name": "De'Zhaun Stribling",
    "adp": 98.32,
    "pos": "WR",
    "team": "SF"
+  },
+  {
+   "name": "Jake Ferguson",
+   "adp": 98.32,
+   "pos": "TE",
+   "team": "DAL"
   },
   {
    "name": "Wan'Dale Robinson",
@@ -1585,16 +1585,16 @@
    "team": "CIN"
   },
   {
-   "name": "Mike Gesicki",
-   "adp": 328.28,
-   "pos": "TE",
-   "team": "CIN"
-  },
-  {
    "name": "Germie Bernard",
    "adp": 328.28,
    "pos": "WR",
    "team": "PIT"
+  },
+  {
+   "name": "Mike Gesicki",
+   "adp": 328.28,
+   "pos": "TE",
+   "team": "CIN"
   },
   {
    "name": "LeQuint Allen",
@@ -1819,15 +1819,15 @@
    "team": "LAR"
   },
   {
-   "name": "Jacob Saylors",
-   "adp": 347.06,
-   "pos": "RB",
-   "team": "DET"
-  },
-  {
    "name": "Greg Dortch",
    "adp": 347.06,
    "pos": "WR",
+   "team": "DET"
+  },
+  {
+   "name": "Jacob Saylors",
+   "adp": 347.06,
+   "pos": "RB",
    "team": "DET"
   },
   {
@@ -1879,22 +1879,16 @@
    "team": "NO"
   },
   {
-   "name": "Brandon Aiyuk",
-   "adp": 347.38,
-   "pos": "WR",
-   "team": "SF"
-  },
-  {
    "name": "Christian Kirk",
    "adp": 347.38,
    "pos": "WR",
    "team": "SF"
   },
   {
-   "name": "Phil Mafah",
-   "adp": 347.4,
-   "pos": "RB",
-   "team": "DAL"
+   "name": "Brandon Aiyuk",
+   "adp": 347.38,
+   "pos": "WR",
+   "team": "SF"
   },
   {
    "name": "Darnell Mooney",
@@ -1903,22 +1897,28 @@
    "team": "NYG"
   },
   {
+   "name": "Phil Mafah",
+   "adp": 347.4,
+   "pos": "RB",
+   "team": "DAL"
+  },
+  {
    "name": "Roman Wilson",
    "adp": 347.43,
    "pos": "WR",
    "team": "PIT"
   },
   {
-   "name": "Chris Brooks",
-   "adp": 347.51,
-   "pos": "RB",
-   "team": "GB"
-  },
-  {
    "name": "Roschon Johnson",
    "adp": 347.51,
    "pos": "RB",
    "team": "CHI"
+  },
+  {
+   "name": "Chris Brooks",
+   "adp": 347.51,
+   "pos": "RB",
+   "team": "GB"
   },
   {
    "name": "Cam Ward",
@@ -1951,10 +1951,10 @@
    "team": "ATL"
   },
   {
-   "name": "Jordan Whittington",
+   "name": "Bryce Lance",
    "adp": 347.6,
    "pos": "WR",
-   "team": "LAR"
+   "team": "NO"
   },
   {
    "name": "Jack Bech",
@@ -1963,10 +1963,10 @@
    "team": "LV"
   },
   {
-   "name": "Bryce Lance",
+   "name": "Jordan Whittington",
    "adp": 347.6,
    "pos": "WR",
-   "team": "NO"
+   "team": "LAR"
   },
   {
    "name": "Andrew Mevis",
@@ -1975,16 +1975,16 @@
    "team": "FA"
   },
   {
-   "name": "CAR Team Defense",
-   "adp": 347.64,
-   "pos": "DF",
-   "team": "CAR"
-  },
-  {
    "name": "NYG Team Defense",
    "adp": 347.64,
    "pos": "DF",
    "team": "NYG"
+  },
+  {
+   "name": "CAR Team Defense",
+   "adp": 347.64,
+   "pos": "DF",
+   "team": "CAR"
   }
  ]
 }

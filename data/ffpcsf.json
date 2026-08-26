@@ -1,6 +1,6 @@
 {
- "at": 1787773065279,
- "generated": "2026-08-26T19:37:45.279Z",
+ "at": 1787774113696,
+ "generated": "2026-08-26T19:55:13.696Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "243 leagues, last 14 days",
@@ -1891,16 +1891,16 @@
    "team": "LAR"
   },
   {
-   "name": "Mason Rudolph",
-   "adp": 348.53,
-   "pos": "QB",
-   "team": "PIT"
-  },
-  {
    "name": "Robert Henry",
    "adp": 348.53,
    "pos": "RB",
    "team": "WAS"
+  },
+  {
+   "name": "Mason Rudolph",
+   "adp": 348.53,
+   "pos": "QB",
+   "team": "PIT"
   },
   {
    "name": "Kaleb Johnson",
@@ -1939,6 +1939,12 @@
    "team": "KC"
   },
   {
+   "name": "Kyle Allen",
+   "adp": 349,
+   "pos": "QB",
+   "team": "BUF"
+  },
+  {
    "name": "Tommy DeVito",
    "adp": 349,
    "pos": "QB",
@@ -1949,12 +1955,6 @@
    "adp": 349,
    "pos": "QB",
    "team": "CAR"
-  },
-  {
-   "name": "Kyle Allen",
-   "adp": 349,
-   "pos": "QB",
-   "team": "BUF"
   },
   {
    "name": "Chimere Dike",
@@ -2071,18 +2071,6 @@
    "team": "PHI"
   },
   {
-   "name": "Will Levis",
-   "adp": 349.51,
-   "pos": "QB",
-   "team": "TEN"
-  },
-  {
-   "name": "Tyler Goodson",
-   "adp": 349.51,
-   "pos": "RB",
-   "team": "ATL"
-  },
-  {
    "name": "Audric Estime",
    "adp": 349.51,
    "pos": "RB",
@@ -2101,6 +2089,24 @@
    "team": "CIN"
   },
   {
+   "name": "Tyler Goodson",
+   "adp": 349.51,
+   "pos": "RB",
+   "team": "ATL"
+  },
+  {
+   "name": "Will Levis",
+   "adp": 349.51,
+   "pos": "QB",
+   "team": "TEN"
+  },
+  {
+   "name": "Nick Westbrook-Ikhine",
+   "adp": 349.52,
+   "pos": "WR",
+   "team": "IND"
+  },
+  {
    "name": "Will Kacmarek",
    "adp": 349.52,
    "pos": "TE",
@@ -2113,10 +2119,22 @@
    "team": "NYG"
   },
   {
-   "name": "Nick Westbrook-Ikhine",
-   "adp": 349.52,
+   "name": "Jordan Whittington",
+   "adp": 349.53,
    "pos": "WR",
-   "team": "IND"
+   "team": "LAR"
+  },
+  {
+   "name": "Elic Ayomanor",
+   "adp": 349.53,
+   "pos": "WR",
+   "team": "TEN"
+  },
+  {
+   "name": "Myles Price",
+   "adp": 349.53,
+   "pos": "WR",
+   "team": "MIN"
   },
   {
    "name": "Ashton Dulin",
@@ -2143,48 +2161,6 @@
    "team": "IND"
   },
   {
-   "name": "Jordan Whittington",
-   "adp": 349.53,
-   "pos": "WR",
-   "team": "LAR"
-  },
-  {
-   "name": "Elic Ayomanor",
-   "adp": 349.53,
-   "pos": "WR",
-   "team": "TEN"
-  },
-  {
-   "name": "Myles Price",
-   "adp": 349.53,
-   "pos": "WR",
-   "team": "MIN"
-  },
-  {
-   "name": "Joshua Palmer",
-   "adp": 349.54,
-   "pos": "WR",
-   "team": "BUF"
-  },
-  {
-   "name": "Spencer Rattler",
-   "adp": 349.54,
-   "pos": "QB",
-   "team": "NO"
-  },
-  {
-   "name": "Michael Trigg",
-   "adp": 349.54,
-   "pos": "TE",
-   "team": "DAL"
-  },
-  {
-   "name": "Jarquez Hunter",
-   "adp": 349.54,
-   "pos": "RB",
-   "team": "LAR"
-  },
-  {
    "name": "Tai Felton",
    "adp": 349.54,
    "pos": "WR",
@@ -2203,16 +2179,40 @@
    "team": "CAR"
   },
   {
-   "name": "Zamir White",
-   "adp": 349.55,
-   "pos": "RB",
+   "name": "Spencer Rattler",
+   "adp": 349.54,
+   "pos": "QB",
    "team": "NO"
+  },
+  {
+   "name": "Michael Trigg",
+   "adp": 349.54,
+   "pos": "TE",
+   "team": "DAL"
+  },
+  {
+   "name": "Joshua Palmer",
+   "adp": 349.54,
+   "pos": "WR",
+   "team": "BUF"
+  },
+  {
+   "name": "Jarquez Hunter",
+   "adp": 349.54,
+   "pos": "RB",
+   "team": "LAR"
   },
   {
    "name": "Nick Mullens",
    "adp": 349.55,
    "pos": "QB",
    "team": "JAC"
+  },
+  {
+   "name": "Zamir White",
+   "adp": 349.55,
+   "pos": "RB",
+   "team": "NO"
   }
  ]
 }
