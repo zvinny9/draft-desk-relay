@@ -103,21 +103,45 @@ function adpFromRows(rows) {
 
    What distinguishes a misread column is a GAP: 283, 284, 284, 285, then 1018,
    with nothing in between. A real ADP table has no such hole, because pick
-   numbers are continuous. So a row is dropped when it sits above a
-   better-than-doubling jump AND above four times the median — the jump is the
-   test, the scale only a second opinion, and a smooth tail of any length is
-   left alone. Two simpler rules were tried first: twice the 99th percentile
-   (computed from the very rows it was meant to catch, so it refused nothing)
-   and four times the median alone (which on a small top-heavy feed threw away
-   three team defences priced correctly at 205 to 210). */
+   numbers are continuous.
+
+   Three bars were tried on that gap before one held. Twice the 99th percentile
+   refused nothing, because with four bad rows in three hundred the 99th
+   percentile is computed from the very rows it is meant to catch. Four times
+   the median alone threw away three team defences priced correctly at 205 to
+   210 on a small top-heavy feed. "Above a doubling jump AND above four times
+   the median" shipped, ran, and then let Caleb Douglas through at 568 against
+   a real maximum of 284.70 on the 26 Aug 2026 pull: 568 / 284.70 is 1.995,
+   just under the doubling test, and NFFC's median is 259.41 because the feed
+   piles hundreds of barely-drafted players just below its own maximum, so four
+   times the median is 1,038 and the scan broke before it ever looked.
+
+   The anchor that works is the feed's OWN typical spacing between consecutive
+   prices. Measured across all five ADP feeds on 26 Aug 2026, the widest hole
+   inside a healthy feed is 2.4 to 3.7 times that feed's 95th-percentile gap:
+   FFPC 7.93 against 3.34, FFPC superflex 10.78 against 2.94, FFPC chop 7.61
+   against 3.23, Best Ball superflex 8.4 against 2.91. NFFC's hole is 283.30
+   against 2.14 -- 132 times. The bar is 10: three times above the worst
+   healthy feed, thirteen times below the fault.
+
+   A row is dropped when it sits past a hole of at least ten times the feed's
+   typical spacing, is at least a quarter again the price below it (no healthy
+   feed's top consecutive ratio exceeds 1.002), and is in the top tenth of the
+   feed to begin with. A smooth tail of any length is left alone, and so is a
+   short top-heavy feed. */
 function offScale(rows) {
   const a = rows.map((r) => r.adp).filter((v) => v > 0).sort((x, y) => x - y);
   if (a.length < 20) return rows;
-  const floor = Math.max(4 * a[Math.floor(0.5 * (a.length - 1))], 60);
+  const gaps = [];
+  for (let i = 1; i < a.length; i++) gaps.push(a[i] - a[i - 1]);
+  const gs = gaps.slice().sort((x, y) => x - y);
+  const typical = Math.max(gs[Math.floor(0.95 * (gs.length - 1))],
+    (a[a.length - 1] - a[0]) / a.length);
+  const body = a[Math.floor(0.9 * (a.length - 1))];
   let cut = Infinity;
   for (let i = a.length - 1; i > 0; i--) {
-    if (a[i] <= floor) break;
-    if (a[i] / a[i - 1] >= 2) cut = a[i];
+    if (a[i] <= body) break;
+    if (a[i] - a[i - 1] >= 10 * typical && a[i] / a[i - 1] >= 1.25) cut = a[i];
   }
   const bad = rows.filter((r) => r.adp >= cut);
   if (bad.length) log(`  dropped ${bad.length} off-scale ADP: ${bad.slice(0, 5).map((r) => `${r.name} ${r.adp}`).join(", ")}`);
