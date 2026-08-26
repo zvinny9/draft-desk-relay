@@ -1,6 +1,6 @@
 {
- "at": 1787775180273,
- "generated": "2026-08-26T20:13:00.273Z",
+ "at": 1787775694523,
+ "generated": "2026-08-26T20:21:34.523Z",
  "season": 2026,
  "source": "myffpc.com Chop",
  "note": "99 leagues, last 30 days",
@@ -2017,16 +2017,16 @@
    "team": "CIN"
   },
   {
-   "name": "Zavion Thomas",
-   "adp": 348.79,
-   "pos": "WR",
-   "team": "CHI"
-  },
-  {
    "name": "Xavier Legette",
    "adp": 348.79,
    "pos": "WR",
    "team": "CAR"
+  },
+  {
+   "name": "Zavion Thomas",
+   "adp": 348.79,
+   "pos": "WR",
+   "team": "CHI"
   },
   {
    "name": "Tai Felton",
@@ -2041,16 +2041,16 @@
    "team": "CAR"
   },
   {
-   "name": "Miles Davis",
-   "adp": 348.81,
-   "pos": "RB",
-   "team": "CAR"
-  },
-  {
    "name": "Jahan Dotson",
    "adp": 348.81,
    "pos": "WR",
    "team": "ATL"
+  },
+  {
+   "name": "Miles Davis",
+   "adp": 348.81,
+   "pos": "RB",
+   "team": "CAR"
   },
   {
    "name": "Jalen Royals",
@@ -2095,22 +2095,16 @@
    "team": "HOU"
   },
   {
-   "name": "Kyle Williams",
-   "adp": 348.86,
-   "pos": "WR",
-   "team": "NE"
-  },
-  {
    "name": "Nick Folk",
    "adp": 348.86,
    "pos": "K",
    "team": "ATL"
   },
   {
-   "name": "Devin Singletary",
-   "adp": 348.87,
-   "pos": "RB",
-   "team": "NYG"
+   "name": "Kyle Williams",
+   "adp": 348.86,
+   "pos": "WR",
+   "team": "NE"
   },
   {
    "name": "Oscar Delp",
@@ -2123,6 +2117,12 @@
    "adp": 348.87,
    "pos": "WR",
    "team": "LAC"
+  },
+  {
+   "name": "Devin Singletary",
+   "adp": 348.87,
+   "pos": "RB",
+   "team": "NYG"
   },
   {
    "name": "Tahj Brooks",
