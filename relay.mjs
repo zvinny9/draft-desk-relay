@@ -266,6 +266,85 @@ async function nffc(draftType = NFFC_CONTESTS.all) {
   return { rows, source: "nfc.shgn.com adp.data.php" };
 }
 
+/* Positional finishes — the data the Consistency weight has never had.
+
+   Draft Desk multiplies a player's blend by a consistency score derived from
+   where he finished AT HIS POSITION in past seasons. The weight has sat in the
+   app since the beginning and has been hidden the whole time, because not one
+   player of 333 had a finish history behind it: `finishes` was an empty array
+   on every row and the dial did nothing.
+
+   The obvious source was nflverse, which the win-totals job already reads. It
+   is not viable and this was checked rather than assumed: the `player_stats`
+   release on nflverse-data carries 1,822 assets, its newest season file is
+   player_stats_season_2024.csv, its newest asset of any kind is dated
+   2025-05-07, and a filter for any filename containing 2025 or 2026 returns
+   nothing. The project stopped publishing before the 2025 season ended — which
+   is also why `wins` fails every run and the board's Vegas axis is dark.
+
+   FantasyPros publishes the same thing as a plain ranked table, one page per
+   position per season, no key and no login: /nfl/stats/{pos}.php?year=Y&
+   scoring=PPR. The Rank column IS the positional finish — RB1 is a 1 — so
+   nothing is being computed here, only read. Verified 26 Aug 2026 across all
+   twelve pages: QB 86/88/86 rows, RB 173/165/171, WR 262/257/237, TE 158/146/140,
+   with Josh Allen QB1 in 2025 and 2023, Lamar Jackson QB1 in 2024, Puka Nacua
+   WR1 in 2025 and Brock Bowers TE1 in 2024.
+
+   Four positions, not six. Kickers and team defences are on the same pages, but
+   the Consistency score is about a player holding a level year to year, which
+   is the least meaningful thing you can say about a kicker, and a defence's
+   name has to be matched by team rather than by string. Both are left out
+   deliberately rather than half-done.
+
+   One honest limitation, worth stating because the score cannot see it: a
+   player only appears in a season's table if he played enough to be listed. A
+   season missed through injury leaves no entry, so the score reads him as
+   slightly more consistent than a full record would. The alternative — filling
+   the gap with a made-up bottom finish — would be worse, because it would
+   invent a fact. */
+const FP_STATS = "https://www.fantasypros.com/nfl/stats";
+const FINISH_POS = ["qb", "rb", "wr", "te"];
+const FINISH_YEARS = 3;
+
+async function finishes() {
+  const years = [];
+  for (let i = 1; i <= FINISH_YEARS; i++) years.push(SEASON - i);
+  /* Most recent season first, so the array reads the way a person would say it.
+     The score itself is order-blind — it is a mean and a spread — but the app
+     shows the list. */
+  const by = new Map();
+  const seen = [];
+  for (const y of years) {
+    for (const pos of FINISH_POS) {
+      const r = await fetch(`${FP_STATS}/${pos}.php?year=${y}&scoring=PPR`,
+        { headers: { "user-agent": UA, accept: "text/html" } });
+      if (!r.ok) throw new Error(`${pos} ${y} -> ${r.status}`);
+      const rows = tableRows(await r.text());
+      let n = 0;
+      for (const c of rows) {
+        if (c.length < 3) continue;
+        const rank = /^\d+$/.test(c[0]) ? Number(c[0]) : null;
+        if (!rank) continue;
+        const m = String(c[1] || "").match(/^(.*?)\s*\(([A-Za-z]{2,3})\)$/);
+        const name = (m ? m[1] : c[1] || "").trim();
+        if (!name) continue;
+        const key = name.toLowerCase();
+        if (!by.has(key)) by.set(key, { name, pos: pos.toUpperCase(), finishes: [] });
+        by.get(key).finishes.push(rank);
+        n++;
+      }
+      /* A page that comes back thin is a layout change, not a quiet season.
+         Every one of the twelve is at least 86 rows. */
+      if (n < 30) throw new Error(`${pos} ${y}: only ${n} ranked rows parsed`);
+      seen.push(`${pos}${y}:${n}`);
+    }
+  }
+  const rows = [...by.values()];
+  if (rows.length < 300) throw new Error(`only ${rows.length} players across ${seen.length} pages`);
+  return { rows, source: "fantasypros.com/nfl/stats PPR season tables",
+    note: `${years.join(", ")} \u00b7 ${seen.join(" ")}` };
+}
+
 /* NFFC SuperFlex, draft_type 961 — the second superflex MARKET this board has
    never had, and the honest replacement for the slot `bbsf` was faking.
 
@@ -737,6 +816,7 @@ const FFPC = {
 const JOBS = [
   ["nffc", () => nffc()],
   ["nffcsf", nffcSF],
+  ["finishes", finishes],
   ["ffpc", () => ffpc("ffpc", FFPC.mainEvent)],
   ["ffpcchop", () => ffpc("ffpcchop", FFPC.chop)],
   ["ffpcsf", () => ffpc("ffpcsf", FFPC.sfBbt)],
