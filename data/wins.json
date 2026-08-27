@@ -1,56 +1,32 @@
 {
- "at": 1787805170422,
- "generated": "2026-08-27T04:32:50.422Z",
+ "at": 1787864608585,
+ "generated": "2026-08-27T21:03:28.585Z",
  "season": 2026,
  "source": "VegasInsider posted win totals",
  "note": "32 teams, consensus of the books listed",
  "count": 32,
  "rows": [
   {
-   "team": "SF",
-   "line": 10.5,
+   "team": "CLE",
+   "line": 5.5,
    "over": null,
    "under": null
   },
   {
-   "team": "BAL",
-   "line": 10.5,
+   "team": "NYJ",
+   "line": 5.5,
    "over": null,
    "under": null
   },
   {
-   "team": "NE",
-   "line": 9.5,
+   "team": "LV",
+   "line": 5.5,
    "over": null,
    "under": null
   },
   {
-   "team": "GB",
-   "line": 9.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "SEA",
-   "line": 10.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "DET",
-   "line": 10.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "PHI",
-   "line": 10.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "LAC",
-   "line": 9.5,
+   "team": "TEN",
+   "line": 6.5,
    "over": null,
    "under": null
   },
@@ -61,7 +37,19 @@
    "under": null
   },
   {
-   "team": "KC",
+   "team": "MIA",
+   "line": 3.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "ARI",
+   "line": 3.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "PHI",
    "line": 10.5,
    "over": null,
    "under": null
@@ -73,6 +61,54 @@
    "under": null
   },
   {
+   "team": "SF",
+   "line": 10.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "DET",
+   "line": 10.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "LAC",
+   "line": 9.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "KC",
+   "line": 10.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "SEA",
+   "line": 10.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "GB",
+   "line": 9.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "NE",
+   "line": 9.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "DEN",
+   "line": 9.5,
+   "over": null,
+   "under": null
+  },
+  {
    "team": "CHI",
    "line": 9.5,
    "over": null,
@@ -80,12 +116,6 @@
   },
   {
    "team": "HOU",
-   "line": 9.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "DEN",
    "line": 9.5,
    "over": null,
    "under": null
@@ -103,8 +133,14 @@
    "under": null
   },
   {
-   "team": "TB",
-   "line": 8.5,
+   "team": "DAL",
+   "line": 9.5,
+   "over": null,
+   "under": null
+  },
+  {
+   "team": "BAL",
+   "line": 10.5,
    "over": null,
    "under": null
   },
@@ -121,25 +157,13 @@
    "under": null
   },
   {
-   "team": "IND",
-   "line": 7.5,
+   "team": "TB",
+   "line": 8.5,
    "over": null,
    "under": null
   },
   {
-   "team": "DAL",
-   "line": 9.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "NO",
-   "line": 7.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "NYG",
+   "team": "ATL",
    "line": 7.5,
    "over": null,
    "under": null
@@ -151,14 +175,14 @@
    "under": null
   },
   {
-   "team": "TEN",
-   "line": 6.5,
+   "team": "NYG",
+   "line": 7.5,
    "over": null,
    "under": null
   },
   {
-   "team": "CLE",
-   "line": 5.5,
+   "team": "NO",
+   "line": 7.5,
    "over": null,
    "under": null
   },
@@ -169,32 +193,8 @@
    "under": null
   },
   {
-   "team": "NYJ",
-   "line": 5.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "LV",
-   "line": 5.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "ATL",
+   "team": "IND",
    "line": 7.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "ARI",
-   "line": 3.5,
-   "over": null,
-   "under": null
-  },
-  {
-   "team": "MIA",
-   "line": 3.5,
    "over": null,
    "under": null
   }
