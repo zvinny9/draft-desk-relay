@@ -834,7 +834,7 @@ const JOBS = [
      that is genuinely not FFPC — DraftKings Best Ball superflex or Underdog SF.
      Publishing a clone into it was worse than leaving it empty, because an
      empty slot shows up in the coverage matrix and a clone does not. */
-  ["underdog", underdog],
+  ["fpproj", fpProjections],
   ["wins", wins],
   ...FP_EXPERTS.map((e) => [e.sid, () => fpExpert(e, "ALL")]),
   /* The same six analysts, superflex. Red Wing is best ball AND superflex, and
@@ -872,3 +872,79 @@ await writeFile(join(OUT, "status.json"), JSON.stringify(
   { at: Date.now(), generated: new Date().toISOString(), season: SEASON, ok, failed }, null, 1));
 log(`done — ${ok} of ${JOBS.length} published`);
 if (!ok) process.exit(1);
+/* FantasyPros projections — the second projection set, relayed.
+
+   The two projection sets that decide this board were hand-pasted, and a
+   projection is the one thing where staleness is invisible: a week-old rank
+   still looks like a rank, and a week-old point total still looks like points.
+   This puts one of them on the same twice-daily clock as everything else.
+
+   STAT LINES, not points. A finished point total is frozen at whatever scoring
+   it was computed under; Draft Desk detects that and refuses the source in any
+   league whose rules do not match. A stat line re-scores itself for all
+   seventeen. That is why this reads the per-stat columns and never `points`.
+
+   One call per position because the endpoint is per position, merged on name.
+   Validated the same way every other job here is: enough rows, a real spread of
+   positions, and yardage that looks like yardage — a season projection that
+   thinks the best receiver gains 90 yards has failed, and failing loudly is
+   the whole point of these checks. */
+const FP_PROJ_POS = ["QB", "RB", "WR", "TE"];
+const FP_PROJ_KEYS = {
+  pass_yds: "passYds", pass_tds: "passTD", pass_ints: "ints", pass_int: "ints",
+  rush_yds: "rushYds", rush_tds: "rushTD",
+  rec: "rec", receptions: "rec", rec_yds: "recYds", rec_tds: "recTD",
+};
+
+async function fpProjections() {
+  const byName = new Map();
+  const seen = [];
+  for (const pos of FP_PROJ_POS) {
+    const u = `${FP_API}/nfl/${SEASON}/projections`
+      + `?position=${pos}&scoring=PPR&week=draft&sport=NFL`;
+    const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
+      "content-type": "application/json", "x-api-key": FP_KEY } });
+    if (!r.ok) throw new Error(`fantasypros projections ${pos} -> ${r.status}`);
+    const j = await r.json();
+    const list = j.players || j.data || [];
+    if (!Array.isArray(list) || !list.length) throw new Error(`${pos}: no players in the payload`);
+    let took = 0;
+    for (const pl of list) {
+      const name = String(pl.player_name || pl.name || "").trim();
+      if (!name) continue;
+      const src = pl.stats && typeof pl.stats === "object" ? pl.stats : pl;
+      const stats = {};
+      for (const [k, v] of Object.entries(FP_PROJ_KEYS)) {
+        const n = Number(src[k]);
+        if (Number.isFinite(n)) stats[v] = n;
+      }
+      if (!Object.keys(stats).length) continue;
+      byName.set(name, { name, pos: canonPos(pl.player_position_id || pos),
+        team: pl.player_team_id || null, stats });
+      took++;
+    }
+    seen.push(`${pos} ${took}`);
+    if (!took) throw new Error(`${pos}: no row carried a stat column — the keys have moved`);
+  }
+
+  const rows = [...byName.values()];
+  if (rows.length < 200) throw new Error(`only ${rows.length} players across four positions`);
+
+  /* The numbers have to look like a season, not a week. A projection set that
+     arrives as per-game averages would blend silently and read 17x light. */
+  const topWr = rows.filter((x) => x.pos === "WR").map((x) => x.stats.recYds || 0)
+    .sort((a, b) => b - a)[0] || 0;
+  if (topWr < 700) throw new Error(`best receiver projects ${Math.round(topWr)} yards — that is not a season`);
+  const topQb = rows.filter((x) => x.pos === "QB").map((x) => x.stats.passYds || 0)
+    .sort((a, b) => b - a)[0] || 0;
+  if (topQb < 2500) throw new Error(`best passer projects ${Math.round(topQb)} yards — that is not a season`);
+
+  /* Touchdown columns are the import failure that costs the most and shows the
+     least, so their absence is stated rather than discovered downstream. */
+  const noTd = rows.filter((x) => x.stats.rushTD == null && x.stats.recTD == null
+    && x.stats.passTD == null).length;
+
+  return { rows,
+    source: "fantasypros projections (PPR, draft week)",
+    note: `${rows.length} players — ${seen.join(", ")}${noTd ? ` · ${noTd} rows carry no touchdown column` : ""}` };
+}
