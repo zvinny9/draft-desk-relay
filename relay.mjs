@@ -889,14 +889,10 @@ if (!ok) process.exit(1);
    positions, and yardage that looks like yardage — a season projection that
    thinks the best receiver gains 90 yards has failed, and failing loudly is
    the whole point of these checks. */
-const FP_PROJ_POS = ["QB", "RB", "WR", "TE"];
-const FP_PROJ_KEYS = {
-  pass_yds: "passYds", pass_tds: "passTD", pass_ints: "ints", pass_int: "ints",
-  rush_yds: "rushYds", rush_tds: "rushTD",
-  rec: "rec", receptions: "rec", rec_yds: "recYds", rec_tds: "recTD",
-};
 
 async function fpProjections() {
+  const FP_PROJ_POS = ["QB", "RB", "WR", "TE"];
+  const FP_PROJ_KEYS = { pass_yds: "passYds", pass_tds: "passTD", pass_ints: "ints", pass_int: "ints", rush_yds: "rushYds", rush_tds: "rushTD", rec: "rec", receptions: "rec", rec_yds: "recYds", rec_tds: "recTD" };
   const byName = new Map();
   const seen = [];
   for (const pos of FP_PROJ_POS) {
