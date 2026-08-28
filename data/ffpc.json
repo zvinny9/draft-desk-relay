@@ -1,6 +1,6 @@
 {
- "at": 1787951847023,
- "generated": "2026-08-28T21:17:27.023Z",
+ "at": 1787952099820,
+ "generated": "2026-08-28T21:21:39.820Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "55 leagues, last 14 days",
@@ -211,16 +211,16 @@
    "team": "LAC"
   },
   {
-   "name": "Garrett Wilson",
-   "adp": 36.33,
-   "pos": "WR",
-   "team": "NYJ"
-  },
-  {
    "name": "Kyren Williams",
    "adp": 36.33,
    "pos": "RB",
    "team": "LAR"
+  },
+  {
+   "name": "Garrett Wilson",
+   "adp": 36.33,
+   "pos": "WR",
+   "team": "NYJ"
   },
   {
    "name": "Javonte Williams",
@@ -811,16 +811,16 @@
    "team": "NE"
   },
   {
-   "name": "Tyjae Spears",
-   "adp": 135.78,
-   "pos": "RB",
-   "team": "TEN"
-  },
-  {
    "name": "Tank Bigsby",
    "adp": 135.78,
    "pos": "RB",
    "team": "PHI"
+  },
+  {
+   "name": "Tyjae Spears",
+   "adp": 135.78,
+   "pos": "RB",
+   "team": "TEN"
   },
   {
    "name": "Brock Purdy",
@@ -1669,16 +1669,16 @@
    "team": "MIA"
   },
   {
-   "name": "Cairo Santos",
-   "adp": 339.4,
-   "pos": "K",
-   "team": "CHI"
-  },
-  {
    "name": "Matt Hibner",
    "adp": 339.4,
    "pos": "TE",
    "team": "BAL"
+  },
+  {
+   "name": "Cairo Santos",
+   "adp": 339.4,
+   "pos": "K",
+   "team": "CHI"
   },
   {
    "name": "Tyreek Hill",
@@ -1867,28 +1867,28 @@
    "team": "NYG"
   },
   {
-   "name": "Joey Slye",
-   "adp": 347.69,
-   "pos": "K",
-   "team": "TEN"
-  },
-  {
    "name": "Skyler Bell",
    "adp": 347.69,
    "pos": "WR",
    "team": "BUF"
   },
   {
-   "name": "Devin Neal",
-   "adp": 347.75,
-   "pos": "RB",
-   "team": "NO"
+   "name": "Joey Slye",
+   "adp": 347.69,
+   "pos": "K",
+   "team": "TEN"
   },
   {
    "name": "Odell Beckham",
    "adp": 347.75,
    "pos": "WR",
    "team": "NYG"
+  },
+  {
+   "name": "Devin Neal",
+   "adp": 347.75,
+   "pos": "RB",
+   "team": "NO"
   },
   {
    "name": "Christian Kirk",
@@ -1915,16 +1915,16 @@
    "team": "DAL"
   },
   {
-   "name": "Roman Wilson",
-   "adp": 347.8,
-   "pos": "WR",
-   "team": "PIT"
-  },
-  {
    "name": "Kyle Williams",
    "adp": 347.8,
    "pos": "WR",
    "team": "NE"
+  },
+  {
+   "name": "Roman Wilson",
+   "adp": 347.8,
+   "pos": "WR",
+   "team": "PIT"
   },
   {
    "name": "Roschon Johnson",
@@ -1951,22 +1951,16 @@
    "team": "CIN"
   },
   {
-   "name": "Blake Grupe",
-   "adp": 347.93,
-   "pos": "K",
-   "team": "IND"
-  },
-  {
    "name": "Jahan Dotson",
    "adp": 347.93,
    "pos": "WR",
    "team": "ATL"
   },
   {
-   "name": "Jordan Whittington",
-   "adp": 347.95,
-   "pos": "WR",
-   "team": "LAR"
+   "name": "Blake Grupe",
+   "adp": 347.93,
+   "pos": "K",
+   "team": "IND"
   },
   {
    "name": "Bryce Lance",
@@ -1981,16 +1975,16 @@
    "team": "LV"
   },
   {
+   "name": "Jordan Whittington",
+   "adp": 347.95,
+   "pos": "WR",
+   "team": "LAR"
+  },
+  {
    "name": "DeMario Douglas",
    "adp": 347.96,
    "pos": "WR",
    "team": "NE"
-  },
-  {
-   "name": "CAR Team Defense",
-   "adp": 347.98,
-   "pos": "DF",
-   "team": "CAR"
   },
   {
    "name": "Tyler Bass",
@@ -2003,6 +1997,12 @@
    "adp": 347.98,
    "pos": "K",
    "team": "FA"
+  },
+  {
+   "name": "CAR Team Defense",
+   "adp": 347.98,
+   "pos": "DF",
+   "team": "CAR"
   },
   {
    "name": "Rasheen Ali",

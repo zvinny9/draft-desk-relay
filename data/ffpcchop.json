@@ -1,6 +1,6 @@
 {
- "at": 1787951847481,
- "generated": "2026-08-28T21:17:27.481Z",
+ "at": 1787952100398,
+ "generated": "2026-08-28T21:21:40.398Z",
  "season": 2026,
  "source": "myffpc.com Chop",
  "note": "102 leagues, last 30 days",
@@ -2053,22 +2053,16 @@
    "team": "CIN"
   },
   {
-   "name": "Demarcus Robinson",
-   "adp": 348.87,
-   "pos": "WR",
-   "team": "SF"
-  },
-  {
    "name": "Charlie Smyth",
    "adp": 348.87,
    "pos": "K",
    "team": "NO"
   },
   {
-   "name": "Theo Johnson",
-   "adp": 348.88,
-   "pos": "TE",
-   "team": "NYG"
+   "name": "Demarcus Robinson",
+   "adp": 348.87,
+   "pos": "WR",
+   "team": "SF"
   },
   {
    "name": "Trevor Etienne",
@@ -2077,10 +2071,10 @@
    "team": "CAR"
   },
   {
-   "name": "Kyle Williams",
-   "adp": 348.89,
-   "pos": "WR",
-   "team": "NE"
+   "name": "Theo Johnson",
+   "adp": 348.88,
+   "pos": "TE",
+   "team": "NYG"
   },
   {
    "name": "Nick Folk",
@@ -2089,16 +2083,22 @@
    "team": "ATL"
   },
   {
-   "name": "Devin Singletary",
-   "adp": 348.9,
-   "pos": "RB",
-   "team": "NYG"
+   "name": "Kyle Williams",
+   "adp": 348.89,
+   "pos": "WR",
+   "team": "NE"
   },
   {
    "name": "Oscar Delp",
    "adp": 348.9,
    "pos": "TE",
    "team": "NO"
+  },
+  {
+   "name": "Devin Singletary",
+   "adp": 348.9,
+   "pos": "RB",
+   "team": "NYG"
   },
   {
    "name": "Jarquez Hunter",
