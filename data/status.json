@@ -1,10 +1,10 @@
 {
- "at": 1787900231047,
- "generated": "2026-08-28T06:57:11.047Z",
+ "at": 1787951848838,
+ "generated": "2026-08-28T21:17:28.838Z",
  "season": 2026,
  "ok": 20,
  "failed": [
   "nffcsf: 0 rows back from adp.data.php",
-  "underdog: 0 appearances back for 2026 Season"
+  "fpproj: Cannot access 'FP_PROJ_POS' before initialization"
  ]
 }
