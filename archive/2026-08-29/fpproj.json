@@ -1,10 +1,10 @@
 {
- "at": 1787976675228,
- "generated": "2026-08-29T04:11:15.228Z",
+ "at": 1788017976553,
+ "generated": "2026-08-29T15:39:36.553Z",
  "season": 2026,
  "source": "fantasypros projections (PPR, draft week)",
- "note": "524 players — QB 83, RB 128, WR 189, TE 124",
- "count": 524,
+ "note": "523 players — QB 83, RB 128, WR 189, TE 123",
+ "count": 523,
  "rows": [
   {
    "name": "Josh Allen",
@@ -2026,17 +2026,6 @@
    }
   },
   {
-   "name": "Israel Abanikanda",
-   "pos": "RB",
-   "team": null,
-   "stats": {
-    "rushYds": 146,
-    "rushTD": 1,
-    "recYds": 14,
-    "recTD": 0
-   }
-  },
-  {
    "name": "Deuce Vaughn",
    "pos": "RB",
    "team": null,
@@ -2044,6 +2033,28 @@
     "rushYds": 142,
     "rushTD": 1,
     "recYds": 9,
+    "recTD": 0
+   }
+  },
+  {
+   "name": "Donovan Edwards",
+   "pos": "RB",
+   "team": null,
+   "stats": {
+    "rushYds": 130,
+    "rushTD": 1,
+    "recYds": 19,
+    "recTD": 0
+   }
+  },
+  {
+   "name": "Carlos Washington Jr.",
+   "pos": "RB",
+   "team": null,
+   "stats": {
+    "rushYds": 130,
+    "rushTD": 1,
+    "recYds": 19,
     "recTD": 0
    }
   },
@@ -2056,17 +2067,6 @@
     "rushTD": 1.25,
     "recYds": 10.95,
     "recTD": 0.02
-   }
-  },
-  {
-   "name": "Audric Estime",
-   "pos": "RB",
-   "team": null,
-   "stats": {
-    "rushYds": 122,
-    "rushTD": 1,
-    "recYds": 24,
-    "recTD": 0
    }
   },
   {
@@ -3236,17 +3236,6 @@
    }
   },
   {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": null,
-   "stats": {
-    "rushYds": 0,
-    "rushTD": 0,
-    "recYds": 517.74,
-    "recTD": 2.92
-   }
-  },
-  {
    "name": "Germie Bernard",
    "pos": "WR",
    "team": null,
@@ -3343,6 +3332,17 @@
     "rushTD": 0.04,
     "recYds": 402.7,
     "recTD": 3.89
+   }
+  },
+  {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": null,
+   "stats": {
+    "rushYds": 2.5,
+    "rushTD": 0,
+    "recYds": 458.37,
+    "recTD": 2.96
    }
   },
   {
@@ -3632,17 +3632,6 @@
    }
   },
   {
-   "name": "Zavion Thomas",
-   "pos": "WR",
-   "team": null,
-   "stats": {
-    "rushYds": 6.5,
-    "rushTD": 0,
-    "recYds": 304.76,
-    "recTD": 2.11
-   }
-  },
-  {
    "name": "Jahdae Walker",
    "pos": "WR",
    "team": null,
@@ -3827,6 +3816,17 @@
     "rushTD": 0,
     "recYds": 165.8,
     "recTD": 1.01
+   }
+  },
+  {
+   "name": "Zavion Thomas",
+   "pos": "WR",
+   "team": null,
+   "stats": {
+    "rushYds": 0,
+    "rushTD": 0,
+    "recYds": 153.52,
+    "recTD": 1.22
    }
   },
   {
@@ -5102,15 +5102,6 @@
    }
   },
   {
-   "name": "Drew Sample",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 146.32,
-    "recTD": 1.17
-   }
-  },
-  {
    "name": "Jackson Hawes",
    "pos": "TE",
    "team": null,
@@ -5144,6 +5135,15 @@
    "stats": {
     "recYds": 128,
     "recTD": 1
+   }
+  },
+  {
+   "name": "Drew Sample",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 123.16,
+    "recTD": 1.09
    }
   },
   {
@@ -5228,25 +5228,16 @@
    }
   },
   {
-   "name": "Teagan Quitoriano",
+   "name": "Tanner McLachlan",
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 109,
+    "recYds": 111,
     "recTD": 1
    }
   },
   {
    "name": "Travis Vokolek",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 109,
-    "recTD": 1
-   }
-  },
-  {
-   "name": "Rivaldo Fairweather",
    "pos": "TE",
    "team": null,
    "stats": {
@@ -5261,6 +5252,15 @@
    "stats": {
     "recYds": 113.85,
     "recTD": 0.92
+   }
+  },
+  {
+   "name": "Dallen Bentley",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 105,
+    "recTD": 1
    }
   },
   {
@@ -5282,20 +5282,20 @@
    }
   },
   {
-   "name": "Thomas Fidone II",
+   "name": "Zach Ertz",
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 101,
+    "recYds": 95,
     "recTD": 1
    }
   },
   {
-   "name": "Jaheim Bell",
+   "name": "Donald Parham Jr.",
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 98,
+    "recYds": 95,
     "recTD": 1
    }
   },
@@ -5315,15 +5315,6 @@
    "stats": {
     "recYds": 114.36,
     "recTD": 0.59
-   }
-  },
-  {
-   "name": "John FitzPatrick",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 86,
-    "recTD": 1
    }
   },
   {
@@ -5399,6 +5390,15 @@
    }
   },
   {
+   "name": "Justin Joly",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 71.43,
+    "recTD": 0.65
+   }
+  },
+  {
    "name": "Payne Durham",
    "pos": "TE",
    "team": null,
@@ -5417,15 +5417,6 @@
    }
   },
   {
-   "name": "Josh Whyle",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 59.48,
-    "recTD": 0.66
-   }
-  },
-  {
    "name": "Joe Royer",
    "pos": "TE",
    "team": null,
@@ -5435,21 +5426,21 @@
    }
   },
   {
+   "name": "Chris Manhertz",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 50.65,
+    "recTD": 0.56
+   }
+  },
+  {
    "name": "Lucas Krull",
    "pos": "TE",
    "team": null,
    "stats": {
     "recYds": 44.5,
     "recTD": 0.5
-   }
-  },
-  {
-   "name": "Justin Joly",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 37.85,
-    "recTD": 0.3
    }
   },
   {
@@ -5516,6 +5507,15 @@
    }
   },
   {
+   "name": "Josh Whyle",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 32.95,
+    "recTD": 0.32
+   }
+  },
+  {
    "name": "Johnny Mundt",
    "pos": "TE",
    "team": null,
@@ -5549,15 +5549,6 @@
    "stats": {
     "recYds": 31.67,
     "recTD": 0.17
-   }
-  },
-  {
-   "name": "Chris Manhertz",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 16.29,
-    "recTD": 0.12
    }
   },
   {
