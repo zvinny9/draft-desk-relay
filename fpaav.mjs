@@ -41,7 +41,10 @@ let n = 0;
 const trRe = /<tr\b([^>]*)>([\s\S]*?)<\/tr>/gi;
 let m;
 while ((m = trRe.exec(html))) {
-const av = /(?:^|\s)v="(-?\d+(?:\.\d+)?)"/.exec(m[1]);
+// The server writes its attributes in SINGLE quotes and the browser shows
+  // them back in double, which is exactly how the first version of this passed
+  // a test in the console and returned zero rows on the runner. Accept either.
+  const av = /(?:^|\s)v=["']?(-?\d+(?:\.\d+)?)["']?/.exec(m[1]);
 if (!av) continue;
 const text = m[2].replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const nm = /([A-Za-z.'\- ]+?)\s*\(\s*([A-Z]{2,4})\s*-\s*([A-Z]{1,3})\s*\)/.exec(text);
