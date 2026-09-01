@@ -1,6 +1,6 @@
 {
- "at": 1788227486144,
- "generated": "2026-09-01T01:51:26.144Z",
+ "at": 1788276521990,
+ "generated": "2026-09-01T15:28:41.990Z",
  "season": 2026,
  "source": "myffpc.com Chop",
  "note": "104 leagues, last 30 days",
@@ -970,7 +970,7 @@
    "name": "Jaydon Blue",
    "adp": 169.42,
    "pos": "RB",
-   "team": "FA"
+   "team": "PHI"
   },
   {
    "name": "Oronde Gadsden",
@@ -1864,7 +1864,7 @@
    "name": "Blake Grupe",
    "adp": 345.37,
    "pos": "K",
-   "team": "FA"
+   "team": "NYJ"
   },
   {
    "name": "DeMario Douglas",
@@ -1945,16 +1945,16 @@
    "team": "FA"
   },
   {
-   "name": "Kyle Williams",
-   "adp": 347.74,
-   "pos": "WR",
-   "team": "NE"
-  },
-  {
    "name": "NO Team Defense",
    "adp": 347.74,
    "pos": "DF",
    "team": "NO"
+  },
+  {
+   "name": "Kyle Williams",
+   "adp": 347.74,
+   "pos": "WR",
+   "team": "NE"
   },
   {
    "name": "Cole Kmet",
@@ -2011,10 +2011,10 @@
    "team": "FA"
   },
   {
-   "name": "Erick All",
+   "name": "Elijah Sarratt",
    "adp": 348.75,
-   "pos": "TE",
-   "team": "CIN"
+   "pos": "WR",
+   "team": "BAL"
   },
   {
    "name": "Camden Brown",
@@ -2023,10 +2023,10 @@
    "team": "DAL"
   },
   {
-   "name": "Elijah Sarratt",
+   "name": "Erick All",
    "adp": 348.75,
-   "pos": "WR",
-   "team": "BAL"
+   "pos": "TE",
+   "team": "CIN"
   },
   {
    "name": "Elic Ayomanor",
@@ -2047,16 +2047,16 @@
    "team": "CHI"
   },
   {
-   "name": "Ja'Tavion Sanders",
-   "adp": 348.86,
-   "pos": "TE",
-   "team": "CAR"
-  },
-  {
    "name": "Tai Felton",
    "adp": 348.86,
    "pos": "WR",
    "team": "MIN"
+  },
+  {
+   "name": "Ja'Tavion Sanders",
+   "adp": 348.86,
+   "pos": "TE",
+   "team": "CAR"
   },
   {
    "name": "Miles Davis",
@@ -2071,16 +2071,16 @@
    "team": "ATL"
   },
   {
-   "name": "Demarcus Robinson",
-   "adp": 348.89,
-   "pos": "WR",
-   "team": "SF"
-  },
-  {
    "name": "Charlie Smyth",
    "adp": 348.89,
    "pos": "K",
    "team": "FA"
+  },
+  {
+   "name": "Demarcus Robinson",
+   "adp": 348.89,
+   "pos": "WR",
+   "team": "SF"
   },
   {
    "name": "Trevor Etienne",
@@ -2101,22 +2101,28 @@
    "team": "LAR"
   },
   {
-   "name": "Devin Singletary",
-   "adp": 348.92,
-   "pos": "RB",
-   "team": "NYG"
-  },
-  {
    "name": "Oscar Delp",
    "adp": 348.92,
    "pos": "TE",
    "team": "NO"
   },
   {
+   "name": "Devin Singletary",
+   "adp": 348.92,
+   "pos": "RB",
+   "team": "NYG"
+  },
+  {
    "name": "Isaiah Davis",
    "adp": 348.93,
    "pos": "RB",
    "team": "NYJ"
+  },
+  {
+   "name": "Jameis Winston",
+   "adp": 348.94,
+   "pos": "QB",
+   "team": "NYG"
   },
   {
    "name": "Matt Hibner",
@@ -2128,12 +2134,6 @@
    "name": "Dominic Zvada",
    "adp": 348.94,
    "pos": "K",
-   "team": "NYG"
-  },
-  {
-   "name": "Jameis Winston",
-   "adp": 348.94,
-   "pos": "QB",
    "team": "NYG"
   }
  ]
