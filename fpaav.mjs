@@ -28,8 +28,12 @@ for (const teams of SIZES) {
 const url = "https://draftwizard.fantasypros.com/auction/fp_nfl.jsp"
 + "?sport=nfl&scoring=PPR&teams=" + teams + "&tb=" + BUDGET;
 const res = await fetch(url, { headers: {
-"user-agent": "Mozilla/5.0 (draft-desk-relay)",
-"accept": "text/html",
+// The site serves a different, empty page to an unrecognised client, which is
+  // how the first run failed: zero rows at every size. It wants to look like a
+  // browser, so it gets the same user-agent the rest of this relay uses.
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml",
+  "accept-language": "en-US,en;q=0.9",
 } });
 if (!res.ok) throw new Error("fpaav " + teams + "-team: HTTP " + res.status);
 const html = await res.text();
