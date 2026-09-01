@@ -1,6 +1,6 @@
 {
- "at": 1788304014748,
- "generated": "2026-09-01T23:06:54.748Z",
+ "at": 1788304355396,
+ "generated": "2026-09-01T23:12:35.396Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
  "note": "286 leagues, last 14 days",
@@ -1849,16 +1849,16 @@
    "team": "PIT"
   },
   {
-   "name": "Tyson Bagent",
-   "adp": 347.54,
-   "pos": "QB",
-   "team": "CHI"
-  },
-  {
    "name": "Joshua Dobbs",
    "adp": 347.54,
    "pos": "QB",
    "team": "DET"
+  },
+  {
+   "name": "Tyson Bagent",
+   "adp": 347.54,
+   "pos": "QB",
+   "team": "CHI"
   },
   {
    "name": "Devin Singletary",
@@ -1927,16 +1927,16 @@
    "team": "DEN"
   },
   {
-   "name": "Kenny Pickett",
-   "adp": 348.79,
-   "pos": "QB",
-   "team": "CAR"
-  },
-  {
    "name": "Taylen Green",
    "adp": 348.79,
    "pos": "QB",
    "team": "CLE"
+  },
+  {
+   "name": "Kenny Pickett",
+   "adp": 348.79,
+   "pos": "QB",
+   "team": "CAR"
   },
   {
    "name": "Brock Wright",
@@ -2011,12 +2011,6 @@
    "team": "LAR"
   },
   {
-   "name": "Barion Brown",
-   "adp": 349.21,
-   "pos": "WR",
-   "team": "NO"
-  },
-  {
    "name": "Zamir White",
    "adp": 349.21,
    "pos": "RB",
@@ -2029,16 +2023,22 @@
    "team": "MIA"
   },
   {
-   "name": "Tyrod Taylor",
-   "adp": 349.22,
-   "pos": "QB",
-   "team": "GB"
+   "name": "Barion Brown",
+   "adp": 349.21,
+   "pos": "WR",
+   "team": "NO"
   },
   {
    "name": "Tai Felton",
    "adp": 349.22,
    "pos": "WR",
    "team": "MIN"
+  },
+  {
+   "name": "Tyrod Taylor",
+   "adp": 349.22,
+   "pos": "QB",
+   "team": "GB"
   },
   {
    "name": "Quinn Ewers",
@@ -2119,16 +2119,16 @@
    "team": "PIT"
   },
   {
-   "name": "Tommy DeVito",
-   "adp": 349.57,
-   "pos": "QB",
-   "team": "NE"
-  },
-  {
    "name": "Kentrel Bullock",
    "adp": 349.57,
    "pos": "RB",
    "team": "FA"
+  },
+  {
+   "name": "Tommy DeVito",
+   "adp": 349.57,
+   "pos": "QB",
+   "team": "NE"
   },
   {
    "name": "Isaiah Bond",
@@ -2167,6 +2167,12 @@
    "team": "CLE"
   },
   {
+   "name": "Odell Beckham",
+   "adp": 349.59,
+   "pos": "WR",
+   "team": "NYG"
+  },
+  {
    "name": "Kaden Wetjen",
    "adp": 349.59,
    "pos": "WR",
@@ -2185,40 +2191,10 @@
    "team": "WAS"
   },
   {
-   "name": "Odell Beckham",
-   "adp": 349.59,
-   "pos": "WR",
-   "team": "NYG"
-  },
-  {
    "name": "Nick Westbrook-Ikhine",
    "adp": 349.59,
    "pos": "WR",
    "team": "IND"
-  },
-  {
-   "name": "Gardner Minshew",
-   "adp": 349.6,
-   "pos": "QB",
-   "team": "ARI"
-  },
-  {
-   "name": "Tanner Koziol",
-   "adp": 349.6,
-   "pos": "TE",
-   "team": "JAC"
-  },
-  {
-   "name": "Trey Benson",
-   "adp": 349.6,
-   "pos": "RB",
-   "team": "ARI"
-  },
-  {
-   "name": "Savion Williams",
-   "adp": 349.6,
-   "pos": "WR",
-   "team": "GB"
   },
   {
    "name": "Marvin Mims",
@@ -2233,16 +2209,40 @@
    "team": "CHI"
   },
   {
+   "name": "Trey Benson",
+   "adp": 349.6,
+   "pos": "RB",
+   "team": "ARI"
+  },
+  {
+   "name": "Savion Williams",
+   "adp": 349.6,
+   "pos": "WR",
+   "team": "GB"
+  },
+  {
    "name": "Myles Price",
    "adp": 349.6,
    "pos": "WR",
    "team": "MIN"
   },
   {
-   "name": "Spencer Rattler",
+   "name": "Tanner Koziol",
+   "adp": 349.6,
+   "pos": "TE",
+   "team": "JAC"
+  },
+  {
+   "name": "Gardner Minshew",
+   "adp": 349.6,
+   "pos": "QB",
+   "team": "ARI"
+  },
+  {
+   "name": "Jalon Daniels",
    "adp": 349.61,
    "pos": "QB",
-   "team": "NO"
+   "team": "TB"
   },
   {
    "name": "Joshua Palmer",
@@ -2257,10 +2257,10 @@
    "team": "DAL"
   },
   {
-   "name": "Jalon Daniels",
+   "name": "Spencer Rattler",
    "adp": 349.61,
    "pos": "QB",
-   "team": "TB"
+   "team": "NO"
   },
   {
    "name": "Tommy Tremble",
@@ -2269,15 +2269,15 @@
    "team": "CAR"
   },
   {
-   "name": "Nick Mullens",
-   "adp": 349.62,
-   "pos": "QB",
-   "team": "FA"
-  },
-  {
    "name": "Justin Joly",
    "adp": 349.62,
    "pos": "TE",
+   "team": "FA"
+  },
+  {
+   "name": "Nick Mullens",
+   "adp": 349.62,
+   "pos": "QB",
    "team": "FA"
   }
  ]

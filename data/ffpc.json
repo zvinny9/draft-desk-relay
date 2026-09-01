@@ -1,6 +1,6 @@
 {
- "at": 1788304012619,
- "generated": "2026-09-01T23:06:52.619Z",
+ "at": 1788304354163,
+ "generated": "2026-09-01T23:12:34.163Z",
  "season": 2026,
  "source": "myffpc.com Main Event",
  "note": "72 leagues, last 14 days",
@@ -1771,16 +1771,16 @@
    "team": "DET"
   },
   {
-   "name": "DJ Giddens",
-   "adp": 346.24,
-   "pos": "RB",
-   "team": "IND"
-  },
-  {
    "name": "Tory Horton",
    "adp": 346.24,
    "pos": "WR",
    "team": "SEA"
+  },
+  {
+   "name": "DJ Giddens",
+   "adp": 346.24,
+   "pos": "RB",
+   "team": "IND"
   },
   {
    "name": "Ty Johnson",
@@ -1915,16 +1915,16 @@
    "team": "NYG"
   },
   {
-   "name": "Max Klare",
-   "adp": 348.28,
-   "pos": "TE",
-   "team": "LAR"
-  },
-  {
    "name": "Robert Henry",
    "adp": 348.28,
    "pos": "RB",
    "team": "WAS"
+  },
+  {
+   "name": "Max Klare",
+   "adp": 348.28,
+   "pos": "TE",
+   "team": "LAR"
   },
   {
    "name": "Devin Neal",
@@ -1939,28 +1939,28 @@
    "team": "SF"
   },
   {
-   "name": "Phil Mafah",
-   "adp": 348.31,
-   "pos": "RB",
-   "team": "FA"
-  },
-  {
    "name": "Jordan Whittington",
    "adp": 348.31,
    "pos": "WR",
    "team": "LAR"
   },
   {
-   "name": "Raheim Sanders",
-   "adp": 348.35,
+   "name": "Phil Mafah",
+   "adp": 348.31,
    "pos": "RB",
-   "team": "CLE"
+   "team": "FA"
   },
   {
    "name": "Tyquan Thornton",
    "adp": 348.35,
    "pos": "WR",
    "team": "KC"
+  },
+  {
+   "name": "Raheim Sanders",
+   "adp": 348.35,
+   "pos": "RB",
+   "team": "CLE"
   },
   {
    "name": "Jam Miller",

@@ -1,6 +1,6 @@
 {
- "at": 1788304014172,
- "generated": "2026-09-01T23:06:54.172Z",
+ "at": 1788304355009,
+ "generated": "2026-09-01T23:12:35.009Z",
  "season": 2026,
  "source": "myffpc.com Chop",
  "note": "106 leagues, last 30 days",
@@ -2017,16 +2017,16 @@
    "team": "BAL"
   },
   {
-   "name": "Camden Brown",
-   "adp": 348.77,
-   "pos": "WR",
-   "team": "DAL"
-  },
-  {
    "name": "Erick All",
    "adp": 348.77,
    "pos": "TE",
    "team": "CIN"
+  },
+  {
+   "name": "Camden Brown",
+   "adp": 348.77,
+   "pos": "WR",
+   "team": "DAL"
   },
   {
    "name": "CIN Team Defense",
@@ -2071,16 +2071,16 @@
    "team": "CAR"
   },
   {
-   "name": "Miles Davis",
-   "adp": 348.89,
-   "pos": "RB",
-   "team": "FA"
-  },
-  {
    "name": "Jahan Dotson",
    "adp": 348.89,
    "pos": "WR",
    "team": "ATL"
+  },
+  {
+   "name": "Miles Davis",
+   "adp": 348.89,
+   "pos": "RB",
+   "team": "FA"
   },
   {
    "name": "Tutu Atwell",
@@ -2143,16 +2143,16 @@
    "team": "BAL"
   },
   {
-   "name": "Daniel Carlson",
-   "adp": 348.96,
-   "pos": "K",
-   "team": "NO"
-  },
-  {
    "name": "Jameis Winston",
    "adp": 348.96,
    "pos": "QB",
    "team": "NYG"
+  },
+  {
+   "name": "Daniel Carlson",
+   "adp": 348.96,
+   "pos": "K",
+   "team": "NO"
   }
  ]
 }
