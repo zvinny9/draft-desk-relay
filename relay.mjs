@@ -14,6 +14,7 @@
  */
 import { writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
+import { fpAav } from "./fpaav.mjs";
 
 const OUT = process.argv[2] || "data";
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
@@ -814,6 +815,7 @@ const FFPC = {
 };
 
 const JOBS = [
+  ["fpaav", fpAav],
   ["nffc", () => nffc()],
   ["nffcsf", nffcSF],
   ["finishes", finishes],
