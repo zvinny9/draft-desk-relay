@@ -1,10 +1,10 @@
 {
- "at": 1788311030146,
- "generated": "2026-09-02T01:03:50.146Z",
+ "at": 1788361695742,
+ "generated": "2026-09-02T15:08:15.742Z",
  "season": 2026,
  "source": "fantasypros projections (PPR, draft week)",
- "note": "494 players — QB 79, RB 119, WR 179, TE 117",
- "count": 494,
+ "note": "495 players — QB 79, RB 119, WR 179, TE 118",
+ "count": 495,
  "rows": [
   {
    "name": "Josh Allen",
@@ -823,18 +823,6 @@
    }
   },
   {
-   "name": "Joe Milton III",
-   "pos": "QB",
-   "team": null,
-   "stats": {
-    "passYds": 119.33,
-    "passTD": 0.67,
-    "ints": 0.33,
-    "rushYds": 14.33,
-    "rushTD": 0
-   }
-  },
-  {
    "name": "Kyle McCord",
    "pos": "QB",
    "team": null,
@@ -844,6 +832,18 @@
     "ints": 0.75,
     "rushYds": 6.76,
     "rushTD": 0.02
+   }
+  },
+  {
+   "name": "Joe Milton III",
+   "pos": "QB",
+   "team": null,
+   "stats": {
+    "passYds": 88.5,
+    "passTD": 0.5,
+    "ints": 0.5,
+    "rushYds": 11,
+    "rushTD": 0
    }
   },
   {
@@ -879,6 +879,18 @@
     "passTD": 0.5,
     "ints": 0,
     "rushYds": 5,
+    "rushTD": 0
+   }
+  },
+  {
+   "name": "Brady Cook",
+   "pos": "QB",
+   "team": null,
+   "stats": {
+    "passYds": 62,
+    "passTD": 0.5,
+    "ints": 0.5,
+    "rushYds": 9.5,
     "rushTD": 0
    }
   },
@@ -932,18 +944,6 @@
   },
   {
    "name": "Aidan O'Connell",
-   "pos": "QB",
-   "team": null,
-   "stats": {
-    "passYds": 0,
-    "passTD": 0,
-    "ints": 0,
-    "rushYds": 0,
-    "rushTD": 0
-   }
-  },
-  {
-   "name": "Brady Cook",
    "pos": "QB",
    "team": null,
    "stats": {
@@ -1137,7 +1137,7 @@
    "stats": {
     "rushYds": 1069.6,
     "rushTD": 5.38,
-    "recYds": 357.61,
+    "recYds": 358.28,
     "recTD": 3.04
    }
   },
@@ -1835,6 +1835,17 @@
    }
   },
   {
+   "name": "Emari Demercado",
+   "pos": "RB",
+   "team": null,
+   "stats": {
+    "rushYds": 206,
+    "rushTD": 0,
+    "recYds": 41,
+    "recTD": 0
+   }
+  },
+  {
    "name": "Ray Davis",
    "pos": "RB",
    "team": null,
@@ -1874,7 +1885,7 @@
    "stats": {
     "rushYds": 119.91,
     "rushTD": 1.25,
-    "recYds": 16.27,
+    "recYds": 16.77,
     "recTD": 0.04
    }
   },
@@ -1952,17 +1963,6 @@
     "rushYds": 128.12,
     "rushTD": 0.94,
     "recYds": 0,
-    "recTD": 0
-   }
-  },
-  {
-   "name": "Jeremy McNichols",
-   "pos": "RB",
-   "team": null,
-   "stats": {
-    "rushYds": 69,
-    "rushTD": 1,
-    "recYds": 41,
     "recTD": 0
    }
   },
@@ -2374,6 +2374,17 @@
    }
   },
   {
+   "name": "Chris Olave",
+   "pos": "WR",
+   "team": null,
+   "stats": {
+    "rushYds": 0,
+    "rushTD": 0,
+    "recYds": 1196.01,
+    "recTD": 8.2
+   }
+  },
+  {
    "name": "Nico Collins",
    "pos": "WR",
    "team": null,
@@ -2382,17 +2393,6 @@
     "rushTD": 0.36,
     "recYds": 1209.72,
     "recTD": 7.59
-   }
-  },
-  {
-   "name": "Chris Olave",
-   "pos": "WR",
-   "team": null,
-   "stats": {
-    "rushYds": 0,
-    "rushTD": 0,
-    "recYds": 1193.34,
-    "recTD": 7.87
    }
   },
   {
@@ -3007,7 +3007,7 @@
    "stats": {
     "rushYds": 0,
     "rushTD": 0,
-    "recYds": 565.94,
+    "recYds": 567.44,
     "recTD": 3.68
    }
   },
@@ -3053,6 +3053,17 @@
     "rushTD": 0,
     "recYds": 538.63,
     "recTD": 2.85
+   }
+  },
+  {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": null,
+   "stats": {
+    "rushYds": 0,
+    "rushTD": 0,
+    "recYds": 520.13,
+    "recTD": 2.93
    }
   },
   {
@@ -3166,17 +3177,6 @@
    }
   },
   {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": null,
-   "stats": {
-    "rushYds": 2.5,
-    "rushTD": 0,
-    "recYds": 460.57,
-    "recTD": 2.97
-   }
-  },
-  {
    "name": "Darius Slayton",
    "pos": "WR",
    "team": null,
@@ -3238,7 +3238,7 @@
    "stats": {
     "rushYds": 5,
     "rushTD": 0,
-    "recYds": 458.82,
+    "recYds": 460.82,
     "recTD": 1.98
    }
   },
@@ -3463,6 +3463,17 @@
    }
   },
   {
+   "name": "Zavion Thomas",
+   "pos": "WR",
+   "team": null,
+   "stats": {
+    "rushYds": 6.5,
+    "rushTD": 0,
+    "recYds": 305.04,
+    "recTD": 2.11
+   }
+  },
+  {
    "name": "Kevin Coleman Jr.",
    "pos": "WR",
    "team": null,
@@ -3647,17 +3658,6 @@
     "rushTD": 0.12,
     "recYds": 151.72,
     "recTD": 0.89
-   }
-  },
-  {
-   "name": "Zavion Thomas",
-   "pos": "WR",
-   "team": null,
-   "stats": {
-    "rushYds": 0,
-    "rushTD": 0,
-    "recYds": 154.07,
-    "recTD": 1.21
    }
   },
   {
@@ -4390,7 +4390,7 @@
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 734.6,
+    "recYds": 736.26,
     "recTD": 3.28
    }
   },
@@ -4633,7 +4633,7 @@
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 279.06,
+    "recYds": 279.73,
     "recTD": 1.63
    }
   },
@@ -4827,15 +4827,6 @@
    }
   },
   {
-   "name": "Ben Sims",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 152.5,
-    "recTD": 1
-   }
-  },
-  {
    "name": "Jackson Hawes",
    "pos": "TE",
    "team": null,
@@ -4940,6 +4931,15 @@
    "team": null,
    "stats": {
     "recYds": 101,
+    "recTD": 1
+   }
+  },
+  {
+   "name": "Will Mallory",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 97,
     "recTD": 1
    }
   },
@@ -5133,11 +5133,11 @@
    }
   },
   {
-   "name": "Tanner Hudson",
+   "name": "Justin Joly",
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 40.5,
+    "recYds": 44,
     "recTD": 0.5
    }
   },
@@ -5179,6 +5179,15 @@
   },
   {
    "name": "Tyler Conklin",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 0,
+    "recTD": 0
+   }
+  },
+  {
+   "name": "Tanner Hudson",
    "pos": "TE",
    "team": null,
    "stats": {
@@ -5232,6 +5241,15 @@
    }
   },
   {
+   "name": "Ben Sims",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 0,
+    "recTD": 0
+   }
+  },
+  {
    "name": "Julian Hill",
    "pos": "TE",
    "team": null,
@@ -5269,15 +5287,6 @@
   },
   {
    "name": "Joe Royer",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 0,
-    "recTD": 0
-   }
-  },
-  {
-   "name": "Justin Joly",
    "pos": "TE",
    "team": null,
    "stats": {

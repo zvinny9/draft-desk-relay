@@ -1,10 +1,10 @@
 {
- "at": 1788311016595,
- "generated": "2026-09-02T01:03:36.595Z",
+ "at": 1788361684758,
+ "generated": "2026-09-02T15:08:04.758Z",
  "season": 2026,
  "source": "draftwizard.fantasypros.com auction calculator, PPR, $200",
- "note": "8tm 347 (top $62), 10tm 347 (top $63), 12tm 347 (top $63), 14tm 347 (top $60)",
- "count": 1388,
+ "note": "8tm 350 (top $62), 10tm 350 (top $63), 12tm 350 (top $63), 14tm 350 (top $60)",
+ "count": 1400,
  "rows": [
   {
    "name": "Josh Allen",
@@ -60,7 +60,7 @@
    "pos": "QB",
    "team": "JAC",
    "teams": 8,
-   "value": 3
+   "value": 2
   },
   {
    "name": "Brock Purdy",
@@ -102,7 +102,7 @@
    "pos": "RB",
    "team": "ATL",
    "teams": 8,
-   "value": 56
+   "value": 55
   },
   {
    "name": "Christian McCaffrey",
@@ -410,7 +410,7 @@
    "pos": "WR",
    "team": "NO",
    "teams": 8,
-   "value": 30
+   "value": 31
   },
   {
    "name": "A.J. Brown",
@@ -1085,18 +1085,18 @@
    "value": -1
   },
   {
-   "name": "Jerry Jeudy",
-   "pos": "WR",
-   "team": "CLE",
-   "teams": 8,
-   "value": -4
-  },
-  {
    "name": "Juwan Johnson",
    "pos": "TE",
    "team": "NO",
    "teams": 8,
    "value": -3
+  },
+  {
+   "name": "Jerry Jeudy",
+   "pos": "WR",
+   "team": "CLE",
+   "teams": 8,
+   "value": -4
   },
   {
    "name": "Hunter Henry",
@@ -1337,6 +1337,13 @@
    "value": -2
   },
   {
+   "name": "Devaughn Vele",
+   "pos": "WR",
+   "team": "NO",
+   "teams": 8,
+   "value": -8
+  },
+  {
    "name": "Chig Okonkwo",
    "pos": "TE",
    "team": "WAS",
@@ -1349,13 +1356,6 @@
    "team": "HOU",
    "teams": 8,
    "value": -4
-  },
-  {
-   "name": "Devaughn Vele",
-   "pos": "WR",
-   "team": "NO",
-   "teams": 8,
-   "value": -8
   },
   {
    "name": "Cooper Kupp",
@@ -1470,6 +1470,13 @@
    "value": -8
   },
   {
+   "name": "Blake Grupe",
+   "pos": "K",
+   "team": "NYJ",
+   "teams": 8,
+   "value": -3
+  },
+  {
    "name": "Justice Hill",
    "pos": "RB",
    "team": "BAL",
@@ -1554,6 +1561,13 @@
    "value": -10
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 8,
+   "value": -10
+  },
+  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -1615,13 +1629,6 @@
    "team": "PHI",
    "teams": 8,
    "value": -1
-  },
-  {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
-   "teams": 8,
-   "value": -11
   },
   {
    "name": "Xavier Hutchinson",
@@ -1841,18 +1848,18 @@
    "value": -2
   },
   {
-   "name": "Miami Dolphins",
-   "pos": "DST",
-   "team": "MIA",
-   "teams": 8,
-   "value": -2
-  },
-  {
    "name": "Bryce Lance",
    "pos": "WR",
    "team": "NO",
    "teams": 8,
    "value": -13
+  },
+  {
+   "name": "Miami Dolphins",
+   "pos": "DST",
+   "team": "MIA",
+   "teams": 8,
+   "value": -2
   },
   {
    "name": "Colby Parkinson",
@@ -2142,6 +2149,13 @@
    "value": -16
   },
   {
+   "name": "Zavion Thomas",
+   "pos": "WR",
+   "team": "CHI",
+   "teams": 8,
+   "value": -16
+  },
+  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -2216,7 +2230,7 @@
    "pos": "WR",
    "team": "NE",
    "teams": 8,
-   "value": -18
+   "value": -17
   },
   {
    "name": "Charlie Kolar",
@@ -2411,6 +2425,13 @@
    "name": "Sean Tucker",
    "pos": "RB",
    "team": "TB",
+   "teams": 8,
+   "value": -15
+  },
+  {
+   "name": "Emari Demercado",
+   "pos": "RB",
+   "team": "DAL",
    "teams": 8,
    "value": -15
   },
@@ -2937,7 +2958,7 @@
    "pos": "WR",
    "team": "NO",
    "teams": 10,
-   "value": 32
+   "value": 33
   },
   {
    "name": "A.J. Brown",
@@ -3336,7 +3357,7 @@
    "pos": "TE",
    "team": "BUF",
    "teams": 10,
-   "value": 2
+   "value": 1
   },
   {
    "name": "Juwan Johnson",
@@ -3630,7 +3651,7 @@
    "pos": "TE",
    "team": "JAC",
    "teams": 10,
-   "value": -1
+   "value": -2
   },
   {
    "name": "Denzel Boston",
@@ -3808,18 +3829,18 @@
    "value": -2
   },
   {
-   "name": "Chig Okonkwo",
-   "pos": "TE",
-   "team": "WAS",
-   "teams": 10,
-   "value": -5
-  },
-  {
    "name": "Devaughn Vele",
    "pos": "WR",
    "team": "NO",
    "teams": 10,
    "value": -6
+  },
+  {
+   "name": "Chig Okonkwo",
+   "pos": "TE",
+   "team": "WAS",
+   "teams": 10,
+   "value": -5
   },
   {
    "name": "Cooper Kupp",
@@ -3920,6 +3941,13 @@
    "value": -6
   },
   {
+   "name": "Blake Grupe",
+   "pos": "K",
+   "team": "NYJ",
+   "teams": 10,
+   "value": -3
+  },
+  {
    "name": "Adonai Mitchell",
    "pos": "WR",
    "team": "NYJ",
@@ -3997,6 +4025,13 @@
    "value": -8
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 10,
+   "value": -8
+  },
+  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -4044,13 +4079,6 @@
    "team": "PHI",
    "teams": 10,
    "value": -1
-  },
-  {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
-   "teams": 10,
-   "value": -9
   },
   {
    "name": "Xavier Hutchinson",
@@ -4270,18 +4298,18 @@
    "value": -2
   },
   {
-   "name": "Miami Dolphins",
-   "pos": "DST",
-   "team": "MIA",
-   "teams": 10,
-   "value": -2
-  },
-  {
    "name": "Bryce Lance",
    "pos": "WR",
    "team": "NO",
    "teams": 10,
    "value": -10
+  },
+  {
+   "name": "Miami Dolphins",
+   "pos": "DST",
+   "team": "MIA",
+   "teams": 10,
+   "value": -2
   },
   {
    "name": "Colby Parkinson",
@@ -4571,6 +4599,13 @@
    "value": -13
   },
   {
+   "name": "Zavion Thomas",
+   "pos": "WR",
+   "team": "CHI",
+   "teams": 10,
+   "value": -13
+  },
+  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -4617,7 +4652,7 @@
    "pos": "TE",
    "team": "MIA",
    "teams": 10,
-   "value": -12
+   "value": -13
   },
   {
    "name": "Kimani Vidal",
@@ -4844,6 +4879,13 @@
    "value": -9
   },
   {
+   "name": "Emari Demercado",
+   "pos": "RB",
+   "team": "DAL",
+   "teams": 10,
+   "value": -10
+  },
+  {
    "name": "Ray Davis",
    "pos": "RB",
    "team": "BUF",
@@ -5051,7 +5093,7 @@
    "pos": "RB",
    "team": "BUF",
    "teams": 12,
-   "value": 35
+   "value": 34
   },
   {
    "name": "Saquon Barkley",
@@ -5450,7 +5492,7 @@
    "pos": "WR",
    "team": "NO",
    "teams": 12,
-   "value": 35
+   "value": 36
   },
   {
    "name": "A.J. Brown",
@@ -6314,18 +6356,18 @@
    "value": -1
   },
   {
-   "name": "Chig Okonkwo",
-   "pos": "TE",
-   "team": "WAS",
-   "teams": 12,
-   "value": -4
-  },
-  {
    "name": "Devaughn Vele",
    "pos": "WR",
    "team": "NO",
    "teams": 12,
    "value": -3
+  },
+  {
+   "name": "Chig Okonkwo",
+   "pos": "TE",
+   "team": "WAS",
+   "teams": 12,
+   "value": -4
   },
   {
    "name": "Cooper Kupp",
@@ -6426,6 +6468,13 @@
    "value": -5
   },
   {
+   "name": "Blake Grupe",
+   "pos": "K",
+   "team": "NYJ",
+   "teams": 12,
+   "value": -3
+  },
+  {
    "name": "Adonai Mitchell",
    "pos": "WR",
    "team": "NYJ",
@@ -6489,6 +6538,13 @@
    "value": -5
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 12,
+   "value": -5
+  },
+  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -6527,13 +6583,6 @@
    "name": "Omar Cooper Jr.",
    "pos": "WR",
    "team": "NYJ",
-   "teams": 12,
-   "value": -5
-  },
-  {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
    "teams": 12,
    "value": -5
   },
@@ -6699,18 +6748,18 @@
    "value": -1
   },
   {
-   "name": "Miami Dolphins",
-   "pos": "DST",
-   "team": "MIA",
-   "teams": 12,
-   "value": -2
-  },
-  {
    "name": "Bryce Lance",
    "pos": "WR",
    "team": "NO",
    "teams": 12,
    "value": -7
+  },
+  {
+   "name": "Miami Dolphins",
+   "pos": "DST",
+   "team": "MIA",
+   "teams": 12,
+   "value": -2
   },
   {
    "name": "Colby Parkinson",
@@ -7000,6 +7049,13 @@
    "value": -9
   },
   {
+   "name": "Zavion Thomas",
+   "pos": "WR",
+   "team": "CHI",
+   "teams": 12,
+   "value": -10
+  },
+  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -7273,6 +7329,13 @@
    "value": -7
   },
   {
+   "name": "Emari Demercado",
+   "pos": "RB",
+   "team": "DAL",
+   "teams": 12,
+   "value": -7
+  },
+  {
    "name": "Ray Davis",
    "pos": "RB",
    "team": "BUF",
@@ -7515,7 +7578,7 @@
    "pos": "RB",
    "team": "LV",
    "teams": 14,
-   "value": 32
+   "value": 31
   },
   {
    "name": "Kenneth Walker III",
@@ -7942,7 +8005,7 @@
    "pos": "WR",
    "team": "NO",
    "teams": 14,
-   "value": 37
+   "value": 38
   },
   {
    "name": "A.J. Brown",
@@ -8939,6 +9002,13 @@
    "value": -3
   },
   {
+   "name": "Blake Grupe",
+   "pos": "K",
+   "team": "NYJ",
+   "teams": 14,
+   "value": -2
+  },
+  {
    "name": "Riley Patterson",
    "pos": "K",
    "team": "MIA",
@@ -8972,6 +9042,13 @@
    "team": "CIN",
    "teams": 14,
    "value": -3
+  },
+  {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 14,
+   "value": -1
   },
   {
    "name": "Chris Bell",
@@ -9012,13 +9089,6 @@
    "name": "Omar Cooper Jr.",
    "pos": "WR",
    "team": "NYJ",
-   "teams": 14,
-   "value": -2
-  },
-  {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
    "teams": 14,
    "value": -2
   },
@@ -9170,18 +9240,18 @@
    "value": -1
   },
   {
-   "name": "Miami Dolphins",
-   "pos": "DST",
-   "team": "MIA",
-   "teams": 14,
-   "value": -1
-  },
-  {
    "name": "Bryce Lance",
    "pos": "WR",
    "team": "NO",
    "teams": 14,
    "value": -3
+  },
+  {
+   "name": "Miami Dolphins",
+   "pos": "DST",
+   "team": "MIA",
+   "teams": 14,
+   "value": -1
   },
   {
    "name": "Colby Parkinson",
@@ -9425,6 +9495,13 @@
    "name": "Jack Bech",
    "pos": "WR",
    "team": "LV",
+   "teams": 14,
+   "value": -5
+  },
+  {
+   "name": "Zavion Thomas",
+   "pos": "WR",
+   "team": "CHI",
    "teams": 14,
    "value": -5
   },
@@ -9698,6 +9775,13 @@
    "name": "Sean Tucker",
    "pos": "RB",
    "team": "TB",
+   "teams": 14,
+   "value": -5
+  },
+  {
+   "name": "Emari Demercado",
+   "pos": "RB",
+   "team": "DAL",
    "teams": 14,
    "value": -5
   },
