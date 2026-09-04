@@ -1,6 +1,6 @@
 {
- "at": 1788483734952,
- "generated": "2026-09-04T01:02:14.952Z",
+ "at": 1788533966398,
+ "generated": "2026-09-04T14:59:26.398Z",
  "season": 2026,
  "source": "draftwizard.fantasypros.com auction calculator, PPR, $200",
  "note": "8tm 350 (top $63), 10tm 350 (top $65), 12tm 350 (top $64), 14tm 350 (top $61)",
@@ -263,7 +263,7 @@
    "pos": "RB",
    "team": "NE",
    "teams": 8,
-   "value": 4
+   "value": 5
   },
   {
    "name": "Rhamondre Stevenson",
@@ -319,7 +319,7 @@
    "pos": "RB",
    "team": "CAR",
    "teams": 8,
-   "value": 2
+   "value": 1
   },
   {
    "name": "RJ Harvey",
@@ -329,16 +329,16 @@
    "value": 1
   },
   {
-   "name": "MarShawn Lloyd",
+   "name": "Aaron Jones Sr.",
    "pos": "RB",
-   "team": "GB",
+   "team": "MIN",
    "teams": 8,
    "value": 1
   },
   {
-   "name": "Aaron Jones Sr.",
+   "name": "MarShawn Lloyd",
    "pos": "RB",
-   "team": "MIN",
+   "team": "GB",
    "teams": 8,
    "value": 1
   },
@@ -385,16 +385,16 @@
    "value": 37
   },
   {
-   "name": "CeeDee Lamb",
-   "pos": "WR",
-   "team": "DAL",
-   "teams": 8,
-   "value": 35
-  },
-  {
    "name": "Justin Jefferson",
    "pos": "WR",
    "team": "MIN",
+   "teams": 8,
+   "value": 36
+  },
+  {
+   "name": "CeeDee Lamb",
+   "pos": "WR",
+   "team": "DAL",
    "teams": 8,
    "value": 35
   },
@@ -851,7 +851,7 @@
    "pos": "QB",
    "team": "MIN",
    "teams": 8,
-   "value": -3
+   "value": -2
   },
   {
    "name": "Jared Goff",
@@ -928,7 +928,7 @@
    "pos": "QB",
    "team": "TEN",
    "teams": 8,
-   "value": -12
+   "value": -11
   },
   {
    "name": "Jacoby Brissett",
@@ -1036,16 +1036,16 @@
    "value": -3
   },
   {
-   "name": "Josh Downs",
+   "name": "Romeo Doubs",
    "pos": "WR",
-   "team": "IND",
+   "team": "NE",
    "teams": 8,
    "value": -3
   },
   {
-   "name": "Romeo Doubs",
+   "name": "Josh Downs",
    "pos": "WR",
-   "team": "NE",
+   "team": "IND",
    "teams": 8,
    "value": -3
   },
@@ -1554,13 +1554,6 @@
    "value": -10
   },
   {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
-   "teams": 8,
-   "value": -10
-  },
-  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -1624,6 +1617,13 @@
    "value": -1
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 8,
+   "value": -11
+  },
+  {
    "name": "Xavier Hutchinson",
    "pos": "WR",
    "team": "HOU",
@@ -1659,13 +1659,6 @@
    "value": -1
   },
   {
-   "name": "New Orleans Saints",
-   "pos": "DST",
-   "team": "NO",
-   "teams": 8,
-   "value": -1
-  },
-  {
    "name": "Jacksonville Jaguars",
    "pos": "DST",
    "team": "JAC",
@@ -1678,6 +1671,13 @@
    "team": "CAR",
    "teams": 8,
    "value": -8
+  },
+  {
+   "name": "New Orleans Saints",
+   "pos": "DST",
+   "team": "NO",
+   "teams": 8,
+   "value": -1
   },
   {
    "name": "New England Patriots",
@@ -1771,18 +1771,18 @@
    "value": -9
   },
   {
-   "name": "Tory Horton",
-   "pos": "WR",
-   "team": "SEA",
-   "teams": 8,
-   "value": -12
-  },
-  {
    "name": "Washington Commanders",
    "pos": "DST",
    "team": "WAS",
    "teams": 8,
    "value": -2
+  },
+  {
+   "name": "Tory Horton",
+   "pos": "WR",
+   "team": "SEA",
+   "teams": 8,
+   "value": -12
   },
   {
    "name": "Xavier Legette",
@@ -2149,13 +2149,6 @@
    "value": -16
   },
   {
-   "name": "Zavion Thomas",
-   "pos": "WR",
-   "team": "CHI",
-   "teams": 8,
-   "value": -16
-  },
-  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -2324,18 +2317,18 @@
    "value": -17
   },
   {
-   "name": "Emanuel Wilson",
-   "pos": "RB",
-   "team": "SEA",
-   "teams": 8,
-   "value": -14
-  },
-  {
    "name": "Eli Raridon",
    "pos": "TE",
    "team": "NE",
    "teams": 8,
    "value": -17
+  },
+  {
+   "name": "Emanuel Wilson",
+   "pos": "RB",
+   "team": "SEA",
+   "teams": 8,
+   "value": -14
   },
   {
    "name": "Noah Gray",
@@ -2455,6 +2448,13 @@
    "team": "DAL",
    "teams": 8,
    "value": -16
+  },
+  {
+   "name": "Corey Kiner",
+   "pos": "RB",
+   "team": "NE",
+   "teams": 8,
+   "value": -17
   },
   {
    "name": "Josh Allen",
@@ -2797,7 +2797,7 @@
    "pos": "RB",
    "team": "CAR",
    "teams": 10,
-   "value": 7
+   "value": 6
   },
   {
    "name": "RJ Harvey",
@@ -2807,16 +2807,16 @@
    "value": 6
   },
   {
-   "name": "MarShawn Lloyd",
+   "name": "Aaron Jones Sr.",
    "pos": "RB",
-   "team": "GB",
+   "team": "MIN",
    "teams": 10,
    "value": 6
   },
   {
-   "name": "Aaron Jones Sr.",
+   "name": "MarShawn Lloyd",
    "pos": "RB",
-   "team": "MIN",
+   "team": "GB",
    "teams": 10,
    "value": 6
   },
@@ -2846,7 +2846,7 @@
    "pos": "RB",
    "team": "MIN",
    "teams": 10,
-   "value": 4
+   "value": 5
   },
   {
    "name": "Blake Corum",
@@ -2933,18 +2933,18 @@
    "value": 37
   },
   {
+   "name": "Justin Jefferson",
+   "pos": "WR",
+   "team": "MIN",
+   "teams": 10,
+   "value": 36
+  },
+  {
    "name": "CeeDee Lamb",
    "pos": "WR",
    "team": "DAL",
    "teams": 10,
    "value": 36
-  },
-  {
-   "name": "Justin Jefferson",
-   "pos": "WR",
-   "team": "MIN",
-   "teams": 10,
-   "value": 35
   },
   {
    "name": "Rashee Rice",
@@ -3084,7 +3084,7 @@
    "pos": "WR",
    "team": "CHI",
    "teams": 10,
-   "value": 12
+   "value": 11
   },
   {
    "name": "Courtland Sutton",
@@ -3248,9 +3248,9 @@
    "value": 1
   },
   {
-   "name": "Josh Downs",
+   "name": "Romeo Doubs",
    "pos": "WR",
-   "team": "IND",
+   "team": "NE",
    "teams": 10,
    "value": 1
   },
@@ -3605,9 +3605,9 @@
    "value": -14
   },
   {
-   "name": "Romeo Doubs",
+   "name": "Josh Downs",
    "pos": "WR",
-   "team": "NE",
+   "team": "IND",
    "teams": 10,
    "value": -1
   },
@@ -4018,13 +4018,6 @@
    "value": -8
   },
   {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
-   "teams": 10,
-   "value": -8
-  },
-  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -4074,6 +4067,13 @@
    "value": -1
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 10,
+   "value": -8
+  },
+  {
    "name": "Xavier Hutchinson",
    "pos": "WR",
    "team": "HOU",
@@ -4109,13 +4109,6 @@
    "value": -1
   },
   {
-   "name": "New Orleans Saints",
-   "pos": "DST",
-   "team": "NO",
-   "teams": 10,
-   "value": -1
-  },
-  {
    "name": "Jacksonville Jaguars",
    "pos": "DST",
    "team": "JAC",
@@ -4128,6 +4121,13 @@
    "team": "CAR",
    "teams": 10,
    "value": -2
+  },
+  {
+   "name": "New Orleans Saints",
+   "pos": "DST",
+   "team": "NO",
+   "teams": 10,
+   "value": -1
   },
   {
    "name": "New England Patriots",
@@ -4204,7 +4204,7 @@
    "pos": "DST",
    "team": "GB",
    "teams": 10,
-   "value": -1
+   "value": -2
   },
   {
    "name": "Indianapolis Colts",
@@ -4221,18 +4221,18 @@
    "value": -3
   },
   {
-   "name": "Tory Horton",
-   "pos": "WR",
-   "team": "SEA",
-   "teams": 10,
-   "value": -9
-  },
-  {
    "name": "Washington Commanders",
    "pos": "DST",
    "team": "WAS",
    "teams": 10,
    "value": -2
+  },
+  {
+   "name": "Tory Horton",
+   "pos": "WR",
+   "team": "SEA",
+   "teams": 10,
+   "value": -9
   },
   {
    "name": "Xavier Legette",
@@ -4599,13 +4599,6 @@
    "value": -13
   },
   {
-   "name": "Zavion Thomas",
-   "pos": "WR",
-   "team": "CHI",
-   "teams": 10,
-   "value": -13
-  },
-  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -4774,18 +4767,18 @@
    "value": -14
   },
   {
-   "name": "Emanuel Wilson",
-   "pos": "RB",
-   "team": "SEA",
-   "teams": 10,
-   "value": -7
-  },
-  {
    "name": "Eli Raridon",
    "pos": "TE",
    "team": "NE",
    "teams": 10,
    "value": -14
+  },
+  {
+   "name": "Emanuel Wilson",
+   "pos": "RB",
+   "team": "SEA",
+   "teams": 10,
+   "value": -7
   },
   {
    "name": "Noah Gray",
@@ -4905,6 +4898,13 @@
    "team": "DAL",
    "teams": 10,
    "value": -9
+  },
+  {
+   "name": "Corey Kiner",
+   "pos": "RB",
+   "team": "NE",
+   "teams": 10,
+   "value": -10
   },
   {
    "name": "Josh Allen",
@@ -5268,7 +5268,7 @@
    "pos": "RB",
    "team": "CAR",
    "teams": 12,
-   "value": 9
+   "value": 8
   },
   {
    "name": "RJ Harvey",
@@ -5278,16 +5278,16 @@
    "value": 8
   },
   {
-   "name": "MarShawn Lloyd",
+   "name": "Aaron Jones Sr.",
    "pos": "RB",
-   "team": "GB",
+   "team": "MIN",
    "teams": 12,
    "value": 8
   },
   {
-   "name": "Aaron Jones Sr.",
+   "name": "MarShawn Lloyd",
    "pos": "RB",
-   "team": "MIN",
+   "team": "GB",
    "teams": 12,
    "value": 8
   },
@@ -5467,16 +5467,16 @@
    "value": 39
   },
   {
-   "name": "CeeDee Lamb",
+   "name": "Justin Jefferson",
    "pos": "WR",
-   "team": "DAL",
+   "team": "MIN",
    "teams": 12,
    "value": 38
   },
   {
-   "name": "Justin Jefferson",
+   "name": "CeeDee Lamb",
    "pos": "WR",
-   "team": "MIN",
+   "team": "DAL",
    "teams": 12,
    "value": 38
   },
@@ -5782,16 +5782,16 @@
    "value": 4
   },
   {
-   "name": "Josh Downs",
+   "name": "Romeo Doubs",
    "pos": "WR",
-   "team": "IND",
+   "team": "NE",
    "teams": 12,
    "value": 4
   },
   {
-   "name": "Romeo Doubs",
+   "name": "Josh Downs",
    "pos": "WR",
-   "team": "NE",
+   "team": "IND",
    "teams": 12,
    "value": 4
   },
@@ -5898,7 +5898,7 @@
    "pos": "TE",
    "team": "ATL",
    "teams": 12,
-   "value": 12
+   "value": 11
   },
   {
    "name": "George Kittle",
@@ -6010,7 +6010,7 @@
    "pos": "DST",
    "team": "MIN",
    "teams": 12,
-   "value": 2
+   "value": 1
   },
   {
    "name": "Pittsburgh Steelers",
@@ -6262,7 +6262,7 @@
    "pos": "QB",
    "team": "CLE",
    "teams": 12,
-   "value": -19
+   "value": -18
   },
   {
    "name": "Jauan Jennings",
@@ -6538,13 +6538,6 @@
    "value": -5
   },
   {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
-   "teams": 12,
-   "value": -5
-  },
-  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -6587,6 +6580,13 @@
    "value": -5
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 12,
+   "value": -5
+  },
+  {
    "name": "Xavier Hutchinson",
    "pos": "WR",
    "team": "HOU",
@@ -6608,16 +6608,16 @@
    "value": -1
   },
   {
-   "name": "New Orleans Saints",
+   "name": "Jacksonville Jaguars",
    "pos": "DST",
-   "team": "NO",
+   "team": "JAC",
    "teams": 12,
    "value": -1
   },
   {
-   "name": "Jacksonville Jaguars",
+   "name": "New Orleans Saints",
    "pos": "DST",
-   "team": "JAC",
+   "team": "NO",
    "teams": 12,
    "value": -1
   },
@@ -6685,18 +6685,18 @@
    "value": -1
   },
   {
-   "name": "Tory Horton",
-   "pos": "WR",
-   "team": "SEA",
-   "teams": 12,
-   "value": -6
-  },
-  {
    "name": "Washington Commanders",
    "pos": "DST",
    "team": "WAS",
    "teams": 12,
    "value": -1
+  },
+  {
+   "name": "Tory Horton",
+   "pos": "WR",
+   "team": "SEA",
+   "teams": 12,
+   "value": -6
   },
   {
    "name": "Xavier Legette",
@@ -7049,13 +7049,6 @@
    "value": -9
   },
   {
-   "name": "Zavion Thomas",
-   "pos": "WR",
-   "team": "CHI",
-   "teams": 12,
-   "value": -9
-  },
-  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -7224,18 +7217,18 @@
    "value": -12
   },
   {
-   "name": "Emanuel Wilson",
-   "pos": "RB",
-   "team": "SEA",
-   "teams": 12,
-   "value": -4
-  },
-  {
    "name": "Eli Raridon",
    "pos": "TE",
    "team": "NE",
    "teams": 12,
    "value": -12
+  },
+  {
+   "name": "Emanuel Wilson",
+   "pos": "RB",
+   "team": "SEA",
+   "teams": 12,
+   "value": -4
   },
   {
    "name": "Noah Gray",
@@ -7357,6 +7350,13 @@
    "value": -7
   },
   {
+   "name": "Corey Kiner",
+   "pos": "RB",
+   "team": "NE",
+   "teams": 12,
+   "value": -7
+  },
+  {
    "name": "Josh Allen",
    "pos": "QB",
    "team": "BUF",
@@ -7382,7 +7382,7 @@
    "pos": "QB",
    "team": "NE",
    "teams": 14,
-   "value": 13
+   "value": 14
   },
   {
    "name": "Jalen Hurts",
@@ -7438,7 +7438,7 @@
    "pos": "QB",
    "team": "CHI",
    "teams": 14,
-   "value": 7
+   "value": 8
   },
   {
    "name": "Justin Herbert",
@@ -7459,7 +7459,7 @@
    "pos": "QB",
    "team": "LAR",
    "teams": 14,
-   "value": 5
+   "value": 6
   },
   {
    "name": "Kyler Murray",
@@ -7585,7 +7585,7 @@
    "pos": "RB",
    "team": "KC",
    "teams": 14,
-   "value": 32
+   "value": 31
   },
   {
    "name": "Omarion Hampton",
@@ -7634,7 +7634,7 @@
    "pos": "RB",
    "team": "NYG",
    "teams": 14,
-   "value": 26
+   "value": 25
   },
   {
    "name": "D'Andre Swift",
@@ -7739,7 +7739,7 @@
    "pos": "RB",
    "team": "CAR",
    "teams": 14,
-   "value": 11
+   "value": 10
   },
   {
    "name": "RJ Harvey",
@@ -7749,16 +7749,16 @@
    "value": 10
   },
   {
-   "name": "MarShawn Lloyd",
+   "name": "Aaron Jones Sr.",
    "pos": "RB",
-   "team": "GB",
+   "team": "MIN",
    "teams": 14,
    "value": 10
   },
   {
-   "name": "Aaron Jones Sr.",
+   "name": "MarShawn Lloyd",
    "pos": "RB",
-   "team": "MIN",
+   "team": "GB",
    "teams": 14,
    "value": 10
   },
@@ -7980,18 +7980,18 @@
    "value": 41
   },
   {
+   "name": "Justin Jefferson",
+   "pos": "WR",
+   "team": "MIN",
+   "teams": 14,
+   "value": 40
+  },
+  {
    "name": "CeeDee Lamb",
    "pos": "WR",
    "team": "DAL",
    "teams": 14,
    "value": 40
-  },
-  {
-   "name": "Justin Jefferson",
-   "pos": "WR",
-   "team": "MIN",
-   "teams": 14,
-   "value": 39
   },
   {
    "name": "Rashee Rice",
@@ -8201,7 +8201,7 @@
    "pos": "WR",
    "team": "TEN",
    "teams": 14,
-   "value": 13
+   "value": 12
   },
   {
    "name": "Carnell Tate",
@@ -8295,16 +8295,16 @@
    "value": 9
   },
   {
-   "name": "Josh Downs",
+   "name": "Romeo Doubs",
    "pos": "WR",
-   "team": "IND",
+   "team": "NE",
    "teams": 14,
    "value": 9
   },
   {
-   "name": "Romeo Doubs",
+   "name": "Josh Downs",
    "pos": "WR",
-   "team": "NE",
+   "team": "IND",
    "teams": 14,
    "value": 9
   },
@@ -8502,7 +8502,7 @@
    "pos": "TE",
    "team": "ATL",
    "teams": 14,
-   "value": 14
+   "value": 13
   },
   {
    "name": "George Kittle",
@@ -9044,13 +9044,6 @@
    "value": -3
   },
   {
-   "name": "Dontayvion Wicks",
-   "pos": "WR",
-   "team": "PHI",
-   "teams": 14,
-   "value": -1
-  },
-  {
    "name": "Chris Bell",
    "pos": "WR",
    "team": "MIA",
@@ -9093,6 +9086,13 @@
    "value": -2
   },
   {
+   "name": "Dontayvion Wicks",
+   "pos": "WR",
+   "team": "PHI",
+   "teams": 14,
+   "value": -2
+  },
+  {
    "name": "Xavier Hutchinson",
    "pos": "WR",
    "team": "HOU",
@@ -9100,16 +9100,16 @@
    "value": -2
   },
   {
-   "name": "New Orleans Saints",
+   "name": "Jacksonville Jaguars",
    "pos": "DST",
-   "team": "NO",
+   "team": "JAC",
    "teams": 14,
    "value": -1
   },
   {
-   "name": "Jacksonville Jaguars",
+   "name": "New Orleans Saints",
    "pos": "DST",
-   "team": "JAC",
+   "team": "NO",
    "teams": 14,
    "value": -1
   },
@@ -9177,18 +9177,18 @@
    "value": -1
   },
   {
-   "name": "Tory Horton",
-   "pos": "WR",
-   "team": "SEA",
-   "teams": 14,
-   "value": -2
-  },
-  {
    "name": "Washington Commanders",
    "pos": "DST",
    "team": "WAS",
    "teams": 14,
    "value": -1
+  },
+  {
+   "name": "Tory Horton",
+   "pos": "WR",
+   "team": "SEA",
+   "teams": 14,
+   "value": -2
   },
   {
    "name": "Xavier Legette",
@@ -9499,13 +9499,6 @@
    "value": -5
   },
   {
-   "name": "Zavion Thomas",
-   "pos": "WR",
-   "team": "CHI",
-   "teams": 14,
-   "value": -5
-  },
-  {
    "name": "Noah Fant",
    "pos": "TE",
    "team": "NO",
@@ -9674,18 +9667,18 @@
    "value": -9
   },
   {
-   "name": "Emanuel Wilson",
-   "pos": "RB",
-   "team": "SEA",
-   "teams": 14,
-   "value": -3
-  },
-  {
    "name": "Eli Raridon",
    "pos": "TE",
    "team": "NE",
    "teams": 14,
    "value": -9
+  },
+  {
+   "name": "Emanuel Wilson",
+   "pos": "RB",
+   "team": "SEA",
+   "teams": 14,
+   "value": -3
   },
   {
    "name": "Noah Gray",
@@ -9803,6 +9796,13 @@
    "name": "Emari Demercado",
    "pos": "RB",
    "team": "DAL",
+   "teams": 14,
+   "value": -5
+  },
+  {
+   "name": "Corey Kiner",
+   "pos": "RB",
+   "team": "NE",
    "teams": 14,
    "value": -5
   }
