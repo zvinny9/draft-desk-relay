@@ -1,10 +1,10 @@
 {
- "at": 1788447721776,
- "generated": "2026-09-03T15:02:01.776Z",
+ "at": 1788483748910,
+ "generated": "2026-09-04T01:02:28.910Z",
  "season": 2026,
  "source": "fantasypros projections (PPR, draft week)",
- "note": "493 players — QB 79, RB 119, WR 177, TE 118",
- "count": 493,
+ "note": "494 players — QB 79, RB 120, WR 177, TE 118",
+ "count": 494,
  "rows": [
   {
    "name": "Josh Allen",
@@ -2041,6 +2041,17 @@
     "rushTD": 0.5,
     "recYds": 14.5,
     "recTD": 0
+   }
+  },
+  {
+   "name": "Andrew Beck",
+   "pos": "RB",
+   "team": null,
+   "stats": {
+    "rushYds": 4,
+    "rushTD": 0,
+    "recYds": 31.77,
+    "recTD": 1.12
    }
   },
   {

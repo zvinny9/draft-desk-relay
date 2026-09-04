@@ -1,10 +1,10 @@
 {
- "at": 1788447721283,
- "generated": "2026-09-03T15:02:01.283Z",
+ "at": 1788483748233,
+ "generated": "2026-09-04T01:02:28.233Z",
  "season": 2026,
  "source": "myffpc.com Superflex Best Ball Tournament",
- "note": "276 leagues, last 14 days",
- "count": 377,
+ "note": "262 leagues, last 14 days",
+ "count": 376,
  "rows": [
   {
    "name": "Jahmyr Gibbs",
@@ -14,7 +14,7 @@
   },
   {
    "name": "Josh Allen",
-   "adp": 2.14,
+   "adp": 2.13,
    "pos": "QB",
    "team": "BUF"
   },
@@ -26,7 +26,7 @@
   },
   {
    "name": "Ja'Marr Chase",
-   "adp": 4.42,
+   "adp": 4.41,
    "pos": "WR",
    "team": "CIN"
   },
@@ -38,219 +38,213 @@
   },
   {
    "name": "Puka Nacua",
-   "adp": 6.59,
+   "adp": 6.61,
    "pos": "WR",
    "team": "LAR"
   },
   {
    "name": "Drake Maye",
-   "adp": 7.92,
+   "adp": 7.95,
    "pos": "QB",
    "team": "NE"
   },
   {
    "name": "Christian McCaffrey",
-   "adp": 8.72,
+   "adp": 8.71,
    "pos": "RB",
    "team": "SF"
   },
   {
    "name": "Jaxon Smith-Njigba",
-   "adp": 9.99,
+   "adp": 9.89,
    "pos": "WR",
    "team": "SEA"
   },
   {
    "name": "Brock Bowers",
-   "adp": 10.59,
+   "adp": 10.68,
    "pos": "TE",
    "team": "LV"
   },
   {
    "name": "Jonathan Taylor",
-   "adp": 11.18,
+   "adp": 11.09,
    "pos": "RB",
    "team": "IND"
   },
   {
    "name": "Amon-Ra St. Brown",
-   "adp": 12.02,
+   "adp": 11.99,
    "pos": "WR",
    "team": "DET"
   },
   {
    "name": "Joe Burrow",
-   "adp": 13.41,
+   "adp": 13.44,
    "pos": "QB",
    "team": "CIN"
   },
   {
    "name": "James Cook",
-   "adp": 14.28,
+   "adp": 14.23,
    "pos": "RB",
    "team": "BUF"
   },
   {
    "name": "Jayden Daniels",
-   "adp": 15.22,
+   "adp": 15.27,
    "pos": "QB",
    "team": "WAS"
   },
   {
    "name": "Jalen Hurts",
-   "adp": 17.49,
+   "adp": 17.44,
    "pos": "QB",
    "team": "PHI"
   },
   {
    "name": "Chase Brown",
-   "adp": 17.8,
+   "adp": 17.71,
    "pos": "RB",
    "team": "CIN"
   },
   {
    "name": "Caleb Williams",
-   "adp": 19.33,
+   "adp": 19.42,
    "pos": "QB",
    "team": "CHI"
   },
   {
    "name": "Trey McBride",
-   "adp": 19.71,
+   "adp": 19.69,
    "pos": "TE",
    "team": "ARI"
   },
   {
    "name": "CeeDee Lamb",
-   "adp": 21.22,
+   "adp": 21.27,
    "pos": "WR",
    "team": "DAL"
   },
   {
-   "name": "Ashton Jeanty",
-   "adp": 21.75,
-   "pos": "RB",
-   "team": "LV"
-  },
-  {
    "name": "Saquon Barkley",
-   "adp": 22.17,
+   "adp": 21.97,
    "pos": "RB",
    "team": "PHI"
   },
   {
+   "name": "Ashton Jeanty",
+   "adp": 22.29,
+   "pos": "RB",
+   "team": "LV"
+  },
+  {
    "name": "Justin Jefferson",
-   "adp": 22.52,
+   "adp": 22.47,
    "pos": "WR",
    "team": "MIN"
   },
   {
    "name": "De'Von Achane",
-   "adp": 24.43,
+   "adp": 24.41,
    "pos": "RB",
    "team": "MIA"
   },
   {
    "name": "Omarion Hampton",
-   "adp": 24.9,
+   "adp": 24.96,
    "pos": "RB",
    "team": "LAC"
   },
   {
    "name": "Justin Herbert",
-   "adp": 25.32,
+   "adp": 25.27,
    "pos": "QB",
    "team": "LAC"
   },
   {
    "name": "Dak Prescott",
-   "adp": 25.46,
+   "adp": 25.48,
    "pos": "QB",
    "team": "DAL"
   },
   {
    "name": "Kenneth Walker",
-   "adp": 26.93,
+   "adp": 27,
    "pos": "RB",
    "team": "KC"
   },
   {
    "name": "Trevor Lawrence",
-   "adp": 28.54,
+   "adp": 28.53,
    "pos": "QB",
    "team": "JAC"
   },
   {
    "name": "Derrick Henry",
-   "adp": 30.55,
+   "adp": 30.49,
    "pos": "RB",
    "team": "BAL"
   },
   {
    "name": "A.J. Brown",
-   "adp": 30.62,
+   "adp": 30.75,
    "pos": "WR",
    "team": "NE"
   },
   {
    "name": "Colston Loveland",
-   "adp": 32.27,
+   "adp": 32.2,
    "pos": "TE",
    "team": "CHI"
   },
   {
    "name": "Jaxson Dart",
-   "adp": 34.99,
+   "adp": 35,
    "pos": "QB",
    "team": "NYG"
   },
   {
    "name": "Brock Purdy",
-   "adp": 35.43,
+   "adp": 35.44,
    "pos": "QB",
    "team": "SF"
   },
   {
    "name": "Drake London",
-   "adp": 35.67,
+   "adp": 35.72,
    "pos": "WR",
    "team": "ATL"
   },
   {
    "name": "Bo Nix",
-   "adp": 36.69,
+   "adp": 36.61,
    "pos": "QB",
    "team": "DEN"
   },
   {
    "name": "Nico Collins",
-   "adp": 37.93,
+   "adp": 37.79,
    "pos": "WR",
    "team": "HOU"
   },
   {
    "name": "Patrick Mahomes",
-   "adp": 38.63,
+   "adp": 38.53,
    "pos": "QB",
    "team": "KC"
   },
   {
    "name": "Malik Nabers",
-   "adp": 39.69,
+   "adp": 39.61,
    "pos": "WR",
    "team": "NYG"
   },
   {
    "name": "Jared Goff",
-   "adp": 39.89,
+   "adp": 39.98,
    "pos": "QB",
    "team": "DET"
-  },
-  {
-   "name": "George Pickens",
-   "adp": 42.16,
-   "pos": "WR",
-   "team": "DAL"
   },
   {
    "name": "Matthew Stafford",
@@ -259,50 +253,56 @@
    "team": "LAR"
   },
   {
+   "name": "George Pickens",
+   "adp": 42.35,
+   "pos": "WR",
+   "team": "DAL"
+  },
+  {
    "name": "Jeremiyah Love",
-   "adp": 43.7,
+   "adp": 43.78,
    "pos": "RB",
    "team": "ARI"
   },
   {
    "name": "Chris Olave",
-   "adp": 44.59,
+   "adp": 44.45,
    "pos": "WR",
    "team": "NO"
   },
   {
    "name": "Kyler Murray",
-   "adp": 45.98,
+   "adp": 46,
    "pos": "QB",
    "team": "MIN"
   },
   {
    "name": "Kyren Williams",
-   "adp": 46.73,
+   "adp": 46.38,
    "pos": "RB",
    "team": "LAR"
   },
   {
    "name": "Rashee Rice",
-   "adp": 47.58,
+   "adp": 47.96,
    "pos": "WR",
    "team": "KC"
   },
   {
    "name": "Javonte Williams",
-   "adp": 48.57,
+   "adp": 48.24,
    "pos": "RB",
    "team": "DAL"
   },
   {
    "name": "Breece Hall",
-   "adp": 48.93,
+   "adp": 48.91,
    "pos": "RB",
    "team": "NYJ"
   },
   {
    "name": "Baker Mayfield",
-   "adp": 49.86,
+   "adp": 49.97,
    "pos": "QB",
    "team": "TB"
   },
@@ -314,229 +314,229 @@
   },
   {
    "name": "Jordan Love",
-   "adp": 51.68,
+   "adp": 51.73,
    "pos": "QB",
    "team": "GB"
   },
   {
    "name": "Tyler Shough",
-   "adp": 52.14,
+   "adp": 52.31,
    "pos": "QB",
    "team": "NO"
   },
   {
    "name": "DeVonta Smith",
-   "adp": 52.78,
+   "adp": 52.7,
    "pos": "WR",
    "team": "PHI"
   },
   {
    "name": "Zay Flowers",
-   "adp": 56.41,
+   "adp": 56.37,
    "pos": "WR",
    "team": "BAL"
   },
   {
    "name": "Travis Etienne",
-   "adp": 57.11,
+   "adp": 56.99,
    "pos": "RB",
    "team": "NO"
   },
   {
    "name": "Ladd McConkey",
-   "adp": 57.49,
+   "adp": 57.45,
    "pos": "WR",
    "team": "LAC"
   },
   {
    "name": "Malik Willis",
-   "adp": 58.12,
+   "adp": 58.3,
    "pos": "QB",
    "team": "MIA"
   },
   {
    "name": "D'Andre Swift",
-   "adp": 58.96,
+   "adp": 58.88,
    "pos": "RB",
    "team": "CHI"
   },
   {
    "name": "Cam Skattebo",
-   "adp": 61.08,
+   "adp": 61.2,
    "pos": "RB",
    "team": "NYG"
   },
   {
    "name": "Sam Darnold",
-   "adp": 63.59,
+   "adp": 63.62,
    "pos": "QB",
    "team": "SEA"
   },
   {
-   "name": "Tee Higgins",
-   "adp": 63.85,
-   "pos": "WR",
-   "team": "CIN"
-  },
-  {
    "name": "Garrett Wilson",
-   "adp": 63.97,
+   "adp": 63.82,
    "pos": "WR",
    "team": "NYJ"
   },
   {
+   "name": "Tee Higgins",
+   "adp": 63.82,
+   "pos": "WR",
+   "team": "CIN"
+  },
+  {
    "name": "Jaylen Waddle",
-   "adp": 64.8,
+   "adp": 64.56,
    "pos": "WR",
    "team": "DEN"
   },
   {
    "name": "Daniel Jones",
-   "adp": 65.53,
+   "adp": 65.71,
    "pos": "QB",
    "team": "IND"
   },
   {
    "name": "Emeka Egbuka",
-   "adp": 66.56,
+   "adp": 67.02,
    "pos": "WR",
    "team": "TB"
   },
   {
    "name": "Bhayshul Tuten",
-   "adp": 68.2,
+   "adp": 68.25,
    "pos": "RB",
    "team": "JAC"
   },
   {
    "name": "Tetairoa McMillan",
-   "adp": 70.13,
+   "adp": 70.08,
    "pos": "WR",
    "team": "CAR"
   },
   {
    "name": "C.J. Stroud",
-   "adp": 70.58,
+   "adp": 70.69,
    "pos": "QB",
    "team": "HOU"
   },
   {
    "name": "David Montgomery",
-   "adp": 71.34,
+   "adp": 71.33,
    "pos": "RB",
    "team": "HOU"
   },
   {
    "name": "DJ Moore",
-   "adp": 71.66,
+   "adp": 71.45,
    "pos": "WR",
    "team": "BUF"
   },
   {
    "name": "Josh Jacobs",
-   "adp": 72.32,
+   "adp": 73.03,
    "pos": "RB",
    "team": "GB"
   },
   {
+   "name": "Bucky Irving",
+   "adp": 73.84,
+   "pos": "RB",
+   "team": "TB"
+  },
+  {
    "name": "Tucker Kraft",
-   "adp": 73.71,
+   "adp": 73.85,
    "pos": "TE",
    "team": "GB"
   },
   {
    "name": "Luther Burden",
-   "adp": 74.17,
+   "adp": 74.11,
    "pos": "WR",
    "team": "CHI"
   },
   {
-   "name": "Bucky Irving",
-   "adp": 74.19,
-   "pos": "RB",
-   "team": "TB"
-  },
-  {
    "name": "Quinshon Judkins",
-   "adp": 75.09,
+   "adp": 75.22,
    "pos": "RB",
    "team": "CLE"
   },
   {
    "name": "Jadarian Price",
-   "adp": 75.93,
+   "adp": 75.48,
    "pos": "RB",
    "team": "SEA"
   },
   {
    "name": "Kyle Pitts",
-   "adp": 78.99,
+   "adp": 79.41,
    "pos": "TE",
    "team": "ATL"
   },
   {
    "name": "Davante Adams",
-   "adp": 80.83,
+   "adp": 80.8,
    "pos": "WR",
    "team": "LAR"
   },
   {
    "name": "Cam Ward",
-   "adp": 81.08,
+   "adp": 81.16,
    "pos": "QB",
    "team": "TEN"
   },
   {
    "name": "Jameson Williams",
-   "adp": 82.6,
+   "adp": 82.29,
    "pos": "WR",
    "team": "DET"
   },
   {
    "name": "Terry McLaurin",
-   "adp": 82.64,
+   "adp": 82.77,
    "pos": "WR",
    "team": "WAS"
   },
   {
    "name": "Harold Fannin",
-   "adp": 82.81,
+   "adp": 83.04,
    "pos": "TE",
    "team": "CLE"
   },
   {
-   "name": "TreVeyon Henderson",
-   "adp": 84.19,
-   "pos": "RB",
-   "team": "NE"
-  },
-  {
    "name": "Bryce Young",
-   "adp": 84.39,
+   "adp": 84.47,
    "pos": "QB",
    "team": "CAR"
   },
   {
-   "name": "Sam LaPorta",
-   "adp": 85.35,
-   "pos": "TE",
-   "team": "DET"
+   "name": "TreVeyon Henderson",
+   "adp": 84.58,
+   "pos": "RB",
+   "team": "NE"
   },
   {
    "name": "Parker Washington",
-   "adp": 85.46,
+   "adp": 85.01,
    "pos": "WR",
    "team": "JAC"
   },
   {
+   "name": "Sam LaPorta",
+   "adp": 85.44,
+   "pos": "TE",
+   "team": "DET"
+  },
+  {
    "name": "Rome Odunze",
-   "adp": 85.98,
+   "adp": 85.9,
    "pos": "WR",
    "team": "CHI"
   },
   {
    "name": "Rhamondre Stevenson",
-   "adp": 88.05,
+   "adp": 87.54,
    "pos": "RB",
    "team": "NE"
   },
@@ -548,169 +548,169 @@
   },
   {
    "name": "Jaylen Warren",
-   "adp": 91.64,
+   "adp": 91.7,
    "pos": "RB",
    "team": "PIT"
   },
   {
    "name": "Jacoby Brissett",
-   "adp": 92.6,
+   "adp": 92.63,
    "pos": "QB",
    "team": "ARI"
   },
   {
    "name": "Jonathon Brooks",
-   "adp": 93.05,
+   "adp": 93.26,
    "pos": "RB",
    "team": "CAR"
   },
   {
    "name": "George Kittle",
-   "adp": 93.8,
+   "adp": 93.76,
    "pos": "TE",
    "team": "SF"
   },
   {
    "name": "Mike Evans",
-   "adp": 94.41,
+   "adp": 94.73,
    "pos": "WR",
    "team": "SF"
   },
   {
    "name": "Marvin Harrison",
-   "adp": 97.93,
+   "adp": 97.78,
    "pos": "WR",
    "team": "ARI"
   },
   {
    "name": "Aaron Rodgers",
-   "adp": 99.95,
+   "adp": 100.06,
    "pos": "QB",
    "team": "PIT"
   },
   {
    "name": "Travis Kelce",
-   "adp": 100.61,
+   "adp": 100.84,
    "pos": "TE",
    "team": "KC"
   },
   {
    "name": "Geno Smith",
-   "adp": 101.05,
+   "adp": 100.87,
    "pos": "QB",
    "team": "NYJ"
   },
   {
    "name": "Tony Pollard",
-   "adp": 101.13,
+   "adp": 101.23,
    "pos": "RB",
    "team": "TEN"
   },
   {
-   "name": "Isaiah Likely",
-   "adp": 102.36,
-   "pos": "TE",
-   "team": "NYG"
-  },
-  {
    "name": "Rico Dowdle",
-   "adp": 102.63,
+   "adp": 102.35,
    "pos": "RB",
    "team": "PIT"
   },
   {
+   "name": "Isaiah Likely",
+   "adp": 102.44,
+   "pos": "TE",
+   "team": "NYG"
+  },
+  {
    "name": "Carnell Tate",
-   "adp": 103.76,
+   "adp": 103.7,
    "pos": "WR",
    "team": "TEN"
   },
   {
    "name": "Fernando Mendoza",
-   "adp": 105.08,
+   "adp": 105.26,
    "pos": "QB",
    "team": "LV"
   },
   {
    "name": "Dallas Goedert",
-   "adp": 105.82,
+   "adp": 105.62,
    "pos": "TE",
    "team": "PHI"
   },
   {
    "name": "Kenny Gainwell",
-   "adp": 107,
+   "adp": 107.03,
    "pos": "RB",
    "team": "TB"
   },
   {
    "name": "Brian Thomas",
-   "adp": 107.17,
+   "adp": 107.22,
    "pos": "WR",
    "team": "JAC"
   },
   {
    "name": "RJ Harvey",
-   "adp": 107.66,
+   "adp": 107.65,
    "pos": "RB",
    "team": "DEN"
   },
   {
    "name": "Dalton Kincaid",
-   "adp": 108,
+   "adp": 107.91,
    "pos": "TE",
    "team": "BUF"
   },
   {
    "name": "Blake Corum",
-   "adp": 109.25,
+   "adp": 109.45,
    "pos": "RB",
    "team": "LAR"
   },
   {
    "name": "Jordan Mason",
-   "adp": 111.45,
+   "adp": 111.03,
    "pos": "RB",
    "team": "MIN"
   },
   {
    "name": "Courtland Sutton",
-   "adp": 112.8,
+   "adp": 112.61,
    "pos": "WR",
    "team": "DEN"
   },
   {
    "name": "Jake Ferguson",
-   "adp": 112.93,
+   "adp": 113.1,
    "pos": "TE",
    "team": "DAL"
   },
   {
    "name": "Chris Godwin",
-   "adp": 114.11,
+   "adp": 113.82,
    "pos": "WR",
    "team": "TB"
   },
   {
    "name": "DK Metcalf",
-   "adp": 114.22,
+   "adp": 114.21,
    "pos": "WR",
    "team": "PIT"
   },
   {
    "name": "J.K. Dobbins",
-   "adp": 116.59,
+   "adp": 116.56,
    "pos": "RB",
    "team": "DEN"
   },
   {
    "name": "Quentin Johnston",
-   "adp": 116.9,
+   "adp": 117.1,
    "pos": "WR",
    "team": "LAC"
   },
   {
    "name": "Mark Andrews",
-   "adp": 119.13,
+   "adp": 119.18,
    "pos": "TE",
    "team": "BAL"
   },
@@ -722,43 +722,43 @@
   },
   {
    "name": "Juwan Johnson",
-   "adp": 119.96,
+   "adp": 119.7,
    "pos": "TE",
    "team": "NO"
   },
   {
-   "name": "Michael Wilson",
-   "adp": 121.51,
-   "pos": "WR",
-   "team": "ARI"
-  },
-  {
    "name": "De'Zhaun Stribling",
-   "adp": 122.17,
+   "adp": 121.48,
    "pos": "WR",
    "team": "SF"
   },
   {
+   "name": "Michael Wilson",
+   "adp": 121.57,
+   "pos": "WR",
+   "team": "ARI"
+  },
+  {
    "name": "Josh Downs",
-   "adp": 123.39,
+   "adp": 123.6,
    "pos": "WR",
    "team": "IND"
   },
   {
    "name": "Chuba Hubbard",
-   "adp": 123.43,
+   "adp": 123.62,
    "pos": "RB",
    "team": "CAR"
   },
   {
    "name": "Michael Pittman",
-   "adp": 126.32,
+   "adp": 126.21,
    "pos": "WR",
    "team": "PIT"
   },
   {
    "name": "Rachaad White",
-   "adp": 129.39,
+   "adp": 129.59,
    "pos": "RB",
    "team": "WAS"
   },
@@ -770,1503 +770,1497 @@
   },
   {
    "name": "Stefon Diggs",
-   "adp": 130.16,
+   "adp": 130.2,
    "pos": "WR",
    "team": "WAS"
   },
   {
    "name": "Wan'Dale Robinson",
-   "adp": 130.59,
+   "adp": 130.74,
    "pos": "WR",
    "team": "TEN"
   },
   {
    "name": "Alec Pierce",
-   "adp": 132,
+   "adp": 131.87,
    "pos": "WR",
    "team": "IND"
   },
   {
+   "name": "MarShawn Lloyd",
+   "adp": 133.63,
+   "pos": "RB",
+   "team": "GB"
+  },
+  {
    "name": "Kyle Monangai",
-   "adp": 133.57,
+   "adp": 133.71,
    "pos": "RB",
    "team": "CHI"
   },
   {
    "name": "Brenton Strange",
-   "adp": 134.76,
+   "adp": 134.93,
    "pos": "TE",
    "team": "JAC"
   },
   {
    "name": "KC Concepcion",
-   "adp": 135.33,
+   "adp": 135.12,
    "pos": "WR",
    "team": "CLE"
   },
   {
-   "name": "MarShawn Lloyd",
-   "adp": 135.72,
-   "pos": "RB",
-   "team": "GB"
-  },
-  {
    "name": "Chig Okonkwo",
-   "adp": 136.33,
+   "adp": 136.28,
    "pos": "TE",
    "team": "WAS"
   },
   {
    "name": "Aaron Jones",
-   "adp": 137.67,
+   "adp": 137.95,
    "pos": "RB",
    "team": "MIN"
   },
   {
-   "name": "Matthew Golden",
-   "adp": 138.64,
-   "pos": "WR",
-   "team": "GB"
-  },
-  {
    "name": "Jordan Addison",
-   "adp": 138.67,
+   "adp": 138.42,
    "pos": "WR",
    "team": "MIN"
   },
   {
+   "name": "Matthew Golden",
+   "adp": 138.66,
+   "pos": "WR",
+   "team": "GB"
+  },
+  {
    "name": "Makai Lemon",
-   "adp": 139.99,
+   "adp": 139.89,
    "pos": "WR",
    "team": "PHI"
   },
   {
    "name": "Hunter Henry",
-   "adp": 141.16,
+   "adp": 141.09,
    "pos": "TE",
    "team": "NE"
   },
   {
    "name": "Chris Rodriguez",
-   "adp": 141.52,
+   "adp": 141.16,
    "pos": "RB",
    "team": "JAC"
   },
   {
    "name": "Dalton Schultz",
-   "adp": 141.98,
+   "adp": 141.95,
    "pos": "TE",
    "team": "HOU"
   },
   {
-   "name": "Keaton Mitchell",
-   "adp": 143.57,
-   "pos": "RB",
-   "team": "LAC"
-  },
-  {
    "name": "Woody Marks",
-   "adp": 144.14,
+   "adp": 143.84,
    "pos": "RB",
    "team": "HOU"
   },
   {
+   "name": "Keaton Mitchell",
+   "adp": 144.2,
+   "pos": "RB",
+   "team": "LAC"
+  },
+  {
    "name": "Terrance Ferguson",
-   "adp": 144.84,
+   "adp": 144.56,
    "pos": "TE",
    "team": "LAR"
   },
   {
    "name": "Mike Washington",
-   "adp": 146.2,
+   "adp": 144.63,
    "pos": "RB",
    "team": "LV"
   },
   {
    "name": "Tyler Allgeier",
-   "adp": 146.76,
+   "adp": 146.47,
    "pos": "RB",
    "team": "ARI"
   },
   {
    "name": "Deebo Samuel",
-   "adp": 149.3,
+   "adp": 149.64,
    "pos": "WR",
    "team": "SF"
   },
   {
    "name": "T.J. Hockenson",
-   "adp": 150.31,
+   "adp": 150.44,
    "pos": "TE",
    "team": "MIN"
   },
   {
    "name": "Xavier Worthy",
-   "adp": 151.41,
+   "adp": 151.54,
    "pos": "WR",
    "team": "KC"
   },
   {
    "name": "Jakobi Meyers",
-   "adp": 152.08,
+   "adp": 152.32,
    "pos": "WR",
    "team": "JAC"
   },
   {
    "name": "Jonah Coleman",
-   "adp": 153.1,
+   "adp": 152.92,
    "pos": "RB",
    "team": "DEN"
   },
   {
    "name": "Tyjae Spears",
-   "adp": 153.51,
+   "adp": 153.69,
    "pos": "RB",
    "team": "TEN"
   },
   {
+   "name": "Michael Penix",
+   "adp": 153.92,
+   "pos": "QB",
+   "team": "ATL"
+  },
+  {
    "name": "Romeo Doubs",
-   "adp": 154.93,
+   "adp": 154.69,
    "pos": "WR",
    "team": "NE"
   },
   {
    "name": "Jalen Coker",
-   "adp": 155.01,
+   "adp": 155.03,
    "pos": "WR",
    "team": "CAR"
   },
   {
-   "name": "Michael Penix",
-   "adp": 155.1,
-   "pos": "QB",
-   "team": "ATL"
-  },
-  {
    "name": "Tua Tagovailoa",
-   "adp": 155.42,
+   "adp": 156.41,
    "pos": "QB",
    "team": "ATL"
   },
   {
    "name": "Jordyn Tyson",
-   "adp": 156.57,
+   "adp": 157.47,
    "pos": "WR",
    "team": "NO"
   },
   {
    "name": "Zach Charbonnet",
-   "adp": 158.05,
+   "adp": 158.39,
    "pos": "RB",
    "team": "SEA"
   },
   {
-   "name": "Khalil Shakir",
-   "adp": 160.56,
-   "pos": "WR",
-   "team": "BUF"
-  },
-  {
    "name": "Rashid Shaheed",
-   "adp": 160.94,
+   "adp": 160.82,
    "pos": "WR",
    "team": "SEA"
   },
   {
+   "name": "Khalil Shakir",
+   "adp": 160.89,
+   "pos": "WR",
+   "team": "BUF"
+  },
+  {
    "name": "Greg Dulcich",
-   "adp": 162.88,
+   "adp": 163,
    "pos": "TE",
    "team": "MIA"
   },
   {
    "name": "Dylan Sampson",
-   "adp": 165.8,
+   "adp": 165.69,
    "pos": "RB",
    "team": "CLE"
   },
   {
-   "name": "Kenyon Sadiq",
-   "adp": 167.18,
-   "pos": "TE",
-   "team": "NYJ"
-  },
-  {
    "name": "AJ Barner",
-   "adp": 167.19,
+   "adp": 167.24,
    "pos": "TE",
    "team": "SEA"
   },
   {
-   "name": "Deshaun Watson",
-   "adp": 168,
-   "pos": "QB",
-   "team": "CLE"
-  },
-  {
-   "name": "Shedeur Sanders",
-   "adp": 168.61,
-   "pos": "QB",
-   "team": "CLE"
+   "name": "Kenyon Sadiq",
+   "adp": 167.64,
+   "pos": "TE",
+   "team": "NYJ"
   },
   {
    "name": "Tank Bigsby",
-   "adp": 169.05,
+   "adp": 168.79,
    "pos": "RB",
    "team": "PHI"
   },
   {
+   "name": "Shedeur Sanders",
+   "adp": 168.85,
+   "pos": "QB",
+   "team": "CLE"
+  },
+  {
    "name": "Denzel Boston",
-   "adp": 169.35,
+   "adp": 169.23,
    "pos": "WR",
    "team": "CLE"
   },
   {
+   "name": "Deshaun Watson",
+   "adp": 169.24,
+   "pos": "QB",
+   "team": "CLE"
+  },
+  {
    "name": "Ja'Kobi Lane",
-   "adp": 169.99,
+   "adp": 169.28,
    "pos": "WR",
    "team": "BAL"
   },
   {
-   "name": "Oronde Gadsden",
-   "adp": 171.1,
-   "pos": "TE",
-   "team": "LAC"
-  },
-  {
    "name": "Tre Tucker",
-   "adp": 171.54,
+   "adp": 170.94,
    "pos": "WR",
    "team": "LV"
   },
   {
+   "name": "Oronde Gadsden",
+   "adp": 172.28,
+   "pos": "TE",
+   "team": "LAC"
+  },
+  {
    "name": "Braelon Allen",
-   "adp": 175.57,
+   "adp": 175.4,
    "pos": "RB",
    "team": "NYJ"
   },
   {
-   "name": "Kirk Cousins",
-   "adp": 176.11,
-   "pos": "QB",
-   "team": "LV"
-  },
-  {
    "name": "Pat Freiermuth",
-   "adp": 176.35,
+   "adp": 176.48,
    "pos": "TE",
    "team": "PIT"
   },
   {
+   "name": "Kirk Cousins",
+   "adp": 177.06,
+   "pos": "QB",
+   "team": "LV"
+  },
+  {
    "name": "Tyrone Tracy",
-   "adp": 176.62,
+   "adp": 178.47,
    "pos": "RB",
    "team": "NYG"
   },
   {
    "name": "Cade Otton",
-   "adp": 179.68,
+   "adp": 179.65,
    "pos": "TE",
    "team": "TB"
   },
   {
    "name": "Kaelon Black",
-   "adp": 181.15,
+   "adp": 180.6,
    "pos": "RB",
    "team": "SF"
   },
   {
-   "name": "Alvin Kamara",
-   "adp": 183.12,
+   "name": "Emmett Johnson",
+   "adp": 183.27,
    "pos": "RB",
-   "team": "NO"
+   "team": "KC"
   },
   {
    "name": "Gunnar Helm",
-   "adp": 183.36,
+   "adp": 183.65,
    "pos": "TE",
    "team": "TEN"
   },
   {
    "name": "Keenan Allen",
-   "adp": 184.37,
+   "adp": 183.79,
    "pos": "WR",
    "team": "IND"
   },
   {
+   "name": "Alvin Kamara",
+   "adp": 183.89,
+   "pos": "RB",
+   "team": "NO"
+  },
+  {
    "name": "Jalen Nailor",
-   "adp": 184.38,
+   "adp": 184.36,
    "pos": "WR",
    "team": "LV"
   },
   {
-   "name": "Emmett Johnson",
-   "adp": 184.57,
-   "pos": "RB",
-   "team": "KC"
-  },
-  {
-   "name": "Brian Robinson",
-   "adp": 184.82,
-   "pos": "RB",
-   "team": "ATL"
-  },
-  {
    "name": "Adonai Mitchell",
-   "adp": 185.08,
+   "adp": 184.62,
    "pos": "WR",
    "team": "NYJ"
   },
   {
-   "name": "Jalen McMillan",
-   "adp": 187.42,
-   "pos": "WR",
-   "team": "TB"
+   "name": "Brian Robinson",
+   "adp": 185.04,
+   "pos": "RB",
+   "team": "ATL"
   },
   {
    "name": "Dontayvion Wicks",
-   "adp": 187.6,
+   "adp": 187.42,
    "pos": "WR",
    "team": "PHI"
   },
   {
+   "name": "Jalen McMillan",
+   "adp": 187.72,
+   "pos": "WR",
+   "team": "TB"
+  },
+  {
    "name": "Isiah Pacheco",
-   "adp": 188.39,
+   "adp": 189.23,
    "pos": "RB",
    "team": "DET"
   },
   {
    "name": "Cyrus Allen",
-   "adp": 190.17,
+   "adp": 190.33,
    "pos": "WR",
    "team": "KC"
   },
   {
    "name": "Evan Engram",
-   "adp": 190.53,
+   "adp": 190.69,
    "pos": "TE",
    "team": "DEN"
   },
   {
    "name": "Malik Washington",
-   "adp": 191.09,
+   "adp": 191.14,
    "pos": "WR",
    "team": "MIA"
   },
   {
    "name": "Ray Davis",
-   "adp": 192.99,
+   "adp": 192.74,
    "pos": "RB",
    "team": "BUF"
   },
   {
    "name": "Justice Hill",
-   "adp": 194.41,
+   "adp": 194.75,
    "pos": "RB",
    "team": "BAL"
   },
   {
    "name": "Tre' Harris",
-   "adp": 194.95,
+   "adp": 195.6,
    "pos": "WR",
    "team": "LAC"
   },
   {
    "name": "David Njoku",
-   "adp": 197.91,
+   "adp": 197.88,
    "pos": "TE",
    "team": "LAC"
   },
   {
    "name": "Caleb Douglas",
-   "adp": 198.32,
+   "adp": 198.24,
    "pos": "WR",
    "team": "MIA"
   },
   {
-   "name": "Pat Bryant",
-   "adp": 201.32,
-   "pos": "WR",
-   "team": "DEN"
-  },
-  {
    "name": "Kayshon Boutte",
-   "adp": 201.74,
+   "adp": 199.13,
    "pos": "WR",
    "team": "HOU"
   },
   {
+   "name": "Pat Bryant",
+   "adp": 201.09,
+   "pos": "WR",
+   "team": "DEN"
+  },
+  {
    "name": "Ryan Flournoy",
-   "adp": 201.86,
+   "adp": 201.68,
    "pos": "WR",
    "team": "DAL"
   },
   {
    "name": "Kimani Vidal",
-   "adp": 205.67,
+   "adp": 205.51,
    "pos": "RB",
    "team": "LAC"
   },
   {
+   "name": "Najee Harris",
+   "adp": 208.9,
+   "pos": "RB",
+   "team": "NYG"
+  },
+  {
+   "name": "Jerry Jeudy",
+   "adp": 208.96,
+   "pos": "WR",
+   "team": "CLE"
+  },
+  {
    "name": "Carson Beck",
-   "adp": 208.04,
+   "adp": 209.03,
    "pos": "QB",
    "team": "ARI"
   },
   {
    "name": "Jaydon Blue",
-   "adp": 208.31,
+   "adp": 210.34,
    "pos": "RB",
    "team": "PHI"
   },
   {
    "name": "Tank Dell",
-   "adp": 208.99,
+   "adp": 211.24,
    "pos": "WR",
    "team": "HOU"
   },
   {
-   "name": "Jerry Jeudy",
-   "adp": 209.41,
-   "pos": "WR",
-   "team": "CLE"
-  },
-  {
-   "name": "Jauan Jennings",
-   "adp": 211.39,
-   "pos": "WR",
-   "team": "MIN"
-  },
-  {
    "name": "Darren Waller",
-   "adp": 211.54,
+   "adp": 211.39,
    "pos": "TE",
    "team": "CAR"
   },
   {
-   "name": "Najee Harris",
-   "adp": 212.65,
-   "pos": "RB",
-   "team": "NYG"
+   "name": "Jauan Jennings",
+   "adp": 212.11,
+   "pos": "WR",
+   "team": "MIN"
   },
   {
    "name": "Colby Parkinson",
-   "adp": 213.54,
+   "adp": 213.95,
    "pos": "TE",
    "team": "LAR"
   },
   {
    "name": "Mike Gesicki",
-   "adp": 215.43,
+   "adp": 215.81,
    "pos": "TE",
    "team": "CIN"
   },
   {
-   "name": "Travis Hunter",
-   "adp": 215.8,
-   "pos": "WR",
-   "team": "JAC"
-  },
-  {
-   "name": "Calvin Ridley",
-   "adp": 216.88,
-   "pos": "WR",
-   "team": "TEN"
-  },
-  {
    "name": "Michael Mayer",
-   "adp": 217.45,
+   "adp": 216.54,
    "pos": "TE",
    "team": "LV"
   },
   {
    "name": "Malachi Fields",
-   "adp": 219.44,
+   "adp": 216.66,
    "pos": "WR",
    "team": "NYG"
   },
   {
+   "name": "Travis Hunter",
+   "adp": 216.68,
+   "pos": "WR",
+   "team": "JAC"
+  },
+  {
+   "name": "Calvin Ridley",
+   "adp": 217.84,
+   "pos": "WR",
+   "team": "TEN"
+  },
+  {
    "name": "Devaughn Vele",
-   "adp": 225.21,
+   "adp": 223.09,
    "pos": "WR",
    "team": "NO"
   },
   {
    "name": "Omar Cooper",
-   "adp": 226.85,
+   "adp": 228,
    "pos": "WR",
    "team": "NYJ"
   },
   {
    "name": "Kaytron Allen",
-   "adp": 229.23,
+   "adp": 229.29,
    "pos": "RB",
    "team": "WAS"
   },
   {
    "name": "Samaje Perine",
-   "adp": 233.68,
+   "adp": 232.74,
    "pos": "RB",
    "team": "CIN"
   },
   {
    "name": "George Holani",
-   "adp": 234.5,
+   "adp": 234.76,
    "pos": "RB",
    "team": "SEA"
   },
   {
-   "name": "Mason Taylor",
-   "adp": 237.83,
-   "pos": "TE",
-   "team": "NYJ"
-  },
-  {
    "name": "Chris Bell",
-   "adp": 237.84,
+   "adp": 235.4,
    "pos": "WR",
    "team": "MIA"
   },
   {
+   "name": "Mason Taylor",
+   "adp": 237.09,
+   "pos": "TE",
+   "team": "NYJ"
+  },
+  {
    "name": "Nicholas Singleton",
-   "adp": 238.06,
+   "adp": 238.85,
    "pos": "RB",
    "team": "TEN"
   },
   {
    "name": "Sean Tucker",
-   "adp": 242.22,
+   "adp": 244.9,
    "pos": "RB",
    "team": "TB"
   },
   {
-   "name": "Zachariah Branch",
-   "adp": 247.12,
-   "pos": "WR",
-   "team": "ATL"
-  },
-  {
    "name": "Charlie Kolar",
-   "adp": 249.38,
+   "adp": 247.13,
    "pos": "TE",
    "team": "LAC"
   },
   {
+   "name": "Zachariah Branch",
+   "adp": 249.13,
+   "pos": "WR",
+   "team": "ATL"
+  },
+  {
    "name": "Rashod Bateman",
-   "adp": 249.56,
+   "adp": 252.42,
    "pos": "WR",
    "team": "BAL"
   },
   {
    "name": "Demond Claiborne",
-   "adp": 253.76,
+   "adp": 255.15,
    "pos": "RB",
    "team": "MIN"
   },
   {
    "name": "Cooper Kupp",
-   "adp": 257.32,
+   "adp": 257.29,
    "pos": "WR",
    "team": "SEA"
   },
   {
-   "name": "Jordan James",
-   "adp": 262,
-   "pos": "RB",
-   "team": "SF"
-  },
-  {
    "name": "Germie Bernard",
-   "adp": 262.92,
+   "adp": 262.39,
    "pos": "WR",
    "team": "PIT"
   },
   {
-   "name": "Ted Hurst",
-   "adp": 265.26,
-   "pos": "WR",
-   "team": "TB"
-  },
-  {
-   "name": "Seth McGowan",
-   "adp": 269.1,
+   "name": "Jordan James",
+   "adp": 264.06,
    "pos": "RB",
-   "team": "IND"
-  },
-  {
-   "name": "Jaylen Wright",
-   "adp": 270.38,
-   "pos": "RB",
-   "team": "MIA"
+   "team": "SF"
   },
   {
    "name": "Malik Davis",
-   "adp": 271.43,
+   "adp": 265.85,
    "pos": "RB",
    "team": "DAL"
   },
   {
+   "name": "Seth McGowan",
+   "adp": 266.34,
+   "pos": "RB",
+   "team": "IND"
+  },
+  {
+   "name": "Ted Hurst",
+   "adp": 266.85,
+   "pos": "WR",
+   "team": "TB"
+  },
+  {
    "name": "Jake Tonges",
-   "adp": 272.45,
+   "adp": 271.89,
    "pos": "TE",
    "team": "SF"
   },
   {
+   "name": "Jaylen Wright",
+   "adp": 272.42,
+   "pos": "RB",
+   "team": "MIA"
+  },
+  {
    "name": "Isaac TeSlaa",
-   "adp": 274.37,
+   "adp": 275,
    "pos": "WR",
    "team": "DET"
   },
   {
    "name": "Jaylin Noel",
-   "adp": 277.4,
+   "adp": 279.41,
    "pos": "WR",
    "team": "HOU"
   },
   {
    "name": "Mac Jones",
-   "adp": 288.05,
+   "adp": 286.98,
    "pos": "QB",
    "team": "SF"
   },
   {
    "name": "Eli Raridon",
-   "adp": 289.76,
+   "adp": 288.4,
    "pos": "TE",
    "team": "NE"
   },
   {
    "name": "Jameis Winston",
-   "adp": 290.27,
+   "adp": 289.39,
    "pos": "QB",
    "team": "NYG"
   },
   {
    "name": "Darnell Washington",
-   "adp": 290.51,
+   "adp": 290.47,
    "pos": "TE",
    "team": "PIT"
   },
   {
    "name": "James Conner",
-   "adp": 303.9,
+   "adp": 305.58,
    "pos": "RB",
    "team": "ARI"
   },
   {
-   "name": "Antonio Williams",
-   "adp": 308.98,
-   "pos": "WR",
-   "team": "WAS"
-  },
-  {
    "name": "John Metchie",
-   "adp": 310.72,
+   "adp": 308.65,
    "pos": "WR",
    "team": "CAR"
   },
   {
+   "name": "Antonio Williams",
+   "adp": 309.6,
+   "pos": "WR",
+   "team": "WAS"
+  },
+  {
    "name": "Elijah Arroyo",
-   "adp": 312.22,
+   "adp": 311.62,
    "pos": "TE",
    "team": "SEA"
   },
   {
-   "name": "Eli Stowers",
-   "adp": 313.69,
-   "pos": "TE",
-   "team": "PHI"
-  },
-  {
-   "name": "Troy Franklin",
-   "adp": 314.16,
-   "pos": "WR",
-   "team": "DEN"
-  },
-  {
    "name": "Emari Demercado",
-   "adp": 314.18,
+   "adp": 314.6,
    "pos": "RB",
    "team": "DAL"
   },
   {
-   "name": "Keon Coleman",
-   "adp": 316.18,
+   "name": "Troy Franklin",
+   "adp": 314.84,
    "pos": "WR",
-   "team": "BUF"
+   "team": "DEN"
+  },
+  {
+   "name": "Eli Stowers",
+   "adp": 316.59,
+   "pos": "TE",
+   "team": "PHI"
   },
   {
    "name": "Adam Randall",
-   "adp": 317.58,
+   "adp": 317.64,
    "pos": "RB",
    "team": "BAL"
   },
   {
-   "name": "Ty Simpson",
-   "adp": 318.8,
-   "pos": "QB",
-   "team": "LAR"
+   "name": "Keon Coleman",
+   "adp": 317.67,
+   "pos": "WR",
+   "team": "BUF"
   },
   {
    "name": "Kaleb Johnson",
-   "adp": 321.25,
+   "adp": 318.33,
    "pos": "RB",
    "team": "GB"
   },
   {
+   "name": "Ty Simpson",
+   "adp": 318.78,
+   "pos": "QB",
+   "team": "LAR"
+  },
+  {
    "name": "Kareem Hunt",
-   "adp": 322.6,
+   "adp": 319.62,
    "pos": "RB",
    "team": "FA"
   },
   {
    "name": "Joe Flacco",
-   "adp": 322.83,
+   "adp": 322.28,
    "pos": "QB",
    "team": "CIN"
   },
   {
    "name": "Chris Brooks",
-   "adp": 323.85,
+   "adp": 322.34,
    "pos": "RB",
    "team": "GB"
   },
   {
    "name": "Tyquan Thornton",
-   "adp": 325.54,
+   "adp": 324.26,
    "pos": "WR",
    "team": "KC"
   },
   {
    "name": "Theo Johnson",
-   "adp": 325.99,
+   "adp": 326.09,
    "pos": "TE",
    "team": "NYG"
   },
   {
-   "name": "J.J. McCarthy",
-   "adp": 326.82,
-   "pos": "QB",
-   "team": "MIN"
-  },
-  {
    "name": "Darnell Mooney",
-   "adp": 327.86,
+   "adp": 328.11,
    "pos": "WR",
    "team": "NYG"
   },
   {
+   "name": "J.J. McCarthy",
+   "adp": 328.33,
+   "pos": "QB",
+   "team": "MIN"
+  },
+  {
    "name": "Erick All",
-   "adp": 328.71,
+   "adp": 328.46,
    "pos": "TE",
    "team": "CIN"
   },
   {
    "name": "DeMario Douglas",
-   "adp": 329.19,
+   "adp": 328.95,
    "pos": "WR",
    "team": "NE"
   },
   {
    "name": "Justin Fields",
-   "adp": 330.46,
+   "adp": 329.91,
    "pos": "QB",
    "team": "KC"
   },
   {
-   "name": "Jayden Higgins",
-   "adp": 331,
-   "pos": "WR",
-   "team": "HOU"
-  },
-  {
    "name": "Dawson Knox",
-   "adp": 331.21,
+   "adp": 332.01,
    "pos": "TE",
-   "team": "BUF"
-  },
-  {
-   "name": "Ty Johnson",
-   "adp": 333.58,
-   "pos": "RB",
    "team": "BUF"
   },
   {
    "name": "Matt Hibner",
-   "adp": 333.66,
+   "adp": 332.79,
    "pos": "TE",
    "team": "BAL"
   },
   {
+   "name": "Ty Johnson",
+   "adp": 333.13,
+   "pos": "RB",
+   "team": "BUF"
+  },
+  {
    "name": "Tyreek Hill",
-   "adp": 334.19,
+   "adp": 333.89,
    "pos": "WR",
    "team": "FA"
   },
   {
    "name": "Bryce Lance",
-   "adp": 334.63,
+   "adp": 334.23,
    "pos": "WR",
    "team": "NO"
   },
   {
+   "name": "Jayden Higgins",
+   "adp": 335.03,
+   "pos": "WR",
+   "team": "HOU"
+  },
+  {
    "name": "Cade Klubnik",
-   "adp": 335.23,
+   "adp": 335.92,
    "pos": "QB",
    "team": "NYJ"
   },
   {
-   "name": "Drew Allar",
-   "adp": 336.47,
-   "pos": "QB",
-   "team": "PIT"
-  },
-  {
    "name": "Cole Kmet",
-   "adp": 337.02,
+   "adp": 336.33,
    "pos": "TE",
    "team": "CHI"
   },
   {
    "name": "Jack Bech",
-   "adp": 337.39,
+   "adp": 337.14,
    "pos": "WR",
    "team": "LV"
   },
   {
+   "name": "Drew Allar",
+   "adp": 338.27,
+   "pos": "QB",
+   "team": "PIT"
+  },
+  {
    "name": "AJ Dillon",
-   "adp": 338.49,
+   "adp": 338.34,
    "pos": "RB",
    "team": "CAR"
   },
   {
-   "name": "Ollie Gordon",
-   "adp": 338.88,
-   "pos": "RB",
-   "team": "MIA"
-  },
-  {
    "name": "Zavion Thomas",
-   "adp": 340.48,
+   "adp": 339.41,
    "pos": "WR",
    "team": "CHI"
   },
   {
-   "name": "Xavier Hutchinson",
-   "adp": 340.61,
-   "pos": "WR",
-   "team": "HOU"
-  },
-  {
    "name": "Jahan Dotson",
-   "adp": 340.64,
+   "adp": 340.61,
    "pos": "WR",
    "team": "ATL"
   },
   {
-   "name": "LeQuint Allen",
-   "adp": 340.99,
-   "pos": "RB",
-   "team": "JAC"
-  },
-  {
    "name": "Darius Slayton",
-   "adp": 341.39,
+   "adp": 341.37,
    "pos": "WR",
    "team": "NYG"
   },
   {
-   "name": "Joe Milton",
-   "adp": 341.79,
-   "pos": "QB",
-   "team": "DAL"
-  },
-  {
-   "name": "Jonnu Smith",
-   "adp": 341.85,
-   "pos": "TE",
-   "team": "GB"
-  },
-  {
-   "name": "Tory Horton",
-   "adp": 341.96,
+   "name": "Xavier Hutchinson",
+   "adp": 341.53,
    "pos": "WR",
-   "team": "SEA"
-  },
-  {
-   "name": "Anthony Richardson",
-   "adp": 342.34,
-   "pos": "QB",
-   "team": "IND"
+   "team": "HOU"
   },
   {
    "name": "Skyler Bell",
-   "adp": 343.26,
+   "adp": 341.84,
    "pos": "WR",
    "team": "BUF"
   },
   {
+   "name": "Jonnu Smith",
+   "adp": 341.84,
+   "pos": "TE",
+   "team": "GB"
+  },
+  {
+   "name": "LeQuint Allen",
+   "adp": 341.87,
+   "pos": "RB",
+   "team": "JAC"
+  },
+  {
+   "name": "Joe Milton",
+   "adp": 342.25,
+   "pos": "QB",
+   "team": "DAL"
+  },
+  {
+   "name": "Ollie Gordon",
+   "adp": 342.32,
+   "pos": "RB",
+   "team": "MIA"
+  },
+  {
+   "name": "Tory Horton",
+   "adp": 342.85,
+   "pos": "WR",
+   "team": "SEA"
+  },
+  {
+   "name": "Jacob Saylors",
+   "adp": 342.85,
+   "pos": "RB",
+   "team": "DET"
+  },
+  {
+   "name": "Brashard Smith",
+   "adp": 343.12,
+   "pos": "RB",
+   "team": "KC"
+  },
+  {
+   "name": "Anthony Richardson",
+   "adp": 343.23,
+   "pos": "QB",
+   "team": "IND"
+  },
+  {
+   "name": "Emanuel Wilson",
+   "adp": 343.95,
+   "pos": "RB",
+   "team": "SEA"
+  },
+  {
    "name": "Andrei Iosivas",
-   "adp": 343.45,
+   "adp": 343.97,
    "pos": "WR",
    "team": "CIN"
   },
   {
    "name": "Malik Benson",
-   "adp": 343.49,
+   "adp": 344.1,
    "pos": "WR",
    "team": "LV"
   },
   {
-   "name": "Brashard Smith",
-   "adp": 344,
-   "pos": "RB",
-   "team": "KC"
-  },
-  {
-   "name": "Emanuel Wilson",
-   "adp": 344.26,
-   "pos": "RB",
-   "team": "SEA"
-  },
-  {
    "name": "Brandon Aiyuk",
-   "adp": 344.64,
+   "adp": 344.36,
    "pos": "WR",
    "team": "SF"
   },
   {
-   "name": "Jacob Saylors",
-   "adp": 344.76,
-   "pos": "RB",
-   "team": "DET"
-  },
-  {
    "name": "Tyler Huntley",
-   "adp": 344.78,
+   "adp": 344.98,
    "pos": "QB",
    "team": "BAL"
   },
   {
-   "name": "Michael Carter",
-   "adp": 345.36,
-   "pos": "RB",
-   "team": "TEN"
-  },
-  {
-   "name": "Kalif Raymond",
-   "adp": 345.78,
-   "pos": "WR",
-   "team": "CHI"
-  },
-  {
-   "name": "Marcus Mariota",
-   "adp": 345.92,
-   "pos": "QB",
-   "team": "WAS"
-  },
-  {
-   "name": "Kyle Williams",
-   "adp": 345.92,
-   "pos": "WR",
-   "team": "NE"
-  },
-  {
    "name": "Kendre Miller",
-   "adp": 346.1,
+   "adp": 345.4,
    "pos": "RB",
    "team": "NO"
   },
   {
+   "name": "Michael Carter",
+   "adp": 345.57,
+   "pos": "RB",
+   "team": "TEN"
+  },
+  {
+   "name": "Kyle Williams",
+   "adp": 345.7,
+   "pos": "WR",
+   "team": "NE"
+  },
+  {
    "name": "Jarquez Hunter",
-   "adp": 346.11,
+   "adp": 345.9,
    "pos": "RB",
    "team": "FA"
   },
   {
    "name": "Stetson Bennett",
-   "adp": 346.11,
+   "adp": 345.9,
    "pos": "QB",
    "team": "LAR"
   },
   {
    "name": "Carson Wentz",
-   "adp": 346.27,
+   "adp": 346.07,
    "pos": "QB",
    "team": "MIN"
   },
   {
+   "name": "Marcus Mariota",
+   "adp": 346.28,
+   "pos": "QB",
+   "team": "WAS"
+  },
+  {
    "name": "Roman Wilson",
-   "adp": 346.59,
+   "adp": 346.41,
    "pos": "WR",
    "team": "PIT"
   },
   {
    "name": "DJ Giddens",
-   "adp": 346.86,
+   "adp": 346.69,
    "pos": "RB",
    "team": "IND"
   },
   {
    "name": "Trey Lance",
-   "adp": 347.01,
+   "adp": 346.85,
    "pos": "QB",
    "team": "LAC"
   },
   {
+   "name": "Kalif Raymond",
+   "adp": 346.85,
+   "pos": "WR",
+   "team": "CHI"
+  },
+  {
    "name": "Demarcus Robinson",
-   "adp": 347.01,
+   "adp": 346.85,
    "pos": "WR",
    "team": "SF"
   },
   {
-   "name": "Noah Gray",
-   "adp": 347.29,
-   "pos": "TE",
-   "team": "KC"
-  },
-  {
    "name": "Davis Mills",
-   "adp": 347.39,
+   "adp": 347.25,
    "pos": "QB",
    "team": "HOU"
   },
   {
    "name": "Elijah Sarratt",
-   "adp": 347.42,
+   "adp": 347.28,
    "pos": "WR",
    "team": "BAL"
   },
   {
    "name": "Devin Singletary",
-   "adp": 347.43,
+   "adp": 347.3,
    "pos": "RB",
    "team": "NYG"
   },
   {
    "name": "Brenen Thompson",
-   "adp": 347.67,
+   "adp": 347.51,
    "pos": "WR",
    "team": "LAC"
   },
   {
+   "name": "Noah Gray",
+   "adp": 347.59,
+   "pos": "TE",
+   "team": "KC"
+  },
+  {
+   "name": "Mason Rudolph",
+   "adp": 347.66,
+   "pos": "QB",
+   "team": "PIT"
+  },
+  {
    "name": "Tyson Bagent",
-   "adp": 347.87,
+   "adp": 347.76,
    "pos": "QB",
    "team": "CHI"
   },
   {
-   "name": "Kendrick Bourne",
-   "adp": 347.87,
-   "pos": "WR",
-   "team": "ARI"
-  },
-  {
    "name": "Joshua Dobbs",
-   "adp": 347.89,
+   "adp": 347.78,
    "pos": "QB",
    "team": "DET"
   },
   {
    "name": "Noah Fant",
-   "adp": 347.9,
+   "adp": 347.79,
    "pos": "TE",
    "team": "NO"
   },
   {
    "name": "Tez Johnson",
-   "adp": 347.92,
+   "adp": 347.81,
    "pos": "WR",
    "team": "TB"
   },
   {
    "name": "Mack Hollins",
-   "adp": 348.09,
+   "adp": 347.99,
    "pos": "WR",
    "team": "NE"
   },
   {
-   "name": "Christian Kirk",
-   "adp": 348.25,
-   "pos": "WR",
-   "team": "SF"
-  },
-  {
-   "name": "Mason Rudolph",
-   "adp": 348.26,
-   "pos": "QB",
-   "team": "PIT"
-  },
-  {
    "name": "Tahj Brooks",
-   "adp": 348.27,
+   "adp": 348.18,
    "pos": "RB",
    "team": "CIN"
   },
   {
+   "name": "Kendrick Bourne",
+   "adp": 348.25,
+   "pos": "WR",
+   "team": "ARI"
+  },
+  {
    "name": "Jalen Tolbert",
-   "adp": 348.37,
+   "adp": 348.29,
    "pos": "WR",
    "team": "MIA"
   },
   {
    "name": "Bub Means",
-   "adp": 348.67,
+   "adp": 348.6,
    "pos": "WR",
    "team": "FA"
   },
   {
+   "name": "Christian Kirk",
+   "adp": 348.61,
+   "pos": "WR",
+   "team": "SF"
+  },
+  {
    "name": "Oscar Delp",
-   "adp": 348.69,
+   "adp": 348.62,
    "pos": "TE",
    "team": "NO"
   },
   {
    "name": "Elic Ayomanor",
-   "adp": 348.73,
+   "adp": 348.66,
    "pos": "WR",
    "team": "TEN"
   },
   {
-   "name": "Xavier Legette",
-   "adp": 348.74,
-   "pos": "WR",
-   "team": "CAR"
-  },
-  {
    "name": "Brock Wright",
-   "adp": 348.75,
+   "adp": 348.69,
    "pos": "TE",
    "team": "DET"
   },
   {
-   "name": "Kenny Pickett",
-   "adp": 348.75,
-   "pos": "QB",
-   "team": "CAR"
+   "name": "Roschon Johnson",
+   "adp": 348.89,
+   "pos": "RB",
+   "team": "CHI"
   },
   {
    "name": "Chimere Dike",
-   "adp": 348.97,
+   "adp": 348.92,
    "pos": "WR",
    "team": "TEN"
   },
   {
    "name": "Riley Leonard",
-   "adp": 349,
+   "adp": 348.95,
    "pos": "QB",
    "team": "IND"
   },
   {
    "name": "Reggie Virgil",
-   "adp": 349.11,
+   "adp": 349.06,
    "pos": "WR",
    "team": "ARI"
   },
   {
    "name": "Jalen Royals",
-   "adp": 349.11,
+   "adp": 349.06,
    "pos": "WR",
    "team": "KC"
   },
   {
    "name": "Colbie Young",
-   "adp": 349.13,
+   "adp": 349.08,
    "pos": "WR",
    "team": "CIN"
   },
   {
    "name": "Tutu Atwell",
-   "adp": 349.14,
+   "adp": 349.1,
    "pos": "WR",
    "team": "LAR"
   },
   {
-   "name": "Jarrett Stidham",
-   "adp": 349.14,
+   "name": "Kenny Pickett",
+   "adp": 349.11,
    "pos": "QB",
-   "team": "DEN"
+   "team": "CAR"
   },
   {
    "name": "Treylon Burks",
-   "adp": 349.16,
+   "adp": 349.11,
    "pos": "WR",
    "team": "WAS"
   },
   {
-   "name": "Jordan Whittington",
-   "adp": 349.17,
+   "name": "Xavier Legette",
+   "adp": 349.11,
    "pos": "WR",
-   "team": "LAR"
+   "team": "CAR"
   },
   {
    "name": "Taylen Green",
-   "adp": 349.17,
+   "adp": 349.12,
    "pos": "QB",
    "team": "CLE"
   },
   {
-   "name": "Barion Brown",
-   "adp": 349.18,
+   "name": "Jordan Whittington",
+   "adp": 349.13,
    "pos": "WR",
-   "team": "NO"
+   "team": "LAR"
   },
   {
    "name": "Zamir White",
-   "adp": 349.18,
+   "adp": 349.13,
    "pos": "RB",
    "team": "NO"
   },
   {
-   "name": "Tai Felton",
-   "adp": 349.19,
+   "name": "Barion Brown",
+   "adp": 349.14,
    "pos": "WR",
-   "team": "MIN"
+   "team": "NO"
   },
   {
    "name": "Quinn Ewers",
-   "adp": 349.19,
+   "adp": 349.15,
    "pos": "QB",
    "team": "JAC"
   },
   {
-   "name": "Tyrod Taylor",
-   "adp": 349.19,
-   "pos": "QB",
-   "team": "GB"
-  },
-  {
    "name": "Donovan Edwards",
-   "adp": 349.2,
+   "adp": 349.16,
    "pos": "RB",
    "team": "FA"
   },
   {
    "name": "Luke Musgrave",
-   "adp": 349.31,
+   "adp": 349.27,
    "pos": "TE",
    "team": "GB"
   },
   {
    "name": "Marlin Klein",
-   "adp": 349.35,
+   "adp": 349.31,
    "pos": "TE",
    "team": "HOU"
   },
   {
    "name": "Boston Scott",
-   "adp": 349.36,
+   "adp": 349.33,
    "pos": "RB",
    "team": "FA"
   },
   {
    "name": "LaJohntay Wester",
-   "adp": 349.37,
+   "adp": 349.34,
    "pos": "WR",
    "team": "BAL"
   },
   {
    "name": "CJ Daniels",
-   "adp": 349.42,
+   "adp": 349.39,
    "pos": "WR",
    "team": "LAR"
   },
   {
    "name": "Max Klare",
-   "adp": 349.43,
+   "adp": 349.4,
    "pos": "TE",
    "team": "LAR"
   },
   {
    "name": "Sione Vaki",
-   "adp": 349.5,
+   "adp": 349.47,
    "pos": "RB",
    "team": "DET"
   },
   {
-   "name": "Jake Browning",
-   "adp": 349.51,
-   "pos": "QB",
-   "team": "FA"
-  },
-  {
    "name": "Cedric Tillman",
-   "adp": 349.52,
+   "adp": 349.49,
    "pos": "WR",
    "team": "NO"
   },
   {
+   "name": "Kyle Allen",
+   "adp": 349.49,
+   "pos": "QB",
+   "team": "BUF"
+  },
+  {
+   "name": "Jake Browning",
+   "adp": 349.49,
+   "pos": "QB",
+   "team": "FA"
+  },
+  {
    "name": "Robert Tonyan",
-   "adp": 349.54,
+   "adp": 349.52,
    "pos": "TE",
    "team": "PIT"
   },
   {
    "name": "Ja'Tavion Sanders",
-   "adp": 349.55,
+   "adp": 349.53,
    "pos": "TE",
    "team": "CAR"
   },
   {
    "name": "Kentrel Bullock",
-   "adp": 349.55,
+   "adp": 349.53,
    "pos": "RB",
    "team": "CIN"
   },
   {
-   "name": "Isaiah Bond",
-   "adp": 349.55,
-   "pos": "WR",
-   "team": "CLE"
-  },
-  {
-   "name": "Dillon Gabriel",
-   "adp": 349.56,
-   "pos": "QB",
-   "team": "CLE"
-  },
-  {
    "name": "Tommy DeVito",
-   "adp": 349.56,
+   "adp": 349.53,
    "pos": "QB",
    "team": "NE"
   },
   {
-   "name": "Josh Cuevas",
-   "adp": 349.57,
-   "pos": "TE",
-   "team": "BAL"
+   "name": "Isaiah Bond",
+   "adp": 349.53,
+   "pos": "WR",
+   "team": "CLE"
+  },
+  {
+   "name": "Jarrett Stidham",
+   "adp": 349.54,
+   "pos": "QB",
+   "team": "DEN"
   },
   {
    "name": "Eli Heidenreich",
-   "adp": 349.57,
+   "adp": 349.54,
    "pos": "RB",
    "team": "PIT"
   },
   {
+   "name": "Dillon Gabriel",
+   "adp": 349.54,
+   "pos": "QB",
+   "team": "CLE"
+  },
+  {
+   "name": "Kaden Wetjen",
+   "adp": 349.55,
+   "pos": "WR",
+   "team": "PIT"
+  },
+  {
    "name": "Audric Estime",
-   "adp": 349.57,
+   "adp": 349.55,
    "pos": "RB",
    "team": "NO"
   },
   {
+   "name": "Marquise Brown",
+   "adp": 349.56,
+   "pos": "WR",
+   "team": "PHI"
+  },
+  {
    "name": "Marvin Mims",
-   "adp": 349.58,
+   "adp": 349.56,
    "pos": "WR",
    "team": "DEN"
   },
   {
    "name": "Odell Beckham",
-   "adp": 349.58,
+   "adp": 349.56,
    "pos": "WR",
    "team": "NYG"
   },
   {
    "name": "Trey Benson",
-   "adp": 349.58,
+   "adp": 349.56,
    "pos": "RB",
    "team": "ARI"
   },
   {
    "name": "Tyler Higbee",
-   "adp": 349.58,
+   "adp": 349.56,
    "pos": "TE",
    "team": "LAR"
   },
   {
    "name": "Will Kacmarek",
-   "adp": 349.58,
+   "adp": 349.56,
    "pos": "TE",
    "team": "MIA"
   },
   {
-   "name": "Kaden Wetjen",
-   "adp": 349.58,
-   "pos": "WR",
-   "team": "PIT"
-  },
-  {
-   "name": "Robert Henry",
-   "adp": 349.58,
-   "pos": "RB",
-   "team": "WAS"
-  },
-  {
    "name": "Phil Mafah",
-   "adp": 349.58,
+   "adp": 349.56,
    "pos": "RB",
    "team": "FA"
   },
   {
-   "name": "Roschon Johnson",
-   "adp": 349.59,
-   "pos": "RB",
-   "team": "CHI"
+   "name": "Savion Williams",
+   "adp": 349.57,
+   "pos": "WR",
+   "team": "GB"
+  },
+  {
+   "name": "Tai Felton",
+   "adp": 349.57,
+   "pos": "WR",
+   "team": "MIN"
   },
   {
    "name": "Jalon Daniels",
-   "adp": 349.59,
+   "adp": 349.57,
    "pos": "QB",
    "team": "TB"
   },
   {
    "name": "Tanner Koziol",
-   "adp": 349.59,
+   "adp": 349.57,
    "pos": "TE",
    "team": "JAC"
   },
   {
-   "name": "Savion Williams",
-   "adp": 349.59,
-   "pos": "WR",
-   "team": "GB"
-  },
-  {
    "name": "Myles Price",
-   "adp": 349.59,
+   "adp": 349.57,
    "pos": "WR",
    "team": "MIN"
   },
   {
-   "name": "Marquise Brown",
-   "adp": 349.59,
-   "pos": "WR",
-   "team": "PHI"
-  },
-  {
    "name": "Tommy Tremble",
-   "adp": 349.59,
+   "adp": 349.57,
    "pos": "TE",
    "team": "CAR"
   },
   {
    "name": "Joshua Palmer",
-   "adp": 349.6,
+   "adp": 349.58,
    "pos": "WR",
    "team": "BUF"
   },
   {
    "name": "Justin Joly",
-   "adp": 349.6,
+   "adp": 349.58,
    "pos": "TE",
    "team": "FA"
   },
   {
-   "name": "KaVontae Turpin",
-   "adp": 349.6,
-   "pos": "WR",
-   "team": "DAL"
+   "name": "Tyrod Taylor",
+   "adp": 349.58,
+   "pos": "QB",
+   "team": "GB"
+  },
+  {
+   "name": "Nick Mullens",
+   "adp": 349.58,
+   "pos": "QB",
+   "team": "JAC"
   },
   {
    "name": "Spencer Rattler",
-   "adp": 349.6,
+   "adp": 349.58,
    "pos": "QB",
    "team": "NO"
   },
   {
-   "name": "Nick Mullens",
-   "adp": 349.6,
-   "pos": "QB",
-   "team": "JAC"
+   "name": "KaVontae Turpin",
+   "adp": 349.58,
+   "pos": "WR",
+   "team": "DAL"
   }
  ]
 }

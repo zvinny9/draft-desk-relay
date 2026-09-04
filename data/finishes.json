@@ -1,9 +1,9 @@
 {
- "at": 1788447719875,
- "generated": "2026-09-03T15:01:59.875Z",
+ "at": 1788483745545,
+ "generated": "2026-09-04T01:02:25.545Z",
  "season": 2026,
  "source": "fantasypros.com/nfl/stats PPR season tables",
- "note": "2025, 2024, 2023 · qb2025:86 rb2025:173 wr2025:262 te2025:158 qb2024:88 rb2024:165 wr2024:257 te2024:146 qb2023:86 rb2023:171 wr2023:237 te2023:139",
+ "note": "2025, 2024, 2023 · qb2025:84 rb2025:173 wr2025:261 te2025:157 qb2024:87 rb2024:165 wr2024:257 te2024:145 qb2023:85 rb2023:171 wr2023:236 te2023:138",
  "count": 940,
  "rows": [
   {
@@ -371,7 +371,7 @@
    "pos": "QB",
    "finishes": [
     43,
-    85,
+    84,
     26
    ]
   },
@@ -453,7 +453,7 @@
    "pos": "QB",
    "finishes": [
     53,
-    72
+    71
    ]
   },
   {
@@ -494,8 +494,8 @@
    "pos": "QB",
    "finishes": [
     58,
-    74,
-    81
+    73,
+    80
    ]
   },
   {
@@ -553,7 +553,7 @@
    "pos": "QB",
    "finishes": [
     65,
-    88,
+    87,
     65
    ]
   },
@@ -562,7 +562,7 @@
    "pos": "QB",
    "finishes": [
     66,
-    83
+    82
    ]
   },
   {
@@ -570,7 +570,7 @@
    "pos": "QB",
    "finishes": [
     67,
-    87,
+    86,
     45
    ]
   },
@@ -618,39 +618,19 @@
    ]
   },
   {
-   "name": "Feleipe Franks",
-   "pos": "QB",
-   "finishes": [
-    73,
-    137,
-    68,
-    128
-   ]
-  },
-  {
    "name": "Drew Lock",
    "pos": "QB",
    "finishes": [
-    74,
+    73,
     39,
     48
-   ]
-  },
-  {
-   "name": "Malik Cunningham",
-   "pos": "QB",
-   "finishes": [
-    75,
-    231,
-    78,
-    221
    ]
   },
   {
    "name": "Logan Woodside",
    "pos": "QB",
    "finishes": [
-    76,
+    74,
     75
    ]
   },
@@ -658,14 +638,14 @@
    "name": "Will Grier",
    "pos": "QB",
    "finishes": [
-    77
+    75
    ]
   },
   {
    "name": "Brett Rypien",
    "pos": "QB",
    "finishes": [
-    78,
+    76,
     68
    ]
   },
@@ -673,15 +653,15 @@
    "name": "Stetson Bennett IV",
    "pos": "QB",
    "finishes": [
-    79
+    77
    ]
   },
   {
    "name": "Nick Mullens",
    "pos": "QB",
    "finishes": [
-    80,
-    69,
+    78,
+    68,
     39
    ]
   },
@@ -689,8 +669,8 @@
    "name": "Jarrett Stidham",
    "pos": "QB",
    "finishes": [
-    81,
-    73,
+    79,
+    72,
     50
    ]
   },
@@ -698,30 +678,30 @@
    "name": "Adrian Martinez",
    "pos": "QB",
    "finishes": [
-    82
+    80
    ]
   },
   {
    "name": "Kedon Slovis",
    "pos": "QB",
    "finishes": [
-    83
+    81
    ]
   },
   {
    "name": "Kyle Allen",
    "pos": "QB",
    "finishes": [
-    84,
-    71,
-    86
+    82,
+    70,
+    85
    ]
   },
   {
    "name": "Jimmy Garoppolo",
    "pos": "QB",
    "finishes": [
-    85,
+    83,
     53,
     41
    ]
@@ -730,7 +710,7 @@
    "name": "Jalen Milroe",
    "pos": "QB",
    "finishes": [
-    86
+    84
    ]
   },
   {
@@ -1950,11 +1930,8 @@
    "pos": "RB",
    "finishes": [
     146,
-    75,
     145,
-    123,
-    153,
-    54
+    153
    ]
   },
   {
@@ -2037,7 +2014,7 @@
    "pos": "RB",
    "finishes": [
     156,
-    233,
+    232,
     152,
     231
    ]
@@ -2060,7 +2037,7 @@
     155,
     213,
     160,
-    172
+    171
    ]
   },
   {
@@ -2103,11 +2080,11 @@
    "pos": "RB",
    "finishes": [
     163,
-    148,
+    147,
     162,
-    140,
+    139,
     169,
-    138
+    137
    ]
   },
   {
@@ -2132,9 +2109,9 @@
    "pos": "RB",
    "finishes": [
     166,
-    124,
+    123,
     163,
-    144
+    143
    ]
   },
   {
@@ -2157,7 +2134,7 @@
    "pos": "RB",
    "finishes": [
     169,
-    155
+    154
    ]
   },
   {
@@ -2632,7 +2609,7 @@
    "finishes": [
     51,
     65,
-    191
+    190
    ]
   },
   {
@@ -2716,7 +2693,7 @@
    "finishes": [
     61,
     78,
-    185
+    184
    ]
   },
   {
@@ -3236,7 +3213,7 @@
    "finishes": [
     123,
     106,
-    177
+    176
    ]
   },
   {
@@ -3277,7 +3254,7 @@
    "pos": "WR",
    "finishes": [
     128,
-    194
+    193
    ]
   },
   {
@@ -3552,7 +3529,7 @@
    "pos": "WR",
    "finishes": [
     162,
-    232
+    231
    ]
   },
   {
@@ -3596,7 +3573,7 @@
    "finishes": [
     167,
     123,
-    179
+    178
    ]
   },
   {
@@ -3637,7 +3614,7 @@
    "pos": "WR",
    "finishes": [
     172,
-    223
+    222
    ]
   },
   {
@@ -3646,7 +3623,7 @@
    "finishes": [
     173,
     196,
-    236
+    235
    ]
   },
   {
@@ -3662,7 +3639,7 @@
    "finishes": [
     175,
     122,
-    233
+    232
    ]
   },
   {
@@ -3723,7 +3700,7 @@
    "finishes": [
     182,
     175,
-    203
+    202
    ]
   },
   {
@@ -3740,7 +3717,7 @@
    "finishes": [
     184,
     192,
-    189
+    188
    ]
   },
   {
@@ -3756,7 +3733,7 @@
    "finishes": [
     186,
     193,
-    199
+    198
    ]
   },
   {
@@ -3765,7 +3742,7 @@
    "finishes": [
     187,
     239,
-    228
+    227
    ]
   },
   {
@@ -3792,7 +3769,7 @@
    "finishes": [
     190,
     124,
-    169
+    168
    ]
   },
   {
@@ -3842,7 +3819,7 @@
    "finishes": [
     196,
     143,
-    181
+    180
    ]
   },
   {
@@ -3881,7 +3858,7 @@
    "finishes": [
     201,
     170,
-    178
+    177
    ]
   },
   {
@@ -3930,7 +3907,7 @@
    "pos": "WR",
    "finishes": [
     208,
-    214
+    213
    ]
   },
   {
@@ -4011,7 +3988,7 @@
    "finishes": [
     218,
     157,
-    175
+    174
    ]
   },
   {
@@ -4020,7 +3997,7 @@
    "finishes": [
     219,
     216,
-    195
+    194
    ]
   },
   {
@@ -4069,24 +4046,14 @@
    "finishes": [
     225,
     254,
-    186
-   ]
-  },
-  {
-   "name": "Lawrence Cager",
-   "pos": "WR",
-   "finishes": [
-    226,
-    134,
-    168,
-    128
+    185
    ]
   },
   {
    "name": "Kristian Wilkerson",
    "pos": "WR",
    "finishes": [
-    227,
+    226,
     171
    ]
   },
@@ -4094,41 +4061,49 @@
    "name": "Dan Chisena",
    "pos": "WR",
    "finishes": [
-    228,
+    227,
     179,
-    215
+    214
    ]
   },
   {
    "name": "Chris Blair",
    "pos": "WR",
    "finishes": [
-    229,
+    228,
     198,
-    217
+    216
    ]
   },
   {
    "name": "Ja'Corey Brooks",
    "pos": "WR",
    "finishes": [
-    230
+    229
+   ]
+  },
+  {
+   "name": "Malik Cunningham",
+   "pos": "WR",
+   "finishes": [
+    230,
+    220
    ]
   },
   {
    "name": "Simi Fehoko",
    "pos": "WR",
    "finishes": [
-    232,
+    231,
     148,
-    180
+    179
    ]
   },
   {
    "name": "Brandon Smith",
    "pos": "WR",
    "finishes": [
-    234,
+    233,
     232
    ]
   },
@@ -4136,33 +4111,33 @@
    "name": "DJ Turner",
    "pos": "WR",
    "finishes": [
-    235,
+    234,
     117,
-    222
+    221
    ]
   },
   {
    "name": "Justin Shorter",
    "pos": "WR",
    "finishes": [
+    235,
+    140,
     236,
-    141,
-    236,
-    130
+    129
    ]
   },
   {
    "name": "Jacoby Jones",
    "pos": "WR",
    "finishes": [
-    237
+    236
    ]
   },
   {
    "name": "Kaden Davis",
    "pos": "WR",
    "finishes": [
-    238,
+    237,
     240
    ]
   },
@@ -4170,7 +4145,7 @@
    "name": "Maurice Alexander",
    "pos": "WR",
    "finishes": [
-    239,
+    238,
     243
    ]
   },
@@ -4178,7 +4153,7 @@
    "name": "Jacob Cowing",
    "pos": "WR",
    "finishes": [
-    240,
+    239,
     169
    ]
   },
@@ -4186,7 +4161,7 @@
    "name": "Jalen Moreno-Cropper",
    "pos": "WR",
    "finishes": [
-    241,
+    240,
     245
    ]
   },
@@ -4194,7 +4169,7 @@
    "name": "Jason Brownlee",
    "pos": "WR",
    "finishes": [
-    242,
+    241,
     163
    ]
   },
@@ -4202,106 +4177,106 @@
    "name": "Dominic Lovett",
    "pos": "WR",
    "finishes": [
-    243
+    242
    ]
   },
   {
    "name": "Tejhaun Palmer",
    "pos": "WR",
    "finishes": [
-    244
+    243
    ]
   },
   {
    "name": "Jeshaun Jones",
    "pos": "WR",
    "finishes": [
-    245
+    244
    ]
   },
   {
    "name": "Ricky White III",
    "pos": "WR",
    "finishes": [
-    246
+    245
    ]
   },
   {
    "name": "Jordan Moore",
    "pos": "WR",
    "finishes": [
-    247
+    246
    ]
   },
   {
    "name": "Bryson Green",
    "pos": "WR",
    "finishes": [
-    248
+    247
    ]
   },
   {
    "name": "Coleman Owen",
    "pos": "WR",
    "finishes": [
-    249
+    248
    ]
   },
   {
    "name": "Dalen Cambre",
    "pos": "WR",
    "finishes": [
-    250
+    249
    ]
   },
   {
    "name": "Chandler Brayboy",
    "pos": "WR",
    "finishes": [
-    251
+    250
    ]
   },
   {
    "name": "Jackson Meeks",
    "pos": "WR",
    "finishes": [
-    252,
-    156
+    251,
+    155
    ]
   },
   {
    "name": "Jeremiah Webb",
    "pos": "WR",
    "finishes": [
-    253
+    252
    ]
   },
   {
    "name": "Jimmy Holiday",
    "pos": "WR",
    "finishes": [
-    254
+    253
    ]
   },
   {
    "name": "Dalevon Campbell",
    "pos": "WR",
    "finishes": [
-    255
+    254
    ]
   },
   {
    "name": "Cade McDonald",
    "pos": "WR",
    "finishes": [
-    256
+    255
    ]
   },
   {
    "name": "Roman Wilson",
    "pos": "WR",
    "finishes": [
-    257,
+    256,
     252
    ]
   },
@@ -4309,7 +4284,7 @@
    "name": "Xavier Gipson",
    "pos": "WR",
    "finishes": [
-    258,
+    257,
     156,
     102
    ]
@@ -4318,7 +4293,7 @@
    "name": "Jamal Agnew",
    "pos": "WR",
    "finishes": [
-    259,
+    258,
     120
    ]
   },
@@ -4326,7 +4301,7 @@
    "name": "Mecole Hardman Jr.",
    "pos": "WR",
    "finishes": [
-    260,
+    259,
     127,
     147
    ]
@@ -4335,14 +4310,14 @@
    "name": "LaJohntay Wester",
    "pos": "WR",
    "finishes": [
-    261
+    260
    ]
   },
   {
    "name": "Myles Price",
    "pos": "WR",
    "finishes": [
-    262
+    261
    ]
   },
   {
@@ -4538,7 +4513,7 @@
    "finishes": [
     23,
     31,
-    81
+    80
    ]
   },
   {
@@ -4600,7 +4575,7 @@
    "pos": "TE",
    "finishes": [
     30,
-    135
+    134
    ]
   },
   {
@@ -4676,7 +4651,7 @@
    "finishes": [
     39,
     48,
-    82
+    81
    ]
   },
   {
@@ -4712,7 +4687,7 @@
    "finishes": [
     43,
     93,
-    97
+    96
    ]
   },
   {
@@ -4721,7 +4696,7 @@
    "finishes": [
     44,
     90,
-    70
+    69
    ]
   },
   {
@@ -4757,7 +4732,7 @@
    "finishes": [
     48,
     45,
-    58
+    57
    ]
   },
   {
@@ -4822,7 +4797,7 @@
    "finishes": [
     56,
     62,
-    64
+    63
    ]
   },
   {
@@ -4865,7 +4840,7 @@
    "finishes": [
     61,
     55,
-    67
+    66
    ]
   },
   {
@@ -4874,7 +4849,7 @@
    "finishes": [
     62,
     63,
-    76
+    75
    ]
   },
   {
@@ -4883,7 +4858,7 @@
    "finishes": [
     63,
     82,
-    130
+    129
    ]
   },
   {
@@ -4901,7 +4876,7 @@
    "finishes": [
     65,
     68,
-    91
+    90
    ]
   },
   {
@@ -4919,7 +4894,7 @@
    "finishes": [
     67,
     69,
-    65
+    64
    ]
   },
   {
@@ -4936,7 +4911,7 @@
    "finishes": [
     70,
     78,
-    60
+    59
    ]
   },
   {
@@ -4945,7 +4920,7 @@
    "finishes": [
     71,
     43,
-    68
+    67
    ]
   },
   {
@@ -4954,7 +4929,7 @@
    "finishes": [
     72,
     114,
-    106
+    105
    ]
   },
   {
@@ -4963,7 +4938,7 @@
    "finishes": [
     73,
     101,
-    88
+    87
    ]
   },
   {
@@ -4978,16 +4953,16 @@
    "name": "Grant Calcaterra",
    "pos": "TE",
    "finishes": [
-    76,
+    75,
     41,
-    92
+    91
    ]
   },
   {
    "name": "Will Dissly",
    "pos": "TE",
    "finishes": [
-    77,
+    76,
     23,
     52
    ]
@@ -4996,7 +4971,7 @@
    "name": "Johnny Mundt",
    "pos": "TE",
    "finishes": [
-    78,
+    77,
     47,
     51
    ]
@@ -5005,7 +4980,7 @@
    "name": "Cade Stover",
    "pos": "TE",
    "finishes": [
-    79,
+    78,
     58
    ]
   },
@@ -5013,25 +4988,25 @@
    "name": "Tanner Conner",
    "pos": "TE",
    "finishes": [
-    80,
+    79,
     98,
-    132
+    131
    ]
   },
   {
    "name": "Quintin Morris",
    "pos": "TE",
    "finishes": [
-    81,
+    80,
     77,
-    89
+    88
    ]
   },
   {
    "name": "Tyler Conklin",
    "pos": "TE",
    "finishes": [
-    82,
+    81,
     18,
     18
    ]
@@ -5040,34 +5015,34 @@
    "name": "Nate Adkins",
    "pos": "TE",
    "finishes": [
-    83,
+    82,
     50,
-    96
+    95
    ]
   },
   {
    "name": "Jack Stoll",
    "pos": "TE",
    "finishes": [
-    84,
+    83,
     103,
-    90
+    89
    ]
   },
   {
    "name": "Josh Whyle",
    "pos": "TE",
    "finishes": [
-    85,
+    84,
     40,
-    72
+    71
    ]
   },
   {
    "name": "Anthony Firkser",
    "pos": "TE",
    "finishes": [
-    86,
+    85,
     121
    ]
   },
@@ -5075,7 +5050,7 @@
    "name": "David Martin-Robinson",
    "pos": "TE",
    "finishes": [
-    87,
+    86,
     109
    ]
   },
@@ -5083,7 +5058,7 @@
    "name": "Foster Moreau",
    "pos": "TE",
    "finishes": [
-    88,
+    87,
     29,
     49
    ]
@@ -5092,43 +5067,43 @@
    "name": "Charlie Woerner",
    "pos": "TE",
    "finishes": [
-    89,
+    88,
     86,
-    95
+    94
    ]
   },
   {
    "name": "Drew Ogletree",
    "pos": "TE",
    "finishes": [
-    90,
+    89,
     67,
-    59
+    58
    ]
   },
   {
    "name": "Stone Smartt",
    "pos": "TE",
    "finishes": [
-    91,
+    90,
     56,
-    63
+    62
    ]
   },
   {
    "name": "Josiah Deguara",
    "pos": "TE",
    "finishes": [
-    92,
+    91,
     99,
-    80
+    79
    ]
   },
   {
    "name": "Kylen Granson",
    "pos": "TE",
    "finishes": [
-    93,
+    92,
     61,
     33
    ]
@@ -5137,32 +5112,32 @@
    "name": "Eric Saubert",
    "pos": "TE",
    "finishes": [
-    94,
+    93,
     64,
-    101
+    100
    ]
   },
   {
    "name": "Brenden Bates",
    "pos": "TE",
    "finishes": [
-    95,
-    145
+    94,
+    144
    ]
   },
   {
    "name": "Albert Okwuegbunam Jr.",
    "pos": "TE",
    "finishes": [
-    96,
-    123
+    95,
+    122
    ]
   },
   {
    "name": "Devin Culp",
    "pos": "TE",
    "finishes": [
-    97,
+    96,
     81
    ]
   },
@@ -5170,14 +5145,14 @@
    "name": "Keleki Latu",
    "pos": "TE",
    "finishes": [
-    98
+    97
    ]
   },
   {
    "name": "Durham Smythe",
    "pos": "TE",
    "finishes": [
-    99,
+    98,
     79,
     34
    ]
@@ -5186,24 +5161,24 @@
    "name": "Ben Sims",
    "pos": "TE",
    "finishes": [
-    100,
+    99,
     92,
-    85
+    84
    ]
   },
   {
    "name": "James Mitchell",
    "pos": "TE",
    "finishes": [
-    101,
-    100
+    100,
+    99
    ]
   },
   {
    "name": "Shane Zylstra",
    "pos": "TE",
    "finishes": [
-    102,
+    101,
     102
    ]
   },
@@ -5211,7 +5186,7 @@
    "name": "Tip Reiman",
    "pos": "TE",
    "finishes": [
-    103,
+    102,
     91
    ]
   },
@@ -5219,86 +5194,86 @@
    "name": "Tucker Fisk",
    "pos": "TE",
    "finishes": [
-    104,
+    103,
     88,
-    107
+    106
    ]
   },
   {
    "name": "Colson Yankoff",
    "pos": "TE",
    "finishes": [
-    105,
-    146
+    104,
+    145
    ]
   },
   {
    "name": "Zaire Mitchell-Paden",
    "pos": "TE",
    "finishes": [
-    106
+    105
    ]
   },
   {
    "name": "Lucas Krull",
    "pos": "TE",
    "finishes": [
-    107,
+    106,
     59,
-    73
+    72
    ]
   },
   {
    "name": "Jelani Woods",
    "pos": "TE",
    "finishes": [
-    108
+    107
    ]
   },
   {
    "name": "Ben Yurosek",
    "pos": "TE",
    "finishes": [
-    109
+    108
    ]
   },
   {
    "name": "Sal Cannella",
    "pos": "TE",
    "finishes": [
-    110
+    109
    ]
   },
   {
    "name": "Moliki Matavao",
    "pos": "TE",
    "finishes": [
-    111
+    110
    ]
   },
   {
    "name": "Ross Dwelley",
    "pos": "TE",
    "finishes": [
-    112,
+    111,
     110,
-    105
+    104
    ]
   },
   {
    "name": "Harrison Bryant",
    "pos": "TE",
    "finishes": [
-    113,
+    112,
     71,
-    56
+    55
    ]
   },
   {
    "name": "Cam Grandy",
    "pos": "TE",
    "finishes": [
-    114,
+    113,
     94
    ]
   },
@@ -5306,16 +5281,16 @@
    "name": "Will Mallory",
    "pos": "TE",
    "finishes": [
-    115,
+    114,
     96,
-    55
+    54
    ]
   },
   {
    "name": "Blake Whiteheart",
    "pos": "TE",
    "finishes": [
-    116,
+    115,
     72
    ]
   },
@@ -5323,34 +5298,34 @@
    "name": "Pharaoh Brown",
    "pos": "TE",
    "finishes": [
-    117,
+    116,
     83,
-    57
+    56
    ]
   },
   {
    "name": "Payne Durham",
    "pos": "TE",
    "finishes": [
-    118,
+    117,
     57,
-    87
+    86
    ]
   },
   {
    "name": "Chris Manhertz",
    "pos": "TE",
    "finishes": [
-    119,
+    118,
     84,
-    102
+    101
    ]
   },
   {
    "name": "Jared Wiley",
    "pos": "TE",
    "finishes": [
-    120,
+    119,
     108
    ]
   },
@@ -5358,138 +5333,154 @@
    "name": "Carter Runyon",
    "pos": "TE",
    "finishes": [
-    121
+    120
    ]
   },
   {
    "name": "Drake Dabney",
    "pos": "TE",
    "finishes": [
-    122
+    121
    ]
   },
   {
    "name": "Robert Tonyan",
    "pos": "TE",
    "finishes": [
-    123,
-    75
+    122,
+    74
    ]
   },
   {
    "name": "Marcedes Lewis",
    "pos": "TE",
    "finishes": [
-    125,
+    124,
     113,
-    83
+    82
    ]
   },
   {
    "name": "James Winchester",
    "pos": "TE",
    "finishes": [
-    126,
+    125,
     117,
-    115
+    114
    ]
   },
   {
    "name": "Tyler Ott",
    "pos": "TE",
    "finishes": [
-    127,
-    116
+    126,
+    115
    ]
   },
   {
    "name": "Andrew DePaola",
    "pos": "TE",
    "finishes": [
-    128,
+    127,
     119,
-    118
+    117
    ]
   },
   {
    "name": "Nick Vannett",
    "pos": "TE",
    "finishes": [
-    129,
+    128,
     46,
-    111
+    110
    ]
   },
   {
    "name": "Zach Wood",
    "pos": "TE",
    "finishes": [
-    130,
+    129,
     120,
-    120
+    119
    ]
   },
   {
    "name": "Stephen Carlson",
    "pos": "TE",
    "finishes": [
-    131
+    130
    ]
   },
   {
    "name": "Mitchell Fraboni",
    "pos": "TE",
    "finishes": [
-    132,
-    124,
-    124
+    131,
+    123,
+    123
    ]
   },
   {
    "name": "Matt Orzech",
    "pos": "TE",
    "finishes": [
+    132,
+    124
+   ]
+  },
+  {
+   "name": "Lawrence Cager",
+   "pos": "TE",
+   "finishes": [
     133,
-    125
+    127
    ]
   },
   {
    "name": "Sean McKeon",
    "pos": "TE",
    "finishes": [
-    135,
-    129
+    134,
+    128
    ]
   },
   {
    "name": "Giovanni Ricci",
    "pos": "TE",
    "finishes": [
+    135,
+    111
+   ]
+  },
+  {
+   "name": "Feleipe Franks",
+   "pos": "TE",
+   "finishes": [
     136,
-    112
+    127
    ]
   },
   {
    "name": "Kenny Yeboah",
    "pos": "TE",
    "finishes": [
-    138,
+    137,
     75,
-    99
+    98
    ]
   },
   {
    "name": "Thomas Fidone II",
    "pos": "TE",
    "finishes": [
-    139
+    138
    ]
   },
   {
    "name": "Zach Davidson",
    "pos": "TE",
    "finishes": [
-    140,
+    139,
     112
    ]
   },
@@ -5497,55 +5488,55 @@
    "name": "Nikola Kalinic",
    "pos": "TE",
    "finishes": [
-    142
+    141
    ]
   },
   {
    "name": "Teagan Quitoriano",
    "pos": "TE",
    "finishes": [
-    143,
-    131,
-    98
+    142,
+    130,
+    97
    ]
   },
   {
    "name": "Cameron Latu",
    "pos": "TE",
    "finishes": [
-    144
+    143
    ]
   },
   {
    "name": "Ko Kieft",
    "pos": "TE",
    "finishes": [
-    145,
-    133,
-    94
+    144,
+    132,
+    93
    ]
   },
   {
    "name": "Brayden Willis",
    "pos": "TE",
    "finishes": [
-    146,
-    139,
-    136
+    145,
+    138,
+    135
    ]
   },
   {
    "name": "Patrick Murtagh",
    "pos": "TE",
    "finishes": [
-    147
+    146
    ]
   },
   {
    "name": "E.J. Jenkins",
    "pos": "TE",
    "finishes": [
-    149,
+    148,
     95
    ]
   },
@@ -5553,52 +5544,52 @@
    "name": "Travis Vokolek",
    "pos": "TE",
    "finishes": [
-    150,
-    141,
-    139
+    149,
+    140,
+    138
    ]
   },
   {
    "name": "Princeton Fant",
    "pos": "TE",
    "finishes": [
-    151,
-    142
+    150,
+    141
    ]
   },
   {
    "name": "Treyton Welch",
    "pos": "TE",
    "finishes": [
-    152
+    151
    ]
   },
   {
    "name": "Hayden Rucci",
    "pos": "TE",
    "finishes": [
-    153
+    152
    ]
   },
   {
    "name": "CJ Dippre",
    "pos": "TE",
    "finishes": [
-    154
+    153
    ]
   },
   {
    "name": "Zach Horton",
    "pos": "TE",
    "finishes": [
-    157
+    156
    ]
   },
   {
    "name": "Nick Kallerup",
    "pos": "TE",
    "finishes": [
-    158
+    157
    ]
   },
   {
@@ -5677,7 +5668,7 @@
    "pos": "QB",
    "finishes": [
     64,
-    80
+    79
    ]
   },
   {
@@ -5699,7 +5690,7 @@
    "name": "Mike White",
    "pos": "QB",
    "finishes": [
-    70,
+    69,
     70
    ]
   },
@@ -5707,7 +5698,7 @@
    "name": "Sam Howell",
    "pos": "QB",
    "finishes": [
-    75,
+    74,
     12
    ]
   },
@@ -5715,7 +5706,7 @@
    "name": "Trevor Siemian",
    "pos": "QB",
    "finishes": [
-    76,
+    75,
     49
    ]
   },
@@ -5723,7 +5714,7 @@
    "name": "Jeff Driskel",
    "pos": "QB",
    "finishes": [
-    77,
+    76,
     60
    ]
   },
@@ -5731,7 +5722,7 @@
    "name": "C.J. Beathard",
    "pos": "QB",
    "finishes": [
-    78,
+    77,
     58
    ]
   },
@@ -5739,21 +5730,21 @@
    "name": "Jake Luton",
    "pos": "QB",
    "finishes": [
-    79
+    78
    ]
   },
   {
    "name": "Emory Jones",
    "pos": "QB",
    "finishes": [
-    80
+    79
    ]
   },
   {
    "name": "Jaren Hall",
    "pos": "QB",
    "finishes": [
-    81,
+    80,
     72
    ]
   },
@@ -5761,29 +5752,29 @@
    "name": "Sam Hartman",
    "pos": "QB",
    "finishes": [
-    82
+    81
    ]
   },
   {
    "name": "Jordan Travis",
    "pos": "QB",
    "finishes": [
-    83
+    82
    ]
   },
   {
    "name": "Austin Reed",
    "pos": "QB",
    "finishes": [
-    84
+    83
    ]
   },
   {
    "name": "Kyle Trask",
    "pos": "QB",
    "finishes": [
-    86,
-    82
+    85,
+    81
    ]
   },
   {
@@ -6189,7 +6180,7 @@
    "pos": "WR",
    "finishes": [
     141,
-    173
+    172
    ]
   },
   {
@@ -6250,7 +6241,7 @@
    "pos": "WR",
    "finishes": [
     161,
-    174
+    173
    ]
   },
   {
@@ -6342,7 +6333,7 @@
    "pos": "WR",
    "finishes": [
     203,
-    237
+    236
    ]
   },
   {
@@ -6379,7 +6370,7 @@
    "pos": "WR",
    "finishes": [
     208,
-    197
+    196
    ]
   },
   {
@@ -6387,7 +6378,7 @@
    "pos": "WR",
    "finishes": [
     209,
-    218
+    217
    ]
   },
   {
@@ -6419,7 +6410,7 @@
    "pos": "WR",
    "finishes": [
     218,
-    208
+    207
    ]
   },
   {
@@ -6427,7 +6418,7 @@
    "pos": "WR",
    "finishes": [
     219,
-    184
+    183
    ]
   },
   {
@@ -6435,7 +6426,7 @@
    "pos": "WR",
    "finishes": [
     221,
-    171
+    170
    ]
   },
   {
@@ -6443,7 +6434,7 @@
    "pos": "WR",
    "finishes": [
     222,
-    198
+    197
    ]
   },
   {
@@ -6474,7 +6465,7 @@
    "pos": "WR",
    "finishes": [
     228,
-    170
+    169
    ]
   },
   {
@@ -6496,7 +6487,7 @@
    "pos": "WR",
    "finishes": [
     233,
-    196
+    195
    ]
   },
   {
@@ -6504,7 +6495,7 @@
    "pos": "WR",
    "finishes": [
     237,
-    224
+    223
    ]
   },
   {
@@ -6512,7 +6503,7 @@
    "pos": "WR",
    "finishes": [
     238,
-    227
+    226
    ]
   },
   {
@@ -6520,7 +6511,7 @@
    "pos": "WR",
    "finishes": [
     242,
-    229
+    228
    ]
   },
   {
@@ -6535,7 +6526,7 @@
    "pos": "WR",
    "finishes": [
     248,
-    182
+    181
    ]
   },
   {
@@ -6593,7 +6584,7 @@
    "pos": "TE",
    "finishes": [
     32,
-    66
+    65
    ]
   },
   {
@@ -6608,7 +6599,7 @@
    "pos": "TE",
    "finishes": [
     73,
-    69
+    68
    ]
   },
   {
@@ -6632,7 +6623,7 @@
    "pos": "TE",
    "finishes": [
     89,
-    93
+    92
    ]
   },
   {
@@ -6669,7 +6660,7 @@
    "pos": "TE",
    "finishes": [
     106,
-    78
+    77
    ]
   },
   {
@@ -6691,7 +6682,7 @@
    "pos": "TE",
    "finishes": [
     116,
-    77
+    76
    ]
   },
   {
@@ -6699,7 +6690,7 @@
    "pos": "TE",
    "finishes": [
     118,
-    117
+    116
    ]
   },
   {
@@ -6707,75 +6698,75 @@
    "pos": "TE",
    "finishes": [
     122,
-    62
+    61
    ]
   },
   {
    "name": "Parker Hesse",
    "pos": "TE",
    "finishes": [
-    126,
-    126
+    125,
+    125
    ]
   },
   {
    "name": "Stephen Sullivan",
    "pos": "TE",
    "finishes": [
-    127,
-    71
+    126,
+    70
    ]
   },
   {
    "name": "Baylor Cupp",
    "pos": "TE",
    "finishes": [
-    129
+    128
    ]
   },
   {
    "name": "Nick Muse",
    "pos": "TE",
    "finishes": [
-    132,
-    103
+    131,
+    102
    ]
   },
   {
    "name": "Leroy Watson IV",
    "pos": "TE",
    "finishes": [
-    134
+    133
    ]
   },
   {
    "name": "Rodney Williams",
    "pos": "TE",
    "finishes": [
-    136,
-    134
+    135,
+    133
    ]
   },
   {
    "name": "Thomas Odukoya",
    "pos": "TE",
    "finishes": [
-    137
+    136
    ]
   },
   {
    "name": "Zack Kuntz",
    "pos": "TE",
    "finishes": [
-    138,
-    135
+    137,
+    134
    ]
   },
   {
    "name": "Tanner McLachlan",
    "pos": "TE",
    "finishes": [
-    143
+    142
    ]
   },
   {
@@ -6845,21 +6836,21 @@
    "name": "Max Duggan",
    "pos": "QB",
    "finishes": [
-    79
+    78
    ]
   },
   {
    "name": "Matt Barkley",
    "pos": "QB",
    "finishes": [
-    84
+    83
    ]
   },
   {
    "name": "Nathan Peterman",
    "pos": "QB",
    "finishes": [
-    85
+    84
    ]
   },
   {
@@ -6965,7 +6956,7 @@
    "pos": "RB",
    "finishes": [
     115,
-    205
+    204
    ]
   },
   {
@@ -7127,7 +7118,7 @@
    "pos": "RB",
    "finishes": [
     156,
-    213
+    212
    ]
   },
   {
@@ -7163,7 +7154,7 @@
    "pos": "RB",
    "finishes": [
     167,
-    137
+    136
    ]
   },
   {
@@ -7296,182 +7287,182 @@
    "name": "Keelan Doss",
    "pos": "WR",
    "finishes": [
-    176
+    175
    ]
   },
   {
    "name": "Marvin Jones Jr.",
    "pos": "WR",
    "finishes": [
-    183
+    182
    ]
   },
   {
    "name": "Michael Strachan",
    "pos": "WR",
    "finishes": [
-    187
+    186
    ]
   },
   {
    "name": "Trishton Jackson",
    "pos": "WR",
    "finishes": [
-    188
+    187
    ]
   },
   {
    "name": "Miles Boykin",
    "pos": "WR",
    "finishes": [
-    190
+    189
    ]
   },
   {
    "name": "Willie Snead IV",
    "pos": "WR",
    "finishes": [
-    192
+    191
    ]
   },
   {
    "name": "Malik Taylor",
    "pos": "WR",
    "finishes": [
-    193
+    192
    ]
   },
   {
    "name": "Colton Dowell",
    "pos": "WR",
    "finishes": [
-    200
+    199
    ]
   },
   {
    "name": "Kwamie Lassiter II",
    "pos": "WR",
    "finishes": [
-    201
+    200
    ]
   },
   {
    "name": "Antoine Green",
    "pos": "WR",
    "finishes": [
-    202
+    201
    ]
   },
   {
    "name": "Matthew Slater",
    "pos": "WR",
    "finishes": [
-    204
+    203
    ]
   },
   {
    "name": "Phillip Dorsett II",
    "pos": "WR",
    "finishes": [
-    206
+    205
    ]
   },
   {
    "name": "Damiere Byrd",
    "pos": "WR",
    "finishes": [
-    207
+    206
    ]
   },
   {
    "name": "Tre'Quan Smith",
    "pos": "WR",
    "finishes": [
-    209
+    208
    ]
   },
   {
    "name": "Andy Isabella",
    "pos": "WR",
    "finishes": [
-    210
+    209
    ]
   },
   {
    "name": "Stanley Morgan Jr.",
    "pos": "WR",
    "finishes": [
-    211
+    210
    ]
   },
   {
    "name": "Juwann Winfree",
    "pos": "WR",
    "finishes": [
-    212
+    211
    ]
   },
   {
    "name": "Amari Rodgers",
    "pos": "WR",
    "finishes": [
-    216
+    215
    ]
   },
   {
    "name": "Dax Milne",
    "pos": "WR",
    "finishes": [
-    219
+    218
    ]
   },
   {
    "name": "Kearis Jackson",
    "pos": "WR",
    "finishes": [
-    220
+    219
    ]
   },
   {
    "name": "Johnny Johnson III",
    "pos": "WR",
    "finishes": [
-    225
+    224
    ]
   },
   {
    "name": "Devon Allen",
    "pos": "WR",
    "finishes": [
-    226
+    225
    ]
   },
   {
    "name": "Cephus Johnson III",
    "pos": "WR",
    "finishes": [
-    230
+    229
    ]
   },
   {
    "name": "Isaiah Winstead",
    "pos": "WR",
    "finishes": [
-    231
+    230
    ]
   },
   {
    "name": "Lucky Jackson",
    "pos": "WR",
    "finishes": [
-    234
+    233
    ]
   },
   {
    "name": "Chase Cota",
    "pos": "WR",
    "finishes": [
-    235
+    234
    ]
   },
   {
@@ -7492,126 +7483,126 @@
    "name": "Jimmy Graham",
    "pos": "TE",
    "finishes": [
-    61
+    60
    ]
   },
   {
    "name": "Cole Turner",
    "pos": "TE",
    "finishes": [
-    74
+    73
    ]
   },
   {
    "name": "Mitchell Wilcox",
    "pos": "TE",
    "finishes": [
-    79
+    78
    ]
   },
   {
    "name": "Brycen Hopkins",
    "pos": "TE",
    "finishes": [
-    84
+    83
    ]
   },
   {
    "name": "Blake Bell",
    "pos": "TE",
    "finishes": [
-    86
+    85
    ]
   },
   {
    "name": "Trevon Wesco",
    "pos": "TE",
    "finishes": [
-    104
+    103
    ]
   },
   {
    "name": "Kevin Rader",
    "pos": "TE",
    "finishes": [
-    108
+    107
    ]
   },
   {
    "name": "Cole Fotheringham",
    "pos": "TE",
    "finishes": [
-    109
+    108
    ]
   },
   {
    "name": "Jesper Horsted",
    "pos": "TE",
    "finishes": [
-    110
+    109
    ]
   },
   {
    "name": "David Wells",
    "pos": "TE",
    "finishes": [
-    113
+    112
    ]
   },
   {
    "name": "Tyler Kroft",
    "pos": "TE",
    "finishes": [
-    114
+    113
    ]
   },
   {
    "name": "Stephen Anderson",
    "pos": "TE",
    "finishes": [
-    119
+    118
    ]
   },
   {
    "name": "Darrell Daniels",
    "pos": "TE",
    "finishes": [
-    121
+    120
    ]
   },
   {
    "name": "Jordan Thomas",
    "pos": "TE",
    "finishes": [
-    122
+    121
    ]
   },
   {
    "name": "Matt Sokol",
    "pos": "TE",
    "finishes": [
-    125
+    124
    ]
   },
   {
    "name": "Dalton Keene",
    "pos": "TE",
    "finishes": [
-    127
+    126
    ]
   },
   {
    "name": "Tre' McKitty",
    "pos": "TE",
    "finishes": [
-    131
+    130
    ]
   },
   {
    "name": "Chris Pierce Jr.",
    "pos": "TE",
    "finishes": [
-    133
+    132
    ]
   }
  ]
