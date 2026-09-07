@@ -1,6 +1,6 @@
 {
- "at": 1788743055930,
- "generated": "2026-09-07T01:04:15.930Z",
+ "at": 1788798640547,
+ "generated": "2026-09-07T16:30:40.547Z",
  "season": 2026,
  "source": "draftwizard.fantasypros.com auction calculator, PPR, $200",
  "note": "8tm 356 (top $62), 10tm 356 (top $63), 12tm 356 (top $62), 14tm 356 (top $59)",
@@ -116,21 +116,21 @@
    "pos": "RB",
    "team": "IND",
    "teams": 8,
-   "value": 41
+   "value": 40
   },
   {
    "name": "De'Von Achane",
    "pos": "RB",
    "team": "MIA",
    "teams": 8,
-   "value": 38
+   "value": 37
   },
   {
    "name": "Chase Brown",
    "pos": "RB",
    "team": "CIN",
    "teams": 8,
-   "value": 33
+   "value": 32
   },
   {
    "name": "Derrick Henry",
@@ -151,7 +151,7 @@
    "pos": "RB",
    "team": "BUF",
    "teams": 8,
-   "value": 28
+   "value": 27
   },
   {
    "name": "Kenneth Walker III",
@@ -179,14 +179,7 @@
    "pos": "RB",
    "team": "NYJ",
    "teams": 8,
-   "value": 20
-  },
-  {
-   "name": "Cam Skattebo",
-   "pos": "RB",
-   "team": "NYG",
-   "teams": 8,
-   "value": 15
+   "value": 19
   },
   {
    "name": "Travis Etienne Jr.",
@@ -196,9 +189,9 @@
    "value": 15
   },
   {
-   "name": "Jeremiyah Love",
+   "name": "Cam Skattebo",
    "pos": "RB",
-   "team": "ARI",
+   "team": "NYG",
    "teams": 8,
    "value": 15
   },
@@ -206,6 +199,13 @@
    "name": "Javonte Williams",
    "pos": "RB",
    "team": "DAL",
+   "teams": 8,
+   "value": 15
+  },
+  {
+   "name": "Jeremiyah Love",
+   "pos": "RB",
+   "team": "ARI",
    "teams": 8,
    "value": 14
   },
@@ -235,7 +235,7 @@
    "pos": "RB",
    "team": "CLE",
    "teams": 8,
-   "value": 10
+   "value": 9
   },
   {
    "name": "David Montgomery",
@@ -375,7 +375,7 @@
    "pos": "WR",
    "team": "SEA",
    "teams": 8,
-   "value": 56
+   "value": 57
   },
   {
    "name": "CeeDee Lamb",
@@ -676,7 +676,7 @@
    "pos": "TE",
    "team": "SF",
    "teams": 8,
-   "value": 5
+   "value": 7
   },
   {
    "name": "Travis Kelce",
@@ -1407,18 +1407,18 @@
    "value": -3
   },
   {
-   "name": "Alvin Kamara",
-   "pos": "RB",
-   "team": "NO",
-   "teams": 8,
-   "value": -4
-  },
-  {
    "name": "Terrance Ferguson",
    "pos": "TE",
    "team": "LAR",
    "teams": 8,
    "value": -8
+  },
+  {
+   "name": "Alvin Kamara",
+   "pos": "RB",
+   "team": "NO",
+   "teams": 8,
+   "value": -4
   },
   {
    "name": "Zach Charbonnet",
@@ -1663,7 +1663,7 @@
    "pos": "WR",
    "team": "DEN",
    "teams": 8,
-   "value": -11
+   "value": -12
   },
   {
    "name": "Tampa Bay Buccaneers",
@@ -1911,13 +1911,6 @@
    "value": -2
   },
   {
-   "name": "Dawson Knox",
-   "pos": "TE",
-   "team": "BUF",
-   "teams": 8,
-   "value": -13
-  },
-  {
    "name": "Darnell Washington",
    "pos": "TE",
    "team": "PIT",
@@ -1935,6 +1928,13 @@
    "name": "Jack Bech",
    "pos": "WR",
    "team": "LV",
+   "teams": 8,
+   "value": -13
+  },
+  {
+   "name": "Dawson Knox",
+   "pos": "TE",
+   "team": "BUF",
    "teams": 8,
    "value": -13
   },
@@ -2300,7 +2300,7 @@
    "pos": "WR",
    "team": "KC",
    "teams": 8,
-   "value": -17
+   "value": -18
   },
   {
    "name": "Kendrick Bourne",
@@ -2702,13 +2702,6 @@
    "value": 26
   },
   {
-   "name": "Cam Skattebo",
-   "pos": "RB",
-   "team": "NYG",
-   "teams": 10,
-   "value": 22
-  },
-  {
    "name": "Travis Etienne Jr.",
    "pos": "RB",
    "team": "NO",
@@ -2716,16 +2709,23 @@
    "value": 22
   },
   {
-   "name": "Jeremiyah Love",
+   "name": "Cam Skattebo",
    "pos": "RB",
-   "team": "ARI",
+   "team": "NYG",
    "teams": 10,
-   "value": 21
+   "value": 22
   },
   {
    "name": "Javonte Williams",
    "pos": "RB",
    "team": "DAL",
+   "teams": 10,
+   "value": 22
+  },
+  {
+   "name": "Jeremiyah Love",
+   "pos": "RB",
+   "team": "ARI",
    "teams": 10,
    "value": 21
   },
@@ -2790,7 +2790,7 @@
    "pos": "RB",
    "team": "NE",
    "teams": 10,
-   "value": 10
+   "value": 9
   },
   {
    "name": "Tony Pollard",
@@ -3343,14 +3343,14 @@
    "pos": "TE",
    "team": "SF",
    "teams": 10,
-   "value": 9
+   "value": 11
   },
   {
    "name": "Travis Kelce",
    "pos": "TE",
    "team": "KC",
    "teams": 10,
-   "value": 9
+   "value": 8
   },
   {
    "name": "Dallas Goedert",
@@ -3630,7 +3630,7 @@
    "pos": "QB",
    "team": "NYJ",
    "teams": 10,
-   "value": -9
+   "value": -10
   },
   {
    "name": "Aaron Rodgers",
@@ -3917,7 +3917,7 @@
    "pos": "TE",
    "team": "WAS",
    "teams": 10,
-   "value": -5
+   "value": -6
   },
   {
    "name": "Jauan Jennings",
@@ -4386,7 +4386,7 @@
    "pos": "TE",
    "team": "LV",
    "teams": 10,
-   "value": -9
+   "value": -10
   },
   {
    "name": "Brian Robinson Jr.",
@@ -4401,13 +4401,6 @@
    "team": "NYJ",
    "teams": 10,
    "value": -2
-  },
-  {
-   "name": "Dawson Knox",
-   "pos": "TE",
-   "team": "BUF",
-   "teams": 10,
-   "value": -9
   },
   {
    "name": "Darnell Washington",
@@ -4427,6 +4420,13 @@
    "name": "Jack Bech",
    "pos": "WR",
    "team": "LV",
+   "teams": 10,
+   "value": -10
+  },
+  {
+   "name": "Dawson Knox",
+   "pos": "TE",
+   "team": "BUF",
    "teams": 10,
    "value": -10
   },
@@ -4596,7 +4596,7 @@
    "pos": "TE",
    "team": "CHI",
    "teams": 10,
-   "value": -11
+   "value": -12
   },
   {
    "name": "Bryce Lance",
@@ -4610,7 +4610,7 @@
    "pos": "TE",
    "team": "NYG",
    "teams": 10,
-   "value": -11
+   "value": -12
   },
   {
    "name": "Olamide Zaccheaus",
@@ -4764,7 +4764,7 @@
    "pos": "TE",
    "team": "DET",
    "teams": 10,
-   "value": -13
+   "value": -14
   },
   {
    "name": "Kalif Raymond",
@@ -4785,7 +4785,7 @@
    "pos": "TE",
    "team": "MIN",
    "teams": 10,
-   "value": -13
+   "value": -14
   },
   {
    "name": "Cyrus Allen",
@@ -5215,13 +5215,6 @@
    "value": 28
   },
   {
-   "name": "Cam Skattebo",
-   "pos": "RB",
-   "team": "NYG",
-   "teams": 12,
-   "value": 25
-  },
-  {
    "name": "Travis Etienne Jr.",
    "pos": "RB",
    "team": "NO",
@@ -5229,16 +5222,23 @@
    "value": 25
   },
   {
-   "name": "Jeremiyah Love",
+   "name": "Cam Skattebo",
    "pos": "RB",
-   "team": "ARI",
+   "team": "NYG",
    "teams": 12,
-   "value": 24
+   "value": 25
   },
   {
    "name": "Javonte Williams",
    "pos": "RB",
    "team": "DAL",
+   "teams": 12,
+   "value": 25
+  },
+  {
+   "name": "Jeremiyah Love",
+   "pos": "RB",
+   "team": "ARI",
    "teams": 12,
    "value": 24
   },
@@ -5303,7 +5303,7 @@
    "pos": "RB",
    "team": "NE",
    "teams": 12,
-   "value": 13
+   "value": 12
   },
   {
    "name": "Tony Pollard",
@@ -5989,7 +5989,7 @@
    "pos": "TE",
    "team": "SF",
    "teams": 12,
-   "value": 11
+   "value": 13
   },
   {
    "name": "Travis Kelce",
@@ -6895,13 +6895,6 @@
    "value": -2
   },
   {
-   "name": "Dawson Knox",
-   "pos": "TE",
-   "team": "BUF",
-   "teams": 12,
-   "value": -7
-  },
-  {
    "name": "Darnell Washington",
    "pos": "TE",
    "team": "PIT",
@@ -6919,6 +6912,13 @@
    "name": "Jack Bech",
    "pos": "WR",
    "team": "LV",
+   "teams": 12,
+   "value": -7
+  },
+  {
+   "name": "Dawson Knox",
+   "pos": "TE",
+   "team": "BUF",
    "teams": 12,
    "value": -7
   },
@@ -7728,13 +7728,6 @@
    "value": 29
   },
   {
-   "name": "Cam Skattebo",
-   "pos": "RB",
-   "team": "NYG",
-   "teams": 14,
-   "value": 27
-  },
-  {
    "name": "Travis Etienne Jr.",
    "pos": "RB",
    "team": "NO",
@@ -7742,9 +7735,9 @@
    "value": 26
   },
   {
-   "name": "Jeremiyah Love",
+   "name": "Cam Skattebo",
    "pos": "RB",
-   "team": "ARI",
+   "team": "NYG",
    "teams": 14,
    "value": 26
   },
@@ -7752,6 +7745,13 @@
    "name": "Javonte Williams",
    "pos": "RB",
    "team": "DAL",
+   "teams": 14,
+   "value": 26
+  },
+  {
+   "name": "Jeremiyah Love",
+   "pos": "RB",
+   "team": "ARI",
    "teams": 14,
    "value": 26
   },
@@ -7802,7 +7802,7 @@
    "pos": "RB",
    "team": "NE",
    "teams": 14,
-   "value": 17
+   "value": 18
   },
   {
    "name": "Bhayshul Tuten",
@@ -7858,7 +7858,7 @@
    "pos": "RB",
    "team": "SEA",
    "teams": 14,
-   "value": 11
+   "value": 10
   },
   {
    "name": "RJ Harvey",
@@ -8621,14 +8621,14 @@
    "pos": "TE",
    "team": "DET",
    "teams": 14,
-   "value": 15
+   "value": 16
   },
   {
    "name": "George Kittle",
    "pos": "TE",
    "team": "SF",
    "teams": 14,
-   "value": 14
+   "value": 15
   },
   {
    "name": "Travis Kelce",
@@ -9429,13 +9429,6 @@
    "value": -2
   },
   {
-   "name": "Dawson Knox",
-   "pos": "TE",
-   "team": "BUF",
-   "teams": 14,
-   "value": -5
-  },
-  {
    "name": "Darnell Washington",
    "pos": "TE",
    "team": "PIT",
@@ -9448,6 +9441,13 @@
    "team": "LV",
    "teams": 14,
    "value": -3
+  },
+  {
+   "name": "Dawson Knox",
+   "pos": "TE",
+   "team": "BUF",
+   "teams": 14,
+   "value": -5
   },
   {
    "name": "Tyquan Thornton",
@@ -9923,7 +9923,7 @@
    "pos": "RB",
    "team": "DAL",
    "teams": 14,
-   "value": -5
+   "value": -4
   },
   {
    "name": "Devin Singletary",

@@ -1,6 +1,6 @@
 {
- "at": 1788743071359,
- "generated": "2026-09-07T01:04:31.359Z",
+ "at": 1788798656469,
+ "generated": "2026-09-07T16:30:56.469Z",
  "season": 2026,
  "source": "fantasypros projections (PPR, draft week)",
  "note": "543 players — QB 79, RB 132, WR 203, TE 129",
@@ -1087,6 +1087,17 @@
    }
   },
   {
+   "name": "Javonte Williams",
+   "pos": "RB",
+   "team": null,
+   "stats": {
+    "rushYds": 1172.81,
+    "rushTD": 9.94,
+    "recYds": 190.43,
+    "recTD": 1.31
+   }
+  },
+  {
    "name": "Omarion Hampton",
    "pos": "RB",
    "team": null,
@@ -1095,17 +1106,6 @@
     "rushTD": 8.85,
     "recYds": 327.61,
     "recTD": 1.91
-   }
-  },
-  {
-   "name": "Javonte Williams",
-   "pos": "RB",
-   "team": null,
-   "stats": {
-    "rushYds": 1157.81,
-    "rushTD": 9.94,
-    "recYds": 187.93,
-    "recTD": 1.31
    }
   },
   {
@@ -1124,7 +1124,7 @@
    "pos": "RB",
    "team": null,
    "stats": {
-    "rushYds": 1077.31,
+    "rushYds": 1084.81,
     "rushTD": 5.91,
     "recYds": 332.07,
     "recTD": 2.69
@@ -1135,9 +1135,9 @@
    "pos": "RB",
    "team": null,
    "stats": {
-    "rushYds": 1009.91,
+    "rushYds": 1007.41,
     "rushTD": 7.66,
-    "recYds": 338.85,
+    "recYds": 336.35,
     "recTD": 2.06
    }
   },
@@ -1223,9 +1223,9 @@
    "pos": "RB",
    "team": null,
    "stats": {
-    "rushYds": 781.98,
+    "rushYds": 787.48,
     "rushTD": 6.56,
-    "recYds": 328.71,
+    "recYds": 331.21,
     "recTD": 1.74
    }
   },
@@ -1245,9 +1245,9 @@
    "pos": "RB",
    "team": null,
    "stats": {
-    "rushYds": 842.11,
+    "rushYds": 832.11,
     "rushTD": 6.25,
-    "recYds": 234.26,
+    "recYds": 231.76,
     "recTD": 1.19
    }
   },
@@ -1454,9 +1454,9 @@
    "pos": "RB",
    "team": null,
    "stats": {
-    "rushYds": 439.85,
+    "rushYds": 437.35,
     "rushTD": 2.57,
-    "recYds": 224.74,
+    "recYds": 222.24,
     "recTD": 0.9
    }
   },
@@ -4676,12 +4676,12 @@
    }
   },
   {
-   "name": "Harold Fannin Jr.",
+   "name": "George Kittle",
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 790.47,
-    "recTD": 5.21
+    "recYds": 829.16,
+    "recTD": 6.26
    }
   },
   {
@@ -4689,17 +4689,17 @@
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 837.64,
+    "recYds": 842.64,
     "recTD": 5.9
    }
   },
   {
-   "name": "George Kittle",
+   "name": "Harold Fannin Jr.",
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 809.16,
-    "recTD": 6.01
+    "recYds": 790.47,
+    "recTD": 5.21
    }
   },
   {
@@ -4761,7 +4761,7 @@
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 689.24,
+    "recYds": 696.74,
     "recTD": 5.07
    }
   },
@@ -4941,7 +4941,7 @@
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 359.45,
+    "recYds": 354.45,
     "recTD": 3.01
    }
   },
@@ -5229,8 +5229,8 @@
    "pos": "TE",
    "team": null,
    "stats": {
-    "recYds": 178.26,
-    "recTD": 0.8
+    "recYds": 179.7,
+    "recTD": 0.85
    }
   },
   {
@@ -5338,15 +5338,6 @@
    "team": null,
    "stats": {
     "recYds": 123,
-    "recTD": 1
-   }
-  },
-  {
-   "name": "Jake Tonges",
-   "pos": "TE",
-   "team": null,
-   "stats": {
-    "recYds": 122.33,
     "recTD": 1
    }
   },
@@ -5528,6 +5519,15 @@
    "stats": {
     "recYds": 73.81,
     "recTD": 0.68
+   }
+  },
+  {
+   "name": "Jake Tonges",
+   "pos": "TE",
+   "team": null,
+   "stats": {
+    "recYds": 74.77,
+    "recTD": 0.66
    }
   },
   {
