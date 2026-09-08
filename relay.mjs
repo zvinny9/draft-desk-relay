@@ -14,16 +14,17 @@
  */
 import { writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { fpAav } from "./fpaav.mjs";
 
 const OUT = process.argv[2] || "data";
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
-const SEASON = Number(process.env.SEASON) || new Date().getFullYear();
+let SEASON = Number(process.env.SEASON) || new Date().getFullYear();
 
 const log = (...a) => console.log("[relay]", ...a);
 
 async function get(url, kind = "text") {
-  const r = await fetch(url, { headers: { "user-agent": UA, accept: "*/*" }, redirect: "follow" });
+  const r = await fetch(url, { headers: { "user-agent": UA, accept: "*/*" }, redirect: "follow", signal: AbortSignal.timeout(20000) });
   if (!r.ok) throw new Error(`${url} -> ${r.status}`);
   return kind === "json" ? r.json() : r.text();
 }
@@ -33,6 +34,7 @@ async function get(url, kind = "text") {
 async function publish(name, rows, source, note, extra = {}) {
   await mkdir(OUT, { recursive: true });
   const body = { at: Date.now(), generated: new Date().toISOString(), season: SEASON,
+    retrievedAt: Date.now(), publishedAt: extra.expert?.updated || null, horizon: name === "finishes" ? "historical" : "draft", week: null,
     source, note: note || "", count: rows.length, rows, ...extra };
   await writeFile(join(OUT, `${name}.json`), JSON.stringify(body, null, 1));
   log(`wrote ${name}.json — ${rows.length} rows from ${source}`);
@@ -248,13 +250,13 @@ async function ffpc(kind, contest) {
    is how the first version of this file quietly published Shohei Ohtani.
    draft_type 0 is every non-auction draft; the numbered contests are NFFC's
    own ids, read off the picker. */
-const NFFC_CONTESTS = { all: 0, superflex: 961, primetime: 941, classic: 935 };
+const NFFC_CONTESTS = { all: -1, superflex: 961, primetime: 941, classic: 935 };
 
-async function nffc(draftType = NFFC_CONTESTS.all) {
+async function nffc(draftType = NFFC_CONTESTS.primetime) {
   const body = new URLSearchParams({ team_id: "0", time_period: "", from_date: "",
-    to_date: "", num_teams: "0", draft_type: String(draftType), sport: "football",
+    to_date: "", num_teams: "12", draft_type: String(draftType), sport: "football",
     position: "", league_teams: "", as_board: "0" }).toString();
-  const r = await fetch("https://nfc.shgn.com/adp.data.php", { method: "POST",
+  const r = await fetch("https://nfc.shgn.com/adp.data.php", { method: "POST", signal: AbortSignal.timeout(20000),
     headers: { "user-agent": UA, "x-requested-with": "XMLHttpRequest",
       "content-type": "application/x-www-form-urlencoded; charset=UTF-8" }, body });
   if (!r.ok) throw new Error(`adp.data.php -> ${r.status}`);
@@ -264,7 +266,7 @@ async function nffc(draftType = NFFC_CONTESTS.all) {
      one of six positions, a baseball board is almost none of them. */
   const known = rows.filter((x) => x.pos).length / rows.length;
   if (known < 0.5) throw new Error(`only ${Math.round(known * 100)}% of rows carry an NFL position`);
-  return { rows, source: "nfc.shgn.com adp.data.php" };
+  return { rows, source: `NFFC ${draftType === 941 ? "Primetime" : draftType === 961 ? "SuperFlex" : "non-superflex"} · 12-team`, note: `Verified contest ID ${draftType}; sport=football; num_teams=12` };
 }
 
 /* Positional finishes — the data the Consistency weight has never had.
@@ -692,7 +694,7 @@ const FP_EXPERTS = [
 async function fpJson(filters, position = "ALL") {
   const u = `${FP_API}/nfl/${SEASON}/consensus-rankings`
     + `?type=draft&scoring=PPR&position=${position}&week=0&sport=NFL&filters=${encodeURIComponent(filters)}`;
-  const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
+  const r = await fetch(u, { signal: AbortSignal.timeout(20000), headers: { "user-agent": UA, accept: "application/json",
     "content-type": "application/json", "x-api-key": FP_KEY } });
   if (!r.ok) throw new Error(`fantasypros -> ${r.status}`);
   return r.json();
@@ -758,7 +760,7 @@ function qbShape(rows) {
 async function fpConsensus(position = "ALL") {
   const u = `${FP_API}/nfl/${SEASON}/consensus-rankings`
     + `?type=draft&scoring=PPR&position=${position}&week=0&sport=NFL`;
-  const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
+  const r = await fetch(u, { signal: AbortSignal.timeout(20000), headers: { "user-agent": UA, accept: "application/json",
     "content-type": "application/json", "x-api-key": FP_KEY } });
   if (!r.ok) throw new Error(`fantasypros ecr -> ${r.status}`);
   const j = await r.json();
@@ -816,6 +818,7 @@ const FFPC = {
 
 const JOBS = [
   ["fpaav", fpAav],
+  ["fpproj", fpProjections],
   ["nffc", () => nffc()],
   ["nffcsf", nffcSF],
   ["finishes", finishes],
@@ -836,7 +839,7 @@ const JOBS = [
      that is genuinely not FFPC — DraftKings Best Ball superflex or Underdog SF.
      Publishing a clone into it was worse than leaving it empty, because an
      empty slot shows up in the coverage matrix and a clone does not. */
-  ["fpproj", fpProjections],
+  // Underdog is fetched directly by the browser; no duplicate relay job.
   ["wins", wins],
   ...FP_EXPERTS.map((e) => [e.sid, () => fpExpert(e, "ALL")]),
   /* The same six analysts, superflex. Red Wing is best ball AND superflex, and
@@ -851,47 +854,6 @@ const JOBS = [
   ["fpcustomsf", () => fpConsensus("OP")],
 ];
 
-let ok = 0, failed = [];
-for (const [name, fn] of JOBS) {
-  try {
-    const got = await fn();
-    const extra = {};
-    if (got.tournament) extra.tournament = got.tournament;
-    if (got.expert) extra.expert = got.expert;
-    await publish(name, got.rows, got.source, got.note, extra);
-    ok++;
-  } catch (e) {
-    /* Deliberately does NOT write an empty file. A source that fails leaves its
-       last good file in place and Draft Desk shows that file's real age, which
-       is the honest reading — an empty file would present a failure as a market
-       with nothing in it. */
-    log(`SKIP ${name}: ${e.message}`);
-    failed.push(`${name}: ${e.message}`);
-  }
-}
-await mkdir(OUT, { recursive: true });
-await writeFile(join(OUT, "status.json"), JSON.stringify(
-  { at: Date.now(), generated: new Date().toISOString(), season: SEASON, ok, failed }, null, 1));
-log(`done — ${ok} of ${JOBS.length} published`);
-if (!ok) process.exit(1);
-/* FantasyPros projections — the second projection set, relayed.
-
-   The two projection sets that decide this board were hand-pasted, and a
-   projection is the one thing where staleness is invisible: a week-old rank
-   still looks like a rank, and a week-old point total still looks like points.
-   This puts one of them on the same twice-daily clock as everything else.
-
-   STAT LINES, not points. A finished point total is frozen at whatever scoring
-   it was computed under; Draft Desk detects that and refuses the source in any
-   league whose rules do not match. A stat line re-scores itself for all
-   seventeen. That is why this reads the per-stat columns and never `points`.
-
-   One call per position because the endpoint is per position, merged on name.
-   Validated the same way every other job here is: enough rows, a real spread of
-   positions, and yardage that looks like yardage — a season projection that
-   thinks the best receiver gains 90 yards has failed, and failing loudly is
-   the whole point of these checks. */
-
 async function fpProjections() {
   const FP_PROJ_POS = ["QB", "RB", "WR", "TE"];
   const FP_PROJ_KEYS = { pass_yds: "passYds", pass_tds: "passTD", pass_ints: "ints", pass_int: "ints", rush_yds: "rushYds", rush_tds: "rushTD", rec: "rec", receptions: "rec", rec_yds: "recYds", rec_tds: "recTD" };
@@ -900,7 +862,7 @@ async function fpProjections() {
   for (const pos of FP_PROJ_POS) {
     const u = `${FP_API}/nfl/${SEASON}/projections`
       + `?position=${pos}&scoring=PPR&week=draft&sport=NFL`;
-    const r = await fetch(u, { headers: { "user-agent": UA, accept: "application/json",
+    const r = await fetch(u, { signal: AbortSignal.timeout(20000), headers: { "user-agent": UA, accept: "application/json",
       "content-type": "application/json", "x-api-key": FP_KEY } });
     if (!r.ok) throw new Error(`fantasypros projections ${pos} -> ${r.status}`);
     const j = await r.json();
@@ -946,3 +908,74 @@ async function fpProjections() {
     source: "fantasypros projections (PPR, draft week)",
     note: `${rows.length} players — ${seen.join(", ")}${noTd ? ` · ${noTd} rows carry no touchdown column` : ""}` };
 }
+
+/* Weekly analyst relay. Verified 8 Sep 2026 against the site's public data.
+   Selection: currently included/public experts who finished top 30 overall in
+   either of the two published in-season accuracy years, capped at eight.
+   This is a transparent editorial rule, not a fitted forecast weight. */
+function embeddedJSON(html,name){
+  const m=new RegExp('(?:var|let|const)\\s+'+name+'\\s*=\\s*').exec(html);if(!m)throw Error('Missing public '+name);
+  const tail=html.slice(m.index+m[0].length);let depth=0,string=false,escape=false;
+  for(let i=0;i<tail.length;i++){const c=tail[i];if(string){if(escape)escape=false;else if(c==='\\')escape=true;else if(c==='"')string=false;}else if(c==='"')string=true;else if(c==='{'||c==='[')depth++;else if(c==='}'||c===']'){if(--depth===0)return JSON.parse(tail.slice(0,i+1));}}
+  throw Error('Incomplete public '+name);
+}
+function selectWeeklyExperts(ecr,groups){
+  const included=new Set(ecr.experts_available?.included||[]);
+  const rank=v=>/^\d+$/.test(String(v))&&Number(v)>0?Number(v):null;
+  return (groups.expert_data||[]).filter(e=>included.has(Number(e.id))).map(e=>({...e,latestRank:rank(e.in_season_rank),previousRank:rank(e.in_season_ly_rank)}))
+    .filter(e=>(e.latestRank&&e.latestRank<=30)||(e.previousRank&&e.previousRank<=30))
+    .sort((a,b)=>Math.min(a.latestRank||999,a.previousRank||999)-Math.min(b.latestRank||999,b.previousRank||999)||(a.latestRank||999)-(b.latestRank||999)).slice(0,8);
+}
+function weeklyRows(j,ctx){
+  if(j.ranking_type_name!=='weekly'||Number(j.year)!==ctx.season||Number(j.week)!==ctx.week||j.position_id!==ctx.position||j.scoring!==ctx.scoring)throw Error('Weekly response has the wrong period, scoring, or position');
+  const n=Number(j.total_experts)||0;
+  if(ctx.expert){if(n!==1||String(j.filters)!==String(ctx.expert.id))throw Error('Individual expert filter was ignored or has not published');}
+  else if(n<5)throw Error('Consensus has fewer than five contributors');
+  const rows=(j.players||[]).map(p=>({id:String(p.player_id),name:p.player_name,pos:canonPos(p.player_position_id),team:p.player_team_id,rank:Number(p.rank_ecr),posRank:p.pos_rank||null,bye:Number(p.player_bye_week)||null})).filter(p=>p.name&&Number.isFinite(p.rank)&&p.rank>0);
+  const minimum=['K','DST'].includes(ctx.position)?8:50;if(rows.length<minimum)throw Error('Weekly board is incomplete: '+rows.length+' rows');
+  return rows;
+}
+async function weeklyBundle(season,week){
+  const page=await get('https://www.fantasypros.com/nfl/rankings/ppr-flex.php');
+  const ecr=embeddedJSON(page,'ecrData'),groups=embeddedJSON(page,'expertGroupsData');
+  if(Number(ecr.year)!==season||Number(ecr.week)!==week||ecr.ranking_type_name!=='weekly')throw Error('Public weekly page is not on the requested NFL week');
+  const panel=selectWeeklyExperts(ecr,groups),boards=[],failures=[];
+  const unavailable=(groups.expert_groups?.accuracy_weekly?.options?.[0]?.experts||[]).filter(id=>!panel.some(e=>e.id===id));
+  const requests=[];for(const scoring of ['PPR','HALF']){
+    for(const position of ['OP','K','DST'])requests.push({scoring,position});
+    for(const expert of panel)requests.push({scoring,position:'OP',expert});
+  }
+  for(let i=0;i<requests.length;i+=3){await Promise.all(requests.slice(i,i+3).map(async req=>{
+    let ctx={...req,season,week};try{
+      const url=`${FP_API}/nfl/${season}/consensus-rankings?type=weekly&scoring=${req.scoring}&position=${req.position}&week=${week}&sport=NFL${req.expert?'&filters='+req.expert.id:''}`;
+      const r=await fetch(url,{headers:{'user-agent':UA,'x-api-key':FP_KEY,accept:'application/json'},signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('HTTP '+r.status);
+      let j=await r.json();
+      // Some experts publish a weekly FLEX board without an OP board. Preserve
+      // its actual scope; do not omit a public analyst or invent their QB ranks.
+      if(req.expert&&Number(j.total_experts)!==1){const fallback=await fetch(url.replace('position=OP','position=FLX'),{headers:{'user-agent':UA,'x-api-key':FP_KEY,accept:'application/json'},signal:AbortSignal.timeout(20000)});if(fallback.ok){j=await fallback.json();ctx={...ctx,position:'FLX'};}}
+      const rows=weeklyRows(j,ctx);
+      const publishedAt=j.last_updated_ts?Number(j.last_updated_ts)*1000:req.expert?.last_updated?Number(req.expert.last_updated)*1000:null;
+      boards.push({id:`${req.expert?.id||'consensus'}-${req.scoring}-${ctx.position}`,name:req.expert?.name||'FantasyPros consensus',site:req.expert?.site||'FantasyPros',expertId:req.expert?.id||null,scoring:req.scoring,position:ctx.position,season,week,horizon:'weekly',publishedAt,publishedLabel:j.last_updated||null,retrievedAt:Date.now(),contributors:Number(j.total_experts),rank2025:req.expert?.latestRank||null,rank2024:req.expert?.previousRank||null,accuracyYear:Number(groups.accuracy_weekly_season),previousAccuracyYear:Number(groups.accuracy_weekly_last_season),rows});
+    }catch(e){failures.push({name:req.expert?.name||'Consensus',scoring:req.scoring,position:req.position,reason:e.message});}
+  }));}
+  if(!boards.some(b=>!b.expertId&&b.position==='OP'))throw Error('No valid weekly offensive consensus');
+  return {season,week,horizon:'weekly',source:'FantasyPros public weekly rankings',at:Date.now(),retrievedAt:Date.now(),selection:'Public and current; top 30 in either published in-season accuracy year; at most eight. No fitted weights.',accuracyYear:Number(groups.accuracy_weekly_season),previousAccuracyYear:Number(groups.accuracy_weekly_last_season),panel:panel.filter(e=>boards.some(b=>String(b.expertId)===String(e.id))).map(e=>({id:e.id,name:e.name,site:e.site,rank:e.latestRank,previous:e.previousRank,publishedAt:e.last_updated*1000})),unavailableTopIds:unavailable,boards,failures};
+}
+
+export {embeddedJSON,selectWeeklyExperts,weeklyRows,weeklyBundle,ffpcRows,ffpc,nffc};
+async function main(){
+  await mkdir(OUT,{recursive:true});
+  let state;try{state=await get('https://api.sleeper.app/v1/state/nfl','json');}catch(e){throw Error('Cannot establish NFL week: '+e.message);}
+  const season=Number(state.season),week=Number(state.display_week||state.week);
+  if(!Number.isInteger(season)||season<2020||season>2100)throw Error('Invalid NFL season');
+  if(!process.env.SEASON)SEASON=state.season_type==='regular'?season:Number(state.league_season)||season;
+  const all=process.argv.includes('--all'),weeklyOnly=process.argv.includes('--weekly-only');
+  const mode=all?'all':weeklyOnly?'weekly':state.season_type==='regular'?'weekly':'draft';
+  let ok=0;const failed=[];
+  if(mode!=='weekly')for(const [name,fn]of JOBS){try{const got=await fn();await publish(name,got.rows,got.source,got.note,{...(got.expert?{expert:got.expert}:{}),...(got.tournament?{tournament:got.tournament}:{}),horizon:name==='finishes'?'historical':'draft'});ok++;}catch(e){failed.push(name+': '+e.message);log('SKIP',name,e.message);}}
+  if(state.season_type==='regular'&&week>=1&&week<=18){try{const bundle=await weeklyBundle(season,week);await writeFile(join(OUT,'weekly-experts.json'),JSON.stringify(bundle));await writeFile(join(OUT,'weekly-experts-'+season+'-'+week+'.json'),JSON.stringify(bundle));ok++;log('weekly',bundle.boards.length,'boards',bundle.panel.map(e=>e.name).join(', '));}catch(e){failed.push('weekly-experts: '+e.message);}}
+  const status={at:Date.now(),generated:new Date().toISOString(),season,week,mode,ok,failed};
+  await writeFile(join(OUT,mode==='weekly'?'weekly-status.json':'status.json'),JSON.stringify(status,null,2));
+  log(JSON.stringify(status));if(!ok)process.exitCode=1;
+}
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)main().catch(e=>{console.error(e);process.exitCode=1;});
