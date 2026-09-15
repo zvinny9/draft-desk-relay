@@ -963,10 +963,13 @@ async function weeklyBundle(season,week){
 }
 
 export {embeddedJSON,selectWeeklyExperts,weeklyRows,weeklyBundle,ffpcRows,ffpc,nffc};
+// 2026-09-15: Sleeper week=2, display_week=1 made four runs reject current Week 2 boards.
+// Use the actual regular-season week; display_week is presentation-only.
+export function currentNflWeek(state){const raw=state?.week??state?.leg??state?.display_week;const week=Number(raw);if(!Number.isInteger(week)||week<1||week>18)return null;return week;}
 async function main(){
   await mkdir(OUT,{recursive:true});
   let state;try{state=await get('https://api.sleeper.app/v1/state/nfl','json');}catch(e){throw Error('Cannot establish NFL week: '+e.message);}
-  const season=Number(state.season),week=Number(state.display_week||state.week);
+  const season=Number(state.season),week=currentNflWeek(state);
   if(!Number.isInteger(season)||season<2020||season>2100)throw Error('Invalid NFL season');
   if(!process.env.SEASON)SEASON=state.season_type==='regular'?season:Number(state.league_season)||season;
   const all=process.argv.includes('--all'),weeklyOnly=process.argv.includes('--weekly-only');
