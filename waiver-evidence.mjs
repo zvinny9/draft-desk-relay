@@ -18,7 +18,7 @@ export function parse(source,html,{season,week,url,players=[]}){
  }else{
   if(!/bids are based on a \$100 budget/i.test(plain(html)))throw Error('Missing budget basis');
   const blocks=html.split(/(?=<h4\b)/i);
-  for(const block of blocks){const heading=block.match(/^<h4\b[^>]*>([\s\S]*?)<\/h4>/i);if(!heading)continue;const m=plain(heading[1]).match(/^(.+?)\s*\((QB|RB|WR|TE)\s*[–-]/);if(!m)continue;const text=plain(block),value=text.match(/True Value\s*:\s*\$(\d+)/i),low=text.match(/Budget-Minded\s*:\s*\$(\d+)/i),high=text.match(/Desperate Need\s*:\s*\$(\d+)/i);if(value&&low&&high)rows.push({...base,name:m[1],pos:m[2],low:+low[1],high:+high[1],typical:+value[1],budgetBasis:100,bidText:`$${low[1]} budget / $${value[1]} typical / $${high[1]} urgent on $100 starting budget`});}
+  for(const block of blocks){const heading=block.match(/^<h4\b[^>]*>([\s\S]*?)<\/h4>/i);if(!heading)continue;const m=plain(heading[1]).match(/^(.+?)\s*\((QB|RB|WR|TE)\s*[–-]/);if(!m)continue;const text=plain(block),value=text.match(/True Value\s*:\s*\$(\d+)/i),low=text.match(/Budget-Minded\s*:\s*\$(\d+)/i),high=text.match(/Desperate Need\s*:\s*\$(\d+)/i);if(value&&low&&high)rows.push({...base,name:m[1],pos:m[2],low:+low[1],high:+high[1],typical:+value[1],budgetBasis:100,bidText:`$${low[1]} budget / $${value[1]} typical / $${high[1]} urgent on stated $100 budget`});}
  }
  if(!rows.length)throw Error('No explicit bids parsed');return rows;
 }
