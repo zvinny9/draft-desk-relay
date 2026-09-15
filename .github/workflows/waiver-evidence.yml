@@ -1,1 +1,28 @@
-
+name: Weekly waiver evidence
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 */4 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: waiver-evidence
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node waiver-evidence.mjs
+      - name: Publish public metadata
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/waiver-evidence.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh dated waiver evidence"
+          git pull --rebase
+          git push
