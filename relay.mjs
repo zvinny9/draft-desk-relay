@@ -919,13 +919,30 @@ function embeddedJSON(html,name){
   for(let i=0;i<tail.length;i++){const c=tail[i];if(string){if(escape)escape=false;else if(c==='\\')escape=true;else if(c==='"')string=false;}else if(c==='"')string=true;else if(c==='{'||c==='[')depth++;else if(c==='}'||c===']'){if(--depth===0)return JSON.parse(tail.slice(0,i+1));}}
   throw Error('Incomplete public '+name);
 }
-function selectWeeklyExperts(ecr,groups){
-  const included=new Set(ecr.experts_available?.included||[]);
-  const rank=v=>/^\d+$/.test(String(v))&&Number(v)>0?Number(v):null;
-  return (groups.expert_data||[]).filter(e=>included.has(Number(e.id))).map(e=>({...e,latestRank:rank(e.in_season_rank),previousRank:rank(e.in_season_ly_rank)}))
-    .filter(e=>(e.latestRank&&e.latestRank<=30)||(e.previousRank&&e.previousRank<=30))
-    .sort((a,b)=>Math.min(a.latestRank||999,a.previousRank||999)-Math.min(b.latestRank||999,b.previousRank||999)||(a.latestRank||999)-(b.latestRank||999)).slice(0,8);
+/* 2026-09-16: live FP metadata changed from 2025/2024 to 2026/2025 after
+   Week 1. The old best-of-two-years rule selected six current top-six names.
+   v112 blends scaled public ranks; FP error scores and individual graded
+   participation are not available from this public ranking-page metadata.
+   Eight prior-equivalent weeks and a 2:1 completed-year split are unfitted
+   starting policies. Selection scores are NOT decision-vote weights. */
+const WEEKLY_ACCURACY_ARCHIVE={"7":{"2024":59,"2025":71},"220":{"2024":121,"2025":142},"284":{"2024":142,"2025":147},"285":{"2024":37,"2025":6},"302":{"2025":152},"394":{"2024":118},"670":{"2024":85,"2025":79},"690":{"2024":120,"2025":93},"692":{"2024":72,"2025":91},"873":{"2024":92,"2025":88},"908":{"2024":14,"2025":13},"1080":{"2024":9,"2025":39},"1091":{"2024":129,"2025":150},"1139":{"2024":57,"2025":43},"1204":{"2024":73,"2025":45},"1549":{"2024":135,"2025":143},"1576":{"2024":99,"2025":56},"2340":{"2024":97,"2025":24},"2373":{"2024":49},"2576":{"2024":67,"2025":81},"2632":{"2024":61,"2025":58},"2716":{"2024":123,"2025":97},"2747":{"2024":70,"2025":87},"2772":{"2024":149,"2025":123},"3137":{"2025":36},"3468":{"2024":86,"2025":74},"3514":{"2024":40,"2025":64},"3585":{"2024":124,"2025":108},"3945":{"2024":128,"2025":104},"4160":{"2024":116,"2025":124},"4164":{"2024":89,"2025":53},"4317":{"2024":95,"2025":129},"4338":{"2024":71,"2025":85},"4408":{"2025":96},"4436":{"2024":47,"2025":86},"4940":{"2024":143,"2025":134},"5001":{"2024":88,"2025":94},"5513":{"2024":151,"2025":151},"5598":{"2024":69,"2025":69},"5874":{"2024":132,"2025":118},"6293":{"2024":83,"2025":62},"6586":{"2024":140,"2025":140},"6600":{"2025":28},"7254":{"2025":98}};
+function weeklyAnalystPolicy(ecr,groups){
+ const season=Number(ecr.year),year=Number(groups.accuracy_weekly_season),previous=Number(groups.accuracy_weekly_last_season),rawWeek=Number(groups.accuracy_weekly_week),through=year===season&&Number.isInteger(rawWeek)&&rawWeek>=1&&rawWeek<=17?rawWeek:0,retained=through>=8?through-1:through,currentWeight=retained/(retained+8),rank=v=>/^\d+$/.test(String(v))&&Number(v)>0?Number(v):null;
+ const history=new Map(Object.entries(WEEKLY_ACCURACY_ARCHIVE).map(([id,years])=>[String(id),{...years}]));
+ for(const e of groups.expert_data||[]){const years=history.get(String(e.id))||{};for(const [y,r]of [[year,rank(e.in_season_rank)],[previous,rank(e.in_season_ly_rank)]])if(y>=season-2&&y<=season&&r)years[y]=r;history.set(String(e.id),years);}
+ const years=[season,season-1,season-2],distributions=Object.fromEntries(years.map(y=>[y,[...history.values()].map(r=>r[y]).filter(r=>rank(r))]));
+ // The archived 2024 cohort is incomplete. Its third observed analyst was #37
+ // overall: an empirical percentile within that small cohort would overstate
+ // the result. Scale the published rank by the largest observed rank instead;
+ // this is still an ordinal approximation, not the full-field error score.
+ const rankScale=Object.fromEntries(years.map(y=>[y,Math.max(2,...distributions[y])]));
+ const percentile=(y,r)=>!r||!distributions[y].length ? .5 : 1-(r-1)/(rankScale[y]-1);
+ const weights={[season]:currentWeight,[season-1]:(1-currentWeight)*2/3,[season-2]:(1-currentWeight)/3},included=new Set((ecr.experts_available?.included||[]).map(String));
+ const candidates=(groups.expert_data||[]).filter(e=>included.has(String(e.id))).map(e=>{const ranks=Object.fromEntries(years.map(y=>[y,history.get(String(e.id))?.[y]||null])),score=years.reduce((n,y)=>n+weights[y]*percentile(y,ranks[y]),0),historical=(2*percentile(season-1,ranks[season-1])+percentile(season-2,ranks[season-2]))/3;return {...e,latestRank:rank(e.in_season_rank),previousRank:rank(e.in_season_ly_rank),accuracyRanks:ranks,selectionScore:score,historicalScore:historical};}).filter(e=>years.some(y=>e.accuracyRanks[y]&&e.accuracyRanks[y]<=30)).sort((a,b)=>b.selectionScore-a.selectionScore||b.historicalScore-a.historicalScore||Number(a.id)-Number(b.id));
+ return {id:'history-blend-v112',season,throughWeek:through,retainedWeeks:retained,priorWeeks:8,weights,rankScale,cohortSizes:Object.fromEntries(years.map(y=>[y,distributions[y].length])),basis:'Published ranks scaled by largest observed rank per year; partial coverage, missing years use neutral 0.5',participation:'Leaderboard-level graded weeks; individual participation unavailable',votes:'One equal vote per analyst; selection score never multiplies votes',fitted:false,candidates};
 }
+function selectWeeklyExperts(ecr,groups){return weeklyAnalystPolicy(ecr,groups).candidates.slice(0,8);}
+
 function weeklyRows(j,ctx){
   if(j.ranking_type_name!=='weekly'||Number(j.year)!==ctx.season||Number(j.week)!==ctx.week||j.position_id!==ctx.position||j.scoring!==ctx.scoring)throw Error('Weekly response has the wrong period, scoring, or position');
   const n=Number(j.total_experts)||0;
@@ -939,7 +956,7 @@ async function weeklyBundle(season,week){
   const page=await get('https://www.fantasypros.com/nfl/rankings/ppr-flex.php');
   const ecr=embeddedJSON(page,'ecrData'),groups=embeddedJSON(page,'expertGroupsData');
   if(Number(ecr.year)!==season||Number(ecr.week)!==week||ecr.ranking_type_name!=='weekly')throw Error('Public weekly page is not on the requested NFL week');
-  const panel=selectWeeklyExperts(ecr,groups),boards=[],failures=[];
+  const selectionPolicy=weeklyAnalystPolicy(ecr,groups),panel=selectionPolicy.candidates.slice(0,8),boards=[],failures=[];
   const unavailable=(groups.expert_groups?.accuracy_weekly?.options?.[0]?.experts||[]).filter(id=>!panel.some(e=>e.id===id));
   const requests=[];for(const scoring of ['PPR','HALF']){
     for(const position of ['OP','K','DST'])requests.push({scoring,position});
@@ -955,14 +972,14 @@ async function weeklyBundle(season,week){
       if(req.expert&&Number(j.total_experts)!==1){const fallback=await fetch(url.replace('position=OP','position=FLX'),{headers:{'user-agent':UA,'x-api-key':FP_KEY,accept:'application/json'},signal:AbortSignal.timeout(20000)});if(fallback.ok){j=await fallback.json();ctx={...ctx,position:'FLX'};}}
       const rows=weeklyRows(j,ctx);
       const publishedAt=j.last_updated_ts?Number(j.last_updated_ts)*1000:req.expert?.last_updated?Number(req.expert.last_updated)*1000:null;
-      boards.push({id:`${req.expert?.id||'consensus'}-${req.scoring}-${ctx.position}`,name:req.expert?.name||'FantasyPros consensus',site:req.expert?.site||'FantasyPros',expertId:req.expert?.id||null,scoring:req.scoring,position:ctx.position,season,week,horizon:'weekly',publishedAt,publishedLabel:j.last_updated||null,retrievedAt:Date.now(),contributors:Number(j.total_experts),rank2025:req.expert?.latestRank||null,rank2024:req.expert?.previousRank||null,accuracyYear:Number(groups.accuracy_weekly_season),previousAccuracyYear:Number(groups.accuracy_weekly_last_season),rows});
+      boards.push({id:`${req.expert?.id||'consensus'}-${req.scoring}-${ctx.position}`,name:req.expert?.name||'FantasyPros consensus',site:req.expert?.site||'FantasyPros',expertId:req.expert?.id||null,scoring:req.scoring,position:ctx.position,season,week,horizon:'weekly',publishedAt,publishedLabel:j.last_updated||null,retrievedAt:Date.now(),contributors:Number(j.total_experts),accuracyRanks:req.expert?.accuracyRanks||{},accuracyYear:Number(groups.accuracy_weekly_season),previousAccuracyYear:Number(groups.accuracy_weekly_last_season),rows});
     }catch(e){failures.push({name:req.expert?.name||'Consensus',scoring:req.scoring,position:req.position,reason:e.message});}
   }));}
   if(!boards.some(b=>!b.expertId&&b.position==='OP'))throw Error('No valid weekly offensive consensus');
-  return {season,week,horizon:'weekly',source:'FantasyPros public weekly rankings',at:Date.now(),retrievedAt:Date.now(),selection:'Public and current; top 30 in either published in-season accuracy year; at most eight. No fitted weights.',accuracyYear:Number(groups.accuracy_weekly_season),previousAccuracyYear:Number(groups.accuracy_weekly_last_season),panel:panel.filter(e=>boards.some(b=>String(b.expertId)===String(e.id))).map(e=>({id:e.id,name:e.name,site:e.site,rank:e.latestRank,previous:e.previousRank,publishedAt:e.last_updated*1000})),unavailableTopIds:unavailable,boards,failures};
+  return {season,week,horizon:'weekly',source:'FantasyPros public weekly rankings',at:Date.now(),retrievedAt:Date.now(),selection:'Public current boards; gradual accuracy blend across current and two completed years; at most eight. Unfitted selection policy; equal decision votes.',selectionPolicy:{...selectionPolicy,candidates:undefined},accuracyYear:Number(groups.accuracy_weekly_season),previousAccuracyYear:Number(groups.accuracy_weekly_last_season),panel:panel.filter(e=>boards.some(b=>String(b.expertId)===String(e.id))).map(e=>({id:e.id,name:e.name,site:e.site,rank:e.latestRank,previous:e.previousRank,accuracyRanks:e.accuracyRanks,selectionScore:e.selectionScore,publishedAt:e.last_updated*1000})),unavailableTopIds:unavailable,boards,failures};
 }
 
-export {embeddedJSON,selectWeeklyExperts,weeklyRows,weeklyBundle,ffpcRows,ffpc,nffc};
+export {embeddedJSON,weeklyAnalystPolicy,selectWeeklyExperts,weeklyRows,weeklyBundle,ffpcRows,ffpc,nffc};
 // 2026-09-15: Sleeper week=2, display_week=1 made four runs reject current Week 2 boards.
 // Use the actual regular-season week; display_week is presentation-only.
 export function currentNflWeek(state){const raw=state?.week??state?.leg??state?.display_week;const week=Number(raw);if(!Number.isInteger(week)||week<1||week>18)return null;return week;}
