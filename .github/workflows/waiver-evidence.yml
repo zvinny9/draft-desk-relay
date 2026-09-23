@@ -17,8 +17,13 @@ jobs:
         with:
           node-version: '22'
       - run: node waiver-evidence.mjs
+      # An empty current-week result carries source failure details. Publish it
+      # even when the collector signals failure; never leave last week's file
+      # looking like the only available status. Fatal preflight errors leave no diff.
       - name: Publish public metadata
+        if: always()
         run: |
+          test -f data/waiver-evidence.json || exit 0
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add data/waiver-evidence.json
