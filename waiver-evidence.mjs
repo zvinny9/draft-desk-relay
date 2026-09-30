@@ -15,7 +15,7 @@ function assertContext({season,week}){if(!Number.isInteger(season)||season<2020|
 export function validArticleURL(source,url,ctx){
  try{assertContext(ctx);const u=new URL(url),{season,week}=ctx;if(u.protocol!=='https:'||u.hostname!==SOURCES[source]?.host||u.username||u.password||u.port)return false;
  if(source==='ft')return u.pathname===`/articles/woods/${String(season).slice(-2)}-touch-transfer-wk${week}.html`;
- if(source==='fp')return new RegExp(`^/${season}/\\d{2}/fantasy-football-waiver-wire-advice-players-to-add-stash-drop-week-${week}-${season}/?$`).test(u.pathname);
+ if(source==='fp')return new RegExp(`^/${season}/\\d{2}/fantasy-football-waiver-wire-advice-players-to-add-stash-drop-week-${week}(?:-${season})?/?$`).test(u.pathname);
  return new RegExp(`^/waiver-wire/week-${week}-waiver-wire(?:-[a-z0-9]+)*-${season}/?$`).test(u.pathname);
  }catch{return false;}
 }
@@ -24,7 +24,7 @@ function metadata(html){
  const article=objects.find(x=>[x['@type']].flat().some(t=>['Article','NewsArticle','BlogPosting'].includes(t)));
  const metaAuthor=html.match(/<meta\b[^>]*name=["']author["'][^>]*content=["']([^"']+)["']/i)?.[1];
  const authorRef=article?.author?.['@id'],linked=authorRef?objects.find(x=>x['@id']===authorRef):null;
- return {date:article?.datePublished,author:article?.author?.name||linked?.name||metaAuthor};
+ return {date:article?.datePublished,headline:article?.headline,author:article?.author?.name||linked?.name||metaAuthor};
 }
 export function parse(source,html,{season,week,url,players=[],now=Date.now()}){
  const ctx={season,week};assertContext(ctx);if(!validArticleURL(source,url,ctx))throw Error('Wrong article origin or period in URL');
@@ -32,16 +32,25 @@ export function parse(source,html,{season,week,url,players=[],now=Date.now()}){
  if(!new RegExp('Week\\s*'+week+'\\b','i').test(title))throw Error('Wrong article week');
  if((title.match(/\b20\d{2}\b/g)||[]).some(y=>Number(y)!==season))throw Error('Wrong article year');
  const canonical=html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)?.[1];
- if(canonical&&!validArticleURL(source,canonical,ctx))throw Error('Canonical URL has wrong source or period');
  const meta=metadata(html),text=plain(html);
+ let metadataWarning=null;
+ if(canonical&&!validArticleURL(source,canonical,ctx)){
+  // Measured 2026-09-29: DN's Week 4 article has a Week 3 canonical despite
+  // a current URL, H1, structured headline, dated byline and public table.
+  // Keep the verified fetched URL and expose the conflict. Never follow the
+  // old canonical or let a wrong URL/year/title/author/date through this gate.
+  const h1=plain(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||''),h2=(html.match(/<h2\b[^>]*>[\s\S]*?<\/h2>/gi)||[]).map(plain),current=new RegExp(`\\bWeek\\s+${week}\\b`,'i');
+  if(source!=='dn'||week<2||!validArticleURL(source,canonical,{season,week:week-1})||!current.test(h1)||!current.test(plain(meta.headline||''))||!h2.some(t=>current.test(t)&&/Waiver Wire FAAB Guide/i.test(t)))throw Error('Canonical URL has wrong source or period');
+  metadataWarning=`Publisher canonical points to Week ${week-1}; current Week ${week} URL, article headings and publication date verified.`;
+ }
  // FFToday's visible dated byline is its primary metadata; the other two sites
  // expose article-specific structured author/date fields. Sidebar names do not qualify.
  const ftByline=source==='ft'?text.match(/(?:By\s*:\s*|By\s+)?(Jon Woods)\s*\|\s*Updated:\s*(\d{1,2}\/\d{1,2}\/\d{2})/i):null;
  const stamp=meta.date||ftByline?.[2],parts=ftByline?.[2]?.split('/'),publishedAt=parts&&!meta.date?new Date(Date.UTC(2000+Number(parts[2]),Number(parts[0])-1,Number(parts[1]))):new Date(stamp||'invalid');
  if(!Number.isFinite(+publishedAt)||publishedAt.getUTCFullYear()!==season||+publishedAt>now+300000||now-publishedAt>10*DAY)throw Error('Article date is not current');
  const config=SOURCES[source];if(plain(meta.author||ftByline?.[1]||'')!==config.author)throw Error('Article author not verified');
- const articleURL=new URL(canonical||url);articleURL.search='';articleURL.hash='';
- const rows=[],base={sourceId:source,author:config.author,source:config.label,format:config.format,url:articleURL.href,publishedAt:publishedAt.toISOString(),retrievedAt:new Date(now).toISOString(),note:'Published waiver guidance; not a measured winning bid.'};
+ const articleURL=new URL(metadataWarning?url:canonical||url);articleURL.search='';articleURL.hash='';
+ const rows=[],base={sourceId:source,author:config.author,source:config.label,format:config.format,url:articleURL.href,publishedAt:publishedAt.toISOString(),retrievedAt:new Date(now).toISOString(),...(metadataWarning?{metadataWarning}:{}),note:'Published waiver guidance; not a measured winning bid.'+(metadataWarning?' '+metadataWarning:'')};
  if(source==='ft'){
   if(!/\$200/.test(text))throw Error('Missing budget basis');
   for(const block of html.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi)||[]){const t=plain(block),m=t.match(/^(QB|RB|WR|TE)\s+(.+?),.*?Suggested FAAB:\s*\$(\d+)\s*[-–]\s*\$(\d+)/);if(m){const conditional=/Suggested FAAB:[\s\S]*\b(?:if|when|unless|assuming)\b/i.test(t);rows.push({...base,name:m[2].trim(),pos:m[1],low:+m[3],high:+m[4],budgetBasis:200,conditional,bidText:`$${m[3]}–$${m[4]} on $200 starting budget${conditional?'; conditional—read source':''}`});}}
@@ -51,7 +60,7 @@ export function parse(source,html,{season,week,url,players=[],now=Date.now()}){
   for(const table of html.match(/<table\b[^>]*>[\s\S]*?<\/table>/gi)||[]){
    const tr=table.match(/<tr\b[^>]*>[\s\S]*?<\/tr>/gi)||[],headers=(tr[0]?.match(/<th\b[^>]*>[\s\S]*?<\/th>/gi)||[]).map(plain);
    if(headers.join('|')!=='Player|Pos|Team|Roster %|FAAB')continue;
-   for(const row of tr.slice(1)){const c=(row.match(/<td\b[^>]*>[\s\S]*?<\/td>/gi)||[]).map(plain),bid=c[4]?.match(/^(\d+)(?:[-–](\d+))?%$/);if(c.length===5&&/^(QB|RB|WR|TE)$/.test(c[1])&&bid)rows.push({...base,name:c[0],pos:c[1],low:+bid[1],high:+(bid[2]||bid[1]),budgetBasis:null,bidText:`${bid[1]}${bid[2]?'–'+bid[2]:''}% FAAB; initial versus remaining basis unspecified`,leagueContext:'12-team superflex PPR dynasty'});}
+   for(const row of tr.slice(1)){const c=(row.match(/<td\b[^>]*>[\s\S]*?<\/td>/gi)||[]).map(plain),bid=c[4]?.match(/^(\d+)(?:[-–](\d+))?%\s*(\*)?$/);if(c.length!==5||!/^(QB|RB|WR|TE)$/.test(c[1])||!bid)continue;const names=c[0].split(/\s+(?:\/|or)\s+/),conditional=!!bid[3]||names.length>1;for(const name of names)rows.push({...base,name:name.trim(),pos:c[1],team:c[2],low:+bid[1],high:+(bid[2]||bid[1]),budgetBasis:null,conditional,...(names.length>1?{alternatives:names}:{}),bidText:`${bid[1]}${bid[2]?'–'+bid[2]:''}% FAAB; initial versus remaining basis unspecified${conditional?'; conditional—read source':''}`,leagueContext:'12-team superflex PPR dynasty'});}
   }
   // Historical public pages used headings and no summary table. Never fetch a
   // login/alternate representation to obtain missing article content.
@@ -69,21 +78,22 @@ export function sourceURLs(source,{season,week,now=Date.now()}){
  if(source==='dn')return [`https://${SOURCES.dn.host}/waiver-wire/week-${week}-waiver-wire-faab-guide-${season}/`,`https://${SOURCES.dn.host}/waiver-wire/week-${week}-waiver-wire-${season}/`];
  // Waiver articles can be published in the previous month at a month boundary.
  const d=new Date(now),months=[d.getUTCMonth()+1,new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),0)).getUTCMonth()+1];
- return [...new Set(months)].map(m=>`https://${SOURCES.fp.host}/${season}/${String(m).padStart(2,'0')}/fantasy-football-waiver-wire-advice-players-to-add-stash-drop-week-${week}-${season}/`);
+ return [...new Set(months)].flatMap(m=>['-'+season,''].map(suffix=>`https://${SOURCES.fp.host}/${season}/${String(m).padStart(2,'0')}/fantasy-football-waiver-wire-advice-players-to-add-stash-drop-week-${week}${suffix}/`));
 }
-export function discoverDN(html,ctx){
- const result=[];for(const m of html.matchAll(/href=["']([^"']+)["']/gi)){try{const u=new URL(m[1],`https://${SOURCES.dn.host}/waiver-wire/`);u.hash='';u.search='';if(validArticleURL('dn',u.href,ctx)&&!result.includes(u.href))result.push(u.href);}catch{}}
+export function discoverArticles(source,html,ctx){
+ const result=[];for(const m of html.matchAll(/href=["']([^"']+)["']/gi)){try{const u=new URL(m[1],`https://${SOURCES[source].host}/`);u.hash='';u.search='';if(validArticleURL(source,u.href,ctx)&&!result.includes(u.href))result.push(u.href);}catch{}}
  return result.slice(0,4);
 }
+export const discoverDN=(html,ctx)=>discoverArticles('dn',html,ctx);
 export async function collect({season,week,players=[],old=null,now=Date.now(),get}){
  const ctx={season,week,players,now};assertContext(ctx);const rows=[],failures=[],sourceStatus=[];
  for(const source of Object.keys(SOURCES)){
   const attempts=[],tried=new Set();let got=null;
   const tryURLs=async urls=>{for(const url of urls){if(tried.has(url))continue;tried.add(url);try{const response=await get(url),resolved=response.url||url;if(!validArticleURL(source,resolved,ctx))throw Error('Redirect has wrong source or period');got=parse(source,await response.text(),{...ctx,url:resolved});return;}catch(e){attempts.push({url,error:e.message});}}};
   await tryURLs(sourceURLs(source,ctx));
-  if(!got&&source==='dn'){
-   const index=`https://${SOURCES.dn.host}/waiver-wire/`;
-   try{const page=await get(index);if(new URL(page.url||index).origin!==new URL(index).origin)throw Error('Discovery redirected off source');const candidates=discoverDN(await page.text(),ctx).filter(u=>!tried.has(u)).slice(0,2);await tryURLs(candidates);}catch(e){attempts.push({url:index,error:e.message});}
+  if(!got&&['dn','fp'].includes(source)){
+   const index=source==='dn'?`https://${SOURCES.dn.host}/waiver-wire/`:`https://${SOURCES.fp.host}/content/nfl/waiver-wire-nfl/`;
+   try{const page=await get(index);if(new URL(page.url||index).origin!==new URL(index).origin)throw Error('Discovery redirected off source');const candidates=discoverArticles(source,await page.text(),ctx).filter(u=>!tried.has(u)).slice(0,2);await tryURLs(candidates);}catch(e){attempts.push({url:index,error:e.message});}
   }
   if(got){rows.push(...got);sourceStatus.push({source,status:'current',rows:got.length,retrievedAt:new Date(now).toISOString(),url:got[0].url,attempts});continue;}
   // Retain only same-period rows and preserve original retrieval/publication
@@ -101,7 +111,7 @@ export function targetWeek(state,board){
  const next=matches&&board.events?.length&&board.events.every(e=>e.status?.type?.completed===true)?week+1:week;
  if(next>18)throw Error('No next regular-season waiver period');return next;
 }
-async function getPublic(url){const r=await fetch(url,{headers:{'User-Agent':'DraftDesk/113 public-waiver-research'},signal:AbortSignal.timeout(25000)});if(!r.ok)throw Error('HTTP '+r.status);return r;}
+async function getPublic(url){const r=await fetch(url,{headers:{'User-Agent':'DraftDesk/114 public-waiver-research'},signal:AbortSignal.timeout(25000)});if(!r.ok)throw Error('HTTP '+r.status);return r;}
 export async function main({get=getPublic,out='data',now=Date.now()}={}){
  const state=await(await get('https://api.sleeper.app/v1/state/nfl')).json(),season=Number(state.season),rawWeek=Number(state.week??state.leg??state.display_week);assertContext({season,week:rawWeek});
  let board=null;try{board=await(await get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=${season}&seasontype=2&week=${rawWeek}`)).json();}catch{}
